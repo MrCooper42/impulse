@@ -1,7 +1,8 @@
 // REACT
 var React = require('react');
 var ReactDOM = require('react-dom');
-var bgUrls = require('./app/assets/images/bgUrls.js')
+var bgUrls = require('./app/assets/images/bgUrls.js');
+var Clock = require('./components/clock.jsx');
 
 var App = React.createClass({
 
@@ -14,6 +15,7 @@ var App = React.createClass({
   render: function() {
     return (
       <div>
+        <Clock />
         <img src={this.getUrl()}/>
       </div>
     )
