@@ -13,13 +13,13 @@ var Clock = React.createClass({
     var that = this;
     setInterval(function(){
       that.setState({time: new Date()})
-    } , 1000 )
+    } , 60000 )
   },
 
   render: function(){
     return(
       <div>
-      {this.state.time.toString()}
+      {this.state.time.getHours()}:{this.state.time.getMinutes()}
       </div>
     );
   }
