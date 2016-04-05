@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "Sample Extension",
+  "name": "Impulse",
   "version": "0.1",
 
   "chrome_url_overrides": {
