@@ -6,7 +6,6 @@ var Clock = require('./components/clock.jsx');
 
 var App = React.createClass({
 
-
   getUrl: function(){
     var idx = Math.random() * bgUrls.urls.length;
     idx = Math.floor(idx);
