@@ -8,6 +8,7 @@
   },
   "permissions": [
       "tabs"
+      // "https://na.api.pvp.net/api/*",
   ]
 
 }
