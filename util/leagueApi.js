@@ -1,4 +1,4 @@
-var key = require('./keys.js'); 
+var key = require('../app/assets/javascripts/keys.js'); 
 
 var LeagueUtil = {
 

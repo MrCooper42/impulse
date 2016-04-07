@@ -2,6 +2,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var bgUrls = require('./app/assets/images/bgUrls.js');
+var league = require('./util/leagueApi.js')
 var Clock = require('./components/clock.jsx');
 
 var App = React.createClass({
@@ -11,6 +12,10 @@ var App = React.createClass({
     var idx = Math.random() * bgUrls.urls.length;
     idx = Math.floor(idx);
     return bgUrls.urls[idx];
+  },
+
+  componentDidMount: function(){
+    league.fetchSummonerInfo();
   },
 
   render: function() {
