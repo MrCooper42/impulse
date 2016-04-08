@@ -5,7 +5,7 @@ var LeagueUtil = {
   fetchSummonerInfo: function(){
     $.ajax({
       // TODO: add key
-      url: "https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/adutta?api_key=" + key.league,
+      url: "https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/" + localStorage["summoner"] + "?api_key=" + key.league,
       method: "GET",
       success: function(data) {
         window.testValue = data;
