@@ -2,7 +2,9 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var bgUrls = require('./app/assets/images/bgUrls.js');
+var league = require('./util/leagueApi.js')
 var Clock = require('./components/clock.jsx');
+var Search = require('./components/searchSummoner.jsx')
 
 var App = React.createClass({
 
@@ -13,11 +15,25 @@ var App = React.createClass({
     return bgUrls.urls[idx];
   },
 
+  componentDidMount: function(){
+    league.fetchSummonerInfo();
+  },
+
   render: function() {
+    var divStyle = {
+        height: '100%',
+        width: '100%',
+        backgroundImage: 'url(' + this.getUrl() + ')',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
+        backgroundPosition: 'center',
+        backgroundSize: 'cover'
+    }
+
     return (
-      <div>
+      <div style={divStyle}>
+        <Search />
         <Clock />
-        <img src={this.getUrl()}/>
       </div>
     )
   }

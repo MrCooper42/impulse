@@ -15,10 +15,9 @@ var Clock = React.createClass({
       that.setState({time: new Date()})
     } , 60000 )
   },
-
   render: function(){
     return(
-      <div>
+      <div className="clock">
       {this.state.time.getHours()}:{this.state.time.getMinutes()}
       </div>
     );
