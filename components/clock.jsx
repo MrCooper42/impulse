@@ -28,11 +28,14 @@ var Clock = React.createClass({
     return this.state.time.getHours()
   },
 
-  render: function(){
-    debugger;
+  period: function() {
+    return this.state.time.getHours() >= 12 ? "PM" : "AM";
+  },
+
+  render: function() {
     return(
       <div className="clock">
-      {this.hours()}:{this.minutes()}
+      {this.hours()}:{this.minutes()} {this.period()}
       </div>
     );
   }
