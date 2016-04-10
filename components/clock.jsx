@@ -15,10 +15,24 @@ var Clock = React.createClass({
       that.setState({time: new Date()})
     } , 60000 )
   },
+
+  minutes: function() {
+    var minutes = this.state.time.getMinutes()
+    if (minutes.length == 1) {
+      minutes = "0" + minutes;
+    }
+    return minutes
+  },
+
+  hours: function() {
+    return this.state.time.getHours()
+  },
+
   render: function(){
+    debugger;
     return(
       <div className="clock">
-      {this.state.time.getHours()}:{this.state.time.getMinutes()}
+      {this.hours()}:{this.minutes()}
       </div>
     );
   }
