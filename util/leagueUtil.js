@@ -1,23 +1,22 @@
-var key = require('../app/assets/javascripts/keys.js'); 
+var key = require('../app/assets/javascripts/keys.js');
+var LeagueActions = require('../actions/leagueActions');
 
 var LeagueUtil = {
 
   fetchSummonerInfo: function(){
+    var summonerName = Object.keys(JSON.parse(localStorage["summoner"]))[0]
     $.ajax({
-      // TODO: add key
-      url: "https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/" + localStorage["summoner"] + "?api_key=" + key.league,
+      url: "https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/" + summonerName + "?api_key=" + key.league,
       method: "GET",
-      success: function(data) {
-        window.testValue = data;
+      success: function(summoner) {
+        LeagueActions.receiveSummoner(summoner)
       },
       error: function(error) {
-        window.testValue = "poop";
+        console.log("Summoner not found");
       }
     });
   }
+  
 }
 
-
 module.exports = LeagueUtil;
-
-

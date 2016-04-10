@@ -1,6 +1,6 @@
 var React = require('react');
 
-
+// ---------------CLASS DEFINITION ------------------------------------*****
 var Clock = React.createClass({
 
   getInitialState: function(){

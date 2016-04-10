@@ -1,40 +1,46 @@
 var React = require('react');
+var LeagueUtil = require('../util/leagueUtil');
+var SummonerStore = require('../stores/summonerStore');
 
+// ---------------CLASS DEFINITION ------------------------------------*****
 var SearchSummoner = React.createClass({
 
   getInitialState: function(){
     return {
-      name: ""
+      summoner: {}
     }
   },
 
   componentDidMount: function(){
+    this.leagueListener = SummonerStore.addListener(this.updateSummoner);
     if (localStorage["summoner"]){
-      this.setState({name: localStorage["summoner"]})
-    } 
+      this.setState({summoner: localStorage["summoner"]})
+    }
   },
 
+  componentWillUnmount: function() {
+    this.leagueListener.remove();
+  },
 
   _onChange: function(e){
     e.preventDefault();
     this.setState({
-      name: e.target.value
+      summoner: e.target.value
     });
   },
 
   _onSubmit: function(e){
-    //TODO: fetchSummonerName on submit, aka make a new ajax call
     e.preventDefault();
-    localStorage["summoner"] = this.state.name;
-
+    LeagueUtil.fetchSummonerInfo();
   },
 
   render: function(){
+    var summonerName = Object.keys(JSON.parse(localStorage["summoner"]))[0]
     return(
       <div className="searchDiv">
         <form onSubmit={this._onSubmit}>
           <input id="searching" type="text"
-          value={this.state.name}
+          value={summonerName}
           onChange={this._onChange}/>
 
           <input type="submit" value="search"/>

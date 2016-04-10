@@ -1,23 +1,28 @@
 // REACT
 var React = require('react');
 var ReactDOM = require('react-dom');
-var bgUrls = require('./app/assets/images/bgUrls.js');
-var league = require('./util/leagueApi.js')
+var LeagueStore = require('./stores/summonerStore');
+
+// FLUX
+var leagueUtil = require('./util/leagueUtil.js')
+
+// COMPONENTS
 var Clock = require('./components/clock.jsx');
 var Search = require('./components/searchSummoner.jsx')
 
+// list of image urls
+var bgUrls = require('./app/assets/images/bgUrls.js');
+
+// ---------------CLASS DEFINITION ------------------------------------*****
 var App = React.createClass({
 
-  getUrl: function(){
-
+  getUrl: function() {
+    // chooses random url from list
     var idx = Math.random() * bgUrls.urls.length;
     idx = Math.floor(idx);
     return bgUrls.urls[idx];
   },
 
-  componentDidMount: function(){
-    league.fetchSummonerInfo();
-  },
 
   render: function() {
     var divStyle = {
