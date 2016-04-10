@@ -3,8 +3,7 @@ var LeagueActions = require('../actions/leagueActions');
 
 var LeagueUtil = {
 
-  fetchSummonerInfo: function(){
-    var summonerName = Object.keys(JSON.parse(localStorage["summoner"]))[0]
+  fetchSummonerInfo: function(summonerName){
     $.ajax({
       url: "https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/" + summonerName + "?api_key=" + key.league,
       method: "GET",
@@ -16,7 +15,7 @@ var LeagueUtil = {
       }
     });
   }
-  
+
 }
 
 module.exports = LeagueUtil;
