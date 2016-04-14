@@ -18,6 +18,19 @@ var LeagueUtil = {
 
   setSummoner: function(summoner) {
     LeagueActions.receiveSummoner(summoner);
+  },
+
+  fetchSummonerStats: function(summonerId) {
+    $.ajax({
+      url: "https://na.api.pvp.net/api/lol/na/v1.3/stats/by-summoner/60131288/summary?season=SEASON2016&api_key=" key.league,
+      method: "GET",
+      success: function(stats) {
+        console.log("success!!");
+      },
+      error: function(error) {
+        console.log("Error");
+      }
+    });
   }
 
 }
