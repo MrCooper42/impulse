@@ -14,6 +14,10 @@ var LeagueUtil = {
         console.log("Summoner not found");
       }
     });
+  },
+
+  setSummoner: function(summoner) {
+    LeagueActions.receiveSummoner(summoner);
   }
 
 }

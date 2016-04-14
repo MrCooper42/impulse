@@ -15,10 +15,12 @@ var SearchSummoner = React.createClass({
   componentDidMount: function(){
     this.leagueListener = SummonerStore.addListener(this.updateSummoner);
     if (localStorage["summoner"]){
+      var summoner = JSON.parse(localStorage["summoner"]);
       this.setState( {
-        summoner: JSON.parse(localStorage["summoner"]),
-        inputText: Object.keys(JSON.parse(localStorage["summoner"]))[0]
+        summoner: summoner,
+        inputText: Object.keys(summoner)[0]
       });
+      LeagueUtil.setSummoner(summoner)
     }
   },
 
