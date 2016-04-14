@@ -18,9 +18,10 @@ var Clock = React.createClass({
 
   minutes: function() {
     var minutes = this.state.time.getMinutes()
-    if (minutes.length == 1) {
-      minutes = "0" + minutes;
+    if (String(minutes).length == 1) {
+      minutes = "0" + String(minutes);
     }
+    debugger;
     return minutes
   },
 
