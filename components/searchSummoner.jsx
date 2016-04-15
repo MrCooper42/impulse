@@ -52,8 +52,7 @@ var SearchSummoner = React.createClass({
           <input id="searching" type="text"
           value={this.state.inputText}
           onChange={this._onChange}/>
-
-          <input type="submit" value="search"/>
+          <input id="searchSubmit" type="submit" value="summoner search"/>
         </form>
       </div>
     );

@@ -6,9 +6,11 @@
   "chrome_url_overrides": {
       "newtab": "index.html"
   },
+
+  
   "content_scripts": [{
      "js": ["jquery.min.js"],
      "matches": ["http://*/*", "https://*/*"]
    }],
-  "permissions": ["<all_urls>"]
+  "permissions": ["<all_urls>", "geolocation"]
 }
