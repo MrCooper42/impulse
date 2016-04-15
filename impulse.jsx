@@ -10,6 +10,8 @@ var leagueUtil = require('./util/leagueUtil.js')
 var Clock = require('./components/clock.jsx');
 var Search = require('./components/searchSummoner.jsx');
 var TopChampionsIndex = require('./components/topChampionsIndex.jsx');
+var RecentGame = require('./components/recentGame.jsx');
+
 // list of image urls
 var bgUrls = require('./app/assets/images/bgUrls.js');
 
@@ -38,6 +40,7 @@ var App = React.createClass({
     return (
       <div style={divStyle}>
         <Search />
+        <RecentGame />
         <Clock />
       </div>
     )

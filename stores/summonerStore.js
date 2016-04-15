@@ -15,12 +15,21 @@ SummonerStore.__onDispatch = function(payload) {
       resetSummoner(payload.summoner);
       SummonerStore.__emitChange();
       break;
+    case 'SET_SUMMONER':
+      setSummoner(payload.summoner);
+      SummonerStore.__emitChange();
+      break;
   };
 };
 
 var resetSummoner = function(summoner) {
+  _summoner = summoner[Object.keys(summoner)[0]];
+  localStorage["summoner"] = JSON.stringify(_summoner);
+};
+
+var setSummoner = function(summoner) {
   _summoner = summoner;
-  localStorage["summoner"] = JSON.stringify(summoner);
+  localStorage["summoner"] = JSON.stringify(_summoner);
 };
 
 module.exports = SummonerStore;

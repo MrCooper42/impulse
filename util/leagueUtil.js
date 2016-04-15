@@ -17,7 +17,7 @@ var LeagueUtil = {
   },
 
   setSummoner: function(summoner) {
-    LeagueActions.receiveSummoner(summoner);
+    LeagueActions.setSummoner(summoner);
   },
 
   // fetchSummonerStats: function(summonerId) {
@@ -33,6 +33,19 @@ var LeagueUtil = {
   //   });
   // },
 
+  fetchGameStats: function(summonerId) {
+    $.ajax({
+      url: "https://na.api.pvp.net/api/lol/na/v1.3/game/by-summoner/" + summonerId + "/recent?api_key=" + key.league,
+      method: "GET",
+      success: function(data) {
+        LeagueActions.receiveGames(data.games);
+      },
+      error: function(error) {
+        console.log("No Games Found");
+      }
+    })
+  },
+
   fetchTopChampions: function(summonerID){
     $.ajax({
       crossDomain: true,
@@ -40,10 +53,9 @@ var LeagueUtil = {
       method: "GET",
       // dataType: "JSONP",
       success: function(champions) {
-        debugger;
         LeagueActions.receiveChampions(champions)
       },
-      error: function(error, a, b){
+      error: function(error){
         console.log("Champions not found")
       }
     });

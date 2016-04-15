@@ -18,7 +18,7 @@ var SearchSummoner = React.createClass({
       var summoner = JSON.parse(localStorage["summoner"]);
       this.setState( {
         summoner: summoner,
-        inputText: Object.keys(summoner)[0]
+        inputText: summoner.name
       });
       LeagueUtil.setSummoner(summoner)
     }
