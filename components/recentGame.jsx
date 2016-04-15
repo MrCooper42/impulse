@@ -3,6 +3,8 @@ var LeagueUtil = require('../util/leagueUtil');
 var SummonerStore = require('../stores/summonerStore');
 var GameStore = require('../stores/gameStore');
 
+var CHAMPIONS = require('../app/assets/maps/champions.js');
+
 var RecentGame = React.createClass({
 
   getInitialState: function() {
@@ -33,7 +35,7 @@ var RecentGame = React.createClass({
     if (this.state.game.stats) {
       stats = (
         <div>
-          <div>Champion Played: {this.state.game.championId}</div>
+          <div>Champion Played: {CHAMPIONS[this.state.game.championId]}</div>
           <div>KDA: {this.state.game.stats.championsKilled}/{this.state.game.stats.numDeaths}/{this.state.game.stats.assists}</div>
           <div>Damage dealt to Champions: {this.state.game.stats.totalDamageDealtToChampions}</div>
         </div>
