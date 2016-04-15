@@ -9,12 +9,29 @@ var LeagueActions = {
   },
 
 
+  setSummoner: function(summoner) {
+    Dispatcher.dispatch({
+      actionType: "SET_SUMMONER",
+      summoner: summoner
+    });
+  },
+
+
   receiveChampions: function(champions) {
     Dispatcher.dispatch({
       actionType: "RECEIVE_CHAMPIONS",
       champions: champions
     });
+  },
+
+
+  receiveGames: function(games) {
+    Dispatcher.dispatch({
+      actionType: "RECEIVE_GAMES",
+      games: games
+    });
   }
+
 };
 
 module.exports = LeagueActions;

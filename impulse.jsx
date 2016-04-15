@@ -11,6 +11,7 @@ var Clock = require('./components/clock.jsx');
 var Search = require('./components/searchSummoner.jsx');
 var TopChampionsIndex = require('./components/topChampionsIndex.jsx');
 var Weather = require('./components/weather.jsx');
+var RecentGame = require('./components/recentGame.jsx');
 // list of image urls
 var bgUrls = require('./app/assets/images/bgUrls.js');
 
@@ -40,6 +41,7 @@ var App = React.createClass({
       <div style={divStyle}>
         <Search />
         <Weather />
+        <RecentGame />
         <Clock />
       </div>
     )
