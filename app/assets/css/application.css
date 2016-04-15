@@ -58,6 +58,7 @@ html{
     font-family: 'Lato';
     border-radius: 2px;
     left: 0px;
+    opacity: 0.8;
 
 }
 
@@ -75,6 +76,24 @@ html{
 
 }
 
+.recentGame{
+  font-family: 'Lato';
+  font-size: 20px;
+  position: absolute;
+  top:110px;
+  color:white;
+  background-color: black;
+  width: 200px;
+  left:10px;
+}
+
+.recentGame h1{
+  font-family: 'Lato';
+  font-size: 30px;
+  margin: 0;
+  text-decoration: underline;
+  padding-bottom: 20px;
+}
 
 .searchDiv #searchSubmit:hover{
     background-color: white;

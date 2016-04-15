@@ -47,7 +47,8 @@ var RecentGame = React.createClass({
   render: function() {
     this.getStats();
     return (
-      <div>
+      <div className="recentGame">
+        <h1>Recent Game</h1>
         {this.getStats()}
       </div>
     );
