@@ -12,7 +12,6 @@ ChampionStore.champions = function(){
 ChampionStore.__onDispatch = function(payload) {
   switch(payload.actionType){
     case 'RECEIVE_CHAMPIONS':
-  debugger;
       resetChampions(payload.champions);
       ChampionStore.__emitChange();
       break;

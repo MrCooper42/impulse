@@ -12,8 +12,8 @@ var Clock = React.createClass({
   componentDidMount: function(){
     var that = this;
     setInterval(function(){
-      that.setState({time: new Date()})
-    } , 60000 )
+      that.setState({time: new Date()});
+    } , 5000 )
   },
 
   minutes: function() {

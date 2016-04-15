@@ -38,7 +38,6 @@ var App = React.createClass({
     return (
       <div style={divStyle}>
         <Search />
-        <TopChampionsIndex />
         <Clock />
       </div>
     )
