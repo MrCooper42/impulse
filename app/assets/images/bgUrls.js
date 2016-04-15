@@ -11,7 +11,6 @@ var URLS = {
     "http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,h_800,w_1200/v1459961634/Impulse/nauti.jpg",
     "http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,h_800,w_1200/v1459961634/Impulse/league-word-map.jpg",
     "http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,h_800,w_1200/v1459961633/Impulse/kayle.jpg",
-    "http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,h_800,w_1200/v1459961632/Impulse/jax.jpg",
     "http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,h_800,w_1200/v1459961631/Impulse/xerath.jpg",
     "http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,h_800,w_1200/v1459961633/Impulse/mid.png",
     "http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,h_800,w_1200/v1459961630/Impulse/adc.jpg",

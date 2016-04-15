@@ -5,8 +5,7 @@ var LeagueUtil = {
 
   fetchSummonerInfo: function(summonerName){
     $.ajax({
-      // url: "https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/" + summonerName + "?api_key=" + key.league,
-      url: "https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/" + summonerName + "?api_key=bd9c0a96-b497-4619-adb8-1965df5bb4a7",
+      url: "https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/" + summonerName + "?api_key=" + key.league,
       method: "GET",
       success: function(summoner) {
         LeagueActions.receiveSummoner(summoner)
@@ -38,8 +37,6 @@ var LeagueUtil = {
     $.ajax({
       crossDomain: true,
       // url: "https://na.api.pvp.net/championmastery/location/NA1/player/" + summonerID + "/topchampions?api_key=" + key.league,
-      // url: "https://na.api.pvp.net/api/lol/na/v1.3/stats/by-summoner/60131288/summary?season=SEASON2016&api_key=bd9c0a96-b497-4619-adb8-1965df5bb4a7",
-      url: "https://na.api.pvp.net/championmastery/location/NA1/player/60131288/champions?api_key=bd9c0a96-b497-4619-adb8-1965df5bb4a7",
       method: "GET",
       // dataType: "JSONP",
       success: function(champions) {
