@@ -3,7 +3,7 @@ var Dispatcher = require('../dispatcher/dispatcher');
 
 var SummonerStore = new Store(Dispatcher);
 
-var _summoner = {};
+var _summoner = {id: 0};
 
 SummonerStore.summoner = function() {
   return _summoner;

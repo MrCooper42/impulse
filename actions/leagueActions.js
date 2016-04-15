@@ -6,6 +6,14 @@ var LeagueActions = {
       actionType: "RECEIVE_SUMMONER",
       summoner: summoner
     });
+  },
+
+
+  receiveChampions: function(champions) {
+    Dispatcher.dispatch({
+      actionType: "RECEIVE_CHAMPIONS",
+      champions: champions
+    });
   }
 };
 

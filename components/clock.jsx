@@ -21,7 +21,6 @@ var Clock = React.createClass({
     if (String(minutes).length == 1) {
       minutes = "0" + String(minutes);
     }
-    debugger;
     return minutes
   },
 

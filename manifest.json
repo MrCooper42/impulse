@@ -6,8 +6,9 @@
   "chrome_url_overrides": {
       "newtab": "index.html"
   },
-  "permissions": [
-      "tabs",
-      ""https://ajax.googleapis.com/""
-  ]
+  "content_scripts": [{
+     "js": ["jquery.min.js"],
+     "matches": ["http://*/*", "https://*/*"]
+   }],
+  "permissions": ["<all_urls>"]
 }
