@@ -18,7 +18,8 @@ var URLS = {
     "http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,h_800,w_1200/v1459961632/Impulse/kindred.jpg",
     "http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,h_800,w_1200/v1459961632/Impulse/kindred.jpg",
     "http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,h_800,w_1200/v1459961632/Impulse/baron.jpg",
-    "http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,h_800,w_1200/v1459961633/Impulse/draven.jpg"
+    "http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,h_800,w_1200/v1459961633/Impulse/draven.jpg",
+    "http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,h_800,w_1200/v1461002819/Impulse/gnar.jpg"
   ]
 
 };
