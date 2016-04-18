@@ -40,6 +40,7 @@ var App = React.createClass({
     return (
       <div style={divStyle}>
         <Search />
+        <Weather />
         <RecentGame />
         <Clock />
       </div>
