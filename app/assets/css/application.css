@@ -7,6 +7,14 @@ html{
   font-family: 'Lato', sans-serif;
 }
 
+.weather{
+  font-family: 'Lato';
+  font-size: 20px;
+  position: absolute;
+  top:80px;
+  color:white;
+}
+
 #root{
   position: fixed;
   height:100vh;
@@ -19,30 +27,79 @@ html{
 .clock{
   position: relative;
   color:white;
-    text-shadow:
-   -1px -1px 0 #000,  
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-     1px 1px 0 #000;
+  text-shadow:
+  -1px -1px 0 #000,  
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
   text-align: center;
   top: 45%;
   font-size:250px;
   font-family: 'Lato'
 }
 
+.clockPeriod{
+  font-size: 100px;
+  margin-left: 0px;
+}
+
 .searchDiv #searching{
     background: none;
     background-color: black;
-    opacity:0.8;
+    position: absolute;
     border: none;
     color: white;
     height: 50px;
     font-size: 50px;
     width: 250px;
     text-align: left;
-    border-radius: 5px;
     padding: 5px;
     padding-left:20px;
+    font-family: 'Lato';
+    border-radius: 2px;
+    left: 0px;
+    opacity: 0.8;
+
+}
+
+.searchDiv #searchSubmit{
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    background: none;
+    background-color: black;
+    color: white;
+    border: black;
+    border-radius: 2px;
+    font-family: 'Lato';
+    width: 275px;
+
+}
+
+.recentGame{
+  font-family: 'Lato';
+  font-size: 20px;
+  position: absolute;
+  top:110px;
+  color:white;
+  background-color: black;
+  width: 200px;
+  left:10px;
+}
+
+.recentGame h1{
+  font-family: 'Lato';
+  font-size: 30px;
+  margin: 0;
+  text-decoration: underline;
+  padding-bottom: 20px;
+}
+
+.searchDiv #searchSubmit:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    transition: 1s;
 }
 
 .searchDiv input:focus{
