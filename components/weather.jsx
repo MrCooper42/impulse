@@ -10,7 +10,6 @@ var Weather = React.createClass({
     navigator.geolocation.getCurrentPosition(this.pollWeather);
   },
 
-
   toQueryString: function(obj) {
     var parts = [];
     for (var i in obj) {
@@ -26,8 +25,8 @@ var Weather = React.createClass({
     var long = location.coords.longitude;
     var url = "http://api.openweathermap.org/data/2.5/weather?";
     var params = {
-      lat: location.coords.latitude,
-      lon: location.coords.longitude
+      lat: lat,
+      lon: long
     };
     url += this.toQueryString(params)
     url += "&APPID=" + key.weather

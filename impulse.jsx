@@ -12,11 +12,12 @@ var Search = require('./components/searchSummoner.jsx');
 var TopChampionsIndex = require('./components/topChampionsIndex.jsx');
 var Weather = require('./components/weather.jsx');
 var RecentGame = require('./components/recentGame.jsx');
+
 // list of image urls
 var bgUrls = require('./app/assets/images/bgUrls.js');
 
 // ---------------CLASS DEFINITION ------------------------------------*****
-var App = React.createClass({
+var App = React.createClass({ 
 
   getUrl: function() {
     // chooses random url from list
@@ -40,6 +41,7 @@ var App = React.createClass({
     return (
       <div style={divStyle}>
         <Search />
+        <Weather />
         <RecentGame />
         <Clock />
       </div>
