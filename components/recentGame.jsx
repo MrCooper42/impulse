@@ -40,10 +40,14 @@ var RecentGame = React.createClass({
       </div>
     );
     if (this.state.game.stats) {
+      var kill = this.state.game.stats.championsKilled ? this.state.game.stats.championsKilled : 0;
+      var death = this.state.game.stats.numDeaths ? this.state.game.stats.numDeaths : 0;
+      var assist = this.state.game.stats.assists ? this.state.game.stats.assists : 0;
+
       stats = (
         <div>
           <div>{CHAMPIONS[this.state.game.championId]}</div>
-          <div>{this.state.game.stats.championsKilled}/{this.state.game.stats.numDeaths}/{this.state.game.stats.assists}</div>
+          <div>{kill}/{death}/{assist}</div>
           <div>Damage: {this.state.game.stats.totalDamageDealtToChampions}</div>
         </div>
       )

@@ -111,7 +111,7 @@ module.exports = {
   '150': 'Gnar',
   '154': 'Zac',
   '157': 'Yasuo',
-  '161': "Vel'koz",
+  '161': "Vel'Koz",
   '201': 'Braum',
   '202': 'Jhin',
   '203': 'Kindred',
