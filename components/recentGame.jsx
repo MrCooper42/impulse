@@ -4,6 +4,7 @@ var SummonerStore = require('../stores/summonerStore');
 var GameStore = require('../stores/gameStore');
 
 var CHAMPIONS = require('../app/assets/maps/champions.js');
+var CHAMP_SQUARES = require('../app/assets/images/squares.js');
 
 var RecentGame = React.createClass({
 
@@ -41,7 +42,7 @@ var RecentGame = React.createClass({
     if (this.state.game.stats) {
       stats = (
         <div>
-          <div>Champion Played: {CHAMPIONS[this.state.game.championId]}</div>
+          <div>{CHAMPIONS[this.state.game.championId]}</div>
           <div>KDA: {this.state.game.stats.championsKilled}/{this.state.game.stats.numDeaths}/{this.state.game.stats.assists}</div>
           <div>Damage dealt to Champions: {this.state.game.stats.totalDamageDealtToChampions}</div>
         </div>
@@ -50,11 +51,20 @@ var RecentGame = React.createClass({
     return stats;
   },
 
+  getImage: function() {
+    var champ = CHAMPIONS[this.state.game.championId];
+    var url = CHAMP_SQUARES[champ];
+
+    return (
+      <img src={url}/>
+    );
+  },
+
   render: function() {
-    this.getStats();
     return (
       <div className="recentGame">
         <h1>Recent Game</h1>
+        {this.getImage()}
         {this.getStats()}
       </div>
     );
