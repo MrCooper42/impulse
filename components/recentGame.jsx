@@ -49,6 +49,8 @@ var RecentGame = React.createClass({
           <div>{CHAMPIONS[this.state.game.championId]}</div>
           <div>{kill}/{death}/{assist}</div>
           <div>Damage: {this.state.game.stats.totalDamageDealtToChampions}</div>
+          <div>Spells: {this.state.game.spell1}, {this.state.game.spell2}</div>
+          <div>{this.state.game.gameMode.toLowerCase()} {this.state.game.gameType.toLowerCase()}</div>
         </div>
       )
     }

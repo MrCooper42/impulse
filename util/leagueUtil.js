@@ -49,9 +49,13 @@ var LeagueUtil = {
   fetchTopChampions: function(summonerID){
     $.ajax({
       crossDomain: true,
-      // url: "https://na.api.pvp.net/championmastery/location/NA1/player/" + summonerID + "/topchampions?api_key=" + key.league,
+      url: "https://na.api.pvp.net/championmastery/location/NA1/player/" + summonerID + "/topchampions?api_key=" + key.league,
       method: "GET",
-      // dataType: "JSONP",
+      
+      beforeSend: function(xhr){
+        
+        xhr.setRequestHeader('Origin', 'https://developer.riotgames.com');
+      },   
       success: function(champions) {
         LeagueActions.receiveChampions(champions)
       },

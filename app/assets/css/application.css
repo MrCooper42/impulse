@@ -50,7 +50,7 @@ html{
     border: none;
     color: white;
     height: 50px;
-    font-size: 50px;
+    font-size: 30px;
     width: 250px;
     text-align: left;
     padding: 5px;
@@ -85,6 +85,17 @@ html{
   background-color: black;
   width: 200px;
   left:10px;
+}
+
+.compareStats{
+  font-family: 'Lato';
+  font-size: 20px;
+  position: absolute;
+  top:110px;
+  color:white;
+  background-color: black;
+  width: 400px;
+  left:250px; 
 }
 
 .recentGame h1{
