@@ -43,8 +43,8 @@ var RecentGame = React.createClass({
       stats = (
         <div>
           <div>{CHAMPIONS[this.state.game.championId]}</div>
-          <div>KDA: {this.state.game.stats.championsKilled}/{this.state.game.stats.numDeaths}/{this.state.game.stats.assists}</div>
-          <div>Damage dealt to Champions: {this.state.game.stats.totalDamageDealtToChampions}</div>
+          <div>{this.state.game.stats.championsKilled}/{this.state.game.stats.numDeaths}/{this.state.game.stats.assists}</div>
+          <div>Damage: {this.state.game.stats.totalDamageDealtToChampions}</div>
         </div>
       )
     }
