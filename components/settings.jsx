@@ -52,7 +52,7 @@ var Settings = React.createClass({
 
   render: function() {
     return (
-      <div>
+      <div className="settingsMenu">
         <ul>
           {this.displaySettings()}
         </ul>

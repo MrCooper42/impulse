@@ -105,6 +105,12 @@ html{
   padding-bottom: 20px;
 }
 
+.settingsMenu {
+  float: right;
+  color:white;
+  background-color: black;
+}
+
 .quotes {
   position: relative;
   color:white;
@@ -117,7 +123,6 @@ html{
   top: 50%;
   font-size:20px;
   font-family: 'Lato'
-
 }
 
 .searchDiv #searchSubmit:hover{

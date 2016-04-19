@@ -1,7 +1,7 @@
 module.exports = {
-  "Clock": false,
-  "CompareStats": false,
-  "RecentGame": false,
-  "Weather": false,
-  "Quote": false
+  "Clock": true,
+  "CompareStats": true,
+  "RecentGame": true,
+  "Weather": true,
+  "Quote": true
 };

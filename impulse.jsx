@@ -5,6 +5,7 @@ var LeagueStore = require('./stores/summonerStore');
 
 // FLUX
 var leagueUtil = require('./util/leagueUtil.js')
+var SettingsUtil = require('./util/settingsUtil.js')
 
 // SETTINGS
 var DEFAULT_SETTINGS = require('./app/assets/objects/defaultSettings');
@@ -31,6 +32,7 @@ var App = React.createClass({
     var settings = SettingStore.settings();
     if (localStorage['widgetSettings']) {
       settings = JSON.parse(localStorage['widgetSettings']);
+      SettingsUtil.setSettings(settings);
     }
     return ({
       settings: settings
@@ -46,7 +48,7 @@ var App = React.createClass({
   },
 
   setSettings: function() {
-    this.setState( {settings: SettingStore.settings()} )
+    this.setState( { settings: SettingStore.settings() } )
   },
 
   getUrl: function() {
@@ -75,11 +77,11 @@ var App = React.createClass({
         backgroundPosition: 'center',
         backgroundSize: 'cover'
     }
-    this.chooseWidgets();
+
     return (
       <div style={divStyle}>
         <Search />
-        {this.chooseWidgets()}
+          {this.chooseWidgets()}
         <Settings />
       </div>
     )

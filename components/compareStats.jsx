@@ -6,8 +6,8 @@ var CHAMPIONS = require('../app/assets/objects/championsMap.js');
 var CompareStats = React.createClass({
   getInitialState: function(){
     return {
-      recentGame: {},
-      otherGames: []
+      recentGame: GameStore.lastGame(),
+      otherGames: GameStore.allGames().slice(1)
     };
   },
 

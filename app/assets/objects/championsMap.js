@@ -126,7 +126,7 @@ module.exports = {
   '268': 'Azir',
   '412': 'Thresh',
   '420': 'Illaoi',
-  '421': 'RekSai',
+  '421': "Rek'Sai",
   '429': 'Kalista',
   '432': 'Bard'
 };

@@ -10,7 +10,11 @@ GameStore.allGames = function() {
 };
 
 GameStore.lastGame = function() {
-  return _games[0];
+  if (_games.length === 0) {
+    return {};
+  } else {
+    return _games[0];
+  }
 };
 
 GameStore.__onDispatch = function(payload) {
