@@ -1,9 +1,15 @@
 var Store = require('flux/utils').Store;
 var Dispatcher = require('../dispatcher/dispatcher');
 
+var DEFAULTS = require('../app/assets/objects/defaultSettings');
+
 var SettingStore = new Store(Dispatcher);
 
-_settings = {};
+_settings = DEFAULTS;
+
+SettingStore.settings = function() {
+  return _settings
+};
 
 SettingStore.__onDispatch = function(payload) {
   switch(payload.actionType) {

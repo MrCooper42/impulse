@@ -2,8 +2,6 @@ var React = require('react');
 var quotes = require('../app/assets/objects/quotes.js');
 
 
-
-
 var Quotes = React.createClass({
   getQuote: function(){
     var idx = Math.random() * quotes.quotes.length;
@@ -18,7 +16,6 @@ var Quotes = React.createClass({
       </div>
     )
   }
-
 });
 
 
