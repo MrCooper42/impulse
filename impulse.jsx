@@ -34,12 +34,11 @@ var App = React.createClass({
 
   chooseWidgets: function() {
     var settings = DEFAULT_SETTINGS;
-    var result = Object.keys(WIDGETS).map(function(widget) {
+    return Object.keys(WIDGETS).map(function(widget) {
       if (settings[widget]) {
         return (WIDGETS[widget]);
       }
     });
-    return result;
   },
 
   render: function() {

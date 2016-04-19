@@ -7,9 +7,9 @@ var CompareStats = require('../../../components/compareStats.jsx');
 var Quote = require('../../../components/quotes.jsx');
 
 module.exports = {
-  "Weather": < Weather/>,
-  "RecentGame": < RecentGame/>,
-  "CompareStats": < CompareStats/>,
-  "Clock": < Clock/>,
-  "Quote": < Quote/>
+  "Weather": < Weather key="weather"/>,
+  "RecentGame": < RecentGame key="recentGame"/>,
+  "CompareStats": < CompareStats key="compareStats"/>,
+  "Clock": < Clock key="clock"/>,
+  "Quote": < Quote key="quote"/>
 }
