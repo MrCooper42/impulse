@@ -20,7 +20,7 @@ var Weather = require('./components/weather.jsx');
 var RecentGame = require('./components/recentGame.jsx');
 var CompareStats = require('./components/compareStats.jsx');
 var Quote = require('./components/quotes.jsx');
-var Settings = require('./components/settings.jsx');
+var SettingsMenu = require('./components/settings.jsx');
 
 // list of image urls
 var bgUrls = require('./app/assets/images/bgUrls.js');
@@ -58,7 +58,7 @@ var App = React.createClass({
     return bgUrls.urls[idx];
   },
 
-  chooseWidgets: function() {
+  displayWidgets: function() {
     var settings = this.state.settings
     return Object.keys(WIDGETS).map(function(widget) {
       if (settings[widget]) {
@@ -81,8 +81,8 @@ var App = React.createClass({
     return (
       <div style={divStyle}>
         <Search />
-          {this.chooseWidgets()}
-        <Settings />
+        {this.displayWidgets()}
+        <SettingsMenu />
       </div>
     )
   }
