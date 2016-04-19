@@ -39,13 +39,15 @@ var RecentGame = React.createClass({
         NO STATS
       </div>
     );
-    if (this.state.game.stats) {
-      var kill = this.state.game.stats.championsKilled ? this.state.game.stats.championsKilled : 0;
-      var death = this.state.game.stats.numDeaths ? this.state.game.stats.numDeaths : 0;
-      var assist = this.state.game.stats.assists ? this.state.game.stats.assists : 0;
-
+    var gameStats = this.state.game.stats;
+    if (gameStats) {
+      var kill = gameStats.championsKilled ? gameStats.championsKilled : 0;
+      var death = gameStats.numDeaths ? gameStats.numDeaths : 0;
+      var assist = gameStats.assists ? gameStats.assists : 0;
+      var date = new Date(this.state.game.createDate);
       stats = (
         <div>
+          <div>{date.toString()}</div>
           <div>{CHAMPIONS[this.state.game.championId]}</div>
           <div>{kill}/{death}/{assist}</div>
           <div>Spells: {this.state.game.spell1}, {this.state.game.spell2}</div>
