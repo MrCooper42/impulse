@@ -45,24 +45,49 @@ var Weather = React.createClass({
     xmlhttp.send();
   },
 
-   render: function () {
-      var content = "";
-
-      if (this.state.weather) {
-        var weather = this.state.weather;
-        var temp = (weather.main.temp - 273.15) * 1.8 + 32;
-        content += weather.name + "\n";
-        content += temp.toFixed(1)  + " degrees";
-      }
-        else {
-        content = "loading weather...";
-      }
-      return (
-        <div className="weather">
-            {content}
-        </div>
-      );
+  getWeatherImage: function(){
+    var weather = this.state.weather.weather[0].main;
+    if(weather === "Clear"){
+      return <img src="http://res.cloudinary.com/mshencloudinary/image/upload/v1461106714/01d_vrcpkx.png"/>
+    } else if(weather === "Clouds"){
+      return <img src="http://res.cloudinary.com/mshencloudinary/image/upload/v1461106303/03d_ad0spm.png"/>
+    } else if(weather === "Thunderstorm"){
+      return <img src="http://res.cloudinary.com/mshencloudinary/image/upload/v1461107621/11d_a8mm4o.png"/>
+    } else if(weather === "Rain" || weather === "Drizzle"){
+      return <img src="http://res.cloudinary.com/mshencloudinary/image/upload/v1461107603/09n_xsjyiu.png"/>
+    } else if(weather === "Snow"){
+      return <img src="http://res.cloudinary.com/mshencloudinary/image/upload/v1461107847/13d_zkqbv1.png"/>
+    } else {
+      return <img src="http://res.cloudinary.com/mshencloudinary/image/upload/v1461107626/50d_qvjl1q.png"/>  
     }
+  },
+
+ render: function () {
+    var string = "";
+    var city = "";
+
+    if (this.state.weather) {
+      var weather = this.state.weather;
+      var src = this.getWeatherImage();
+      var temp = (weather.main.temp - 273.15) * 1.8 + 32;
+      city = <div>{weather.name}</div>;
+      string += temp.toFixed(1); 
+      content = <span>{string}&deg;</span>
+
+    }
+
+    else {
+      content = <div className="loader">Loading...</div>
+    }
+
+    return (
+      <div className="weather">
+          {src}
+          {content}
+          {city}
+      </div>
+    );
+  }
 });
 
 module.exports = Weather;
