@@ -1,0 +1,17 @@
+module.exports = {
+  "1": {name: "Cleanse", url: "http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,h_32,w_32/v1461108119/summonerSpells/Cleanse.png"},
+  "12": {name: "Teleport", url: "http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,h_32,w_32/v1461108120/summonerSpells/teleport.jpg"},
+  "30": {name: "To the King!", url: "http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,h_32,w_32/v1461108120/summonerSpells/to-the-king.jpg"},
+  "14": {name: "Ignite", url: "http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,h_32,w_32/v1461108120/summonerSpells/ignite.png"},
+  "6": {name: "Ghost", url: "http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,h_32,w_32/v1461108120/summonerSpells/ghost.jpg"},
+  "32": {name: "Mark", url: "http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,h_32,w_32/v1461108120/summonerSpells/mark.png"},
+  "7": {name: "Heal", url: "http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,h_32,w_32/v1461108120/summonerSpells/Heal.png"},
+  "11": {name: "Smite", url: "http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,h_32,w_32/v1461108120/summonerSpells/Smite.png"},
+  "3": {name: "Exhaust", url: "http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,h_32,w_32/v1461108119/summonerSpells/Exhaust.png"},
+  "31": {name: "Poro Toss", url: "http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,h_32,w_32/v1461108120/summonerSpells/poro-toss.jpg"},
+  "13": {name: "Clarity", url: "http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,h_32,w_32/v1461108119/summonerSpells/clarity.png"},
+  "21": {name: "Barrier", url: "http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,h_32,w_32/v1461108119/summonerSpells/barrier.png"},
+  "2": {name: "Clairvoyance", url: "http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,h_32,w_32/v1461108119/summonerSpells/Clairvoyance.png"},
+  "4": {name: "Flash", url: "http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,w_32/v1461109129/summonerSpells/flash.jpg"},
+  "17": {name: "Garrison", url: "http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,h_32,w_32/v1461108120/summonerSpells/garrison.jpg"},
+}

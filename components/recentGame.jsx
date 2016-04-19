@@ -5,12 +5,13 @@ var GameStore = require('../stores/gameStore');
 
 var CHAMPIONS = require('../app/assets/objects/championsMap.js');
 var CHAMP_SQUARES = require('../app/assets/images/squares.js');
+var SUMMONER_SPELLS = require('../app/assets/images/summonerSpells.js')
 
 var RecentGame = React.createClass({
 
   getInitialState: function() {
     return ({
-      game: {}
+      game: GameStore.lastGame()
     });
   },
 
@@ -47,10 +48,13 @@ var RecentGame = React.createClass({
       var date = new Date(this.state.game.createDate);
       stats = (
         <div>
+          <div>
+            <img src={SUMMONER_SPELLS[this.state.game.spell1].url}/>
+            <img src={SUMMONER_SPELLS[this.state.game.spell2].url}/>
+          </div>
           <div>{date.toString()}</div>
           <div>{CHAMPIONS[this.state.game.championId]}</div>
           <div>{kill}/{death}/{assist}</div>
-          <div>Spells: {this.state.game.spell1}, {this.state.game.spell2}</div>
           <div>{this.state.game.gameMode.toLowerCase()} {this.state.game.gameType.toLowerCase()}</div>
         </div>
       )

@@ -1,5 +1,7 @@
 var React = require('react');
 var GameStore = require('../stores/gameStore');
+var SummonerStore = require('../stores/summonerStore');
+var LeagueUtil = require('../util/leagueUtil')
 
 var CHAMPIONS = require('../app/assets/objects/championsMap.js');
 
@@ -13,10 +15,16 @@ var CompareStats = React.createClass({
 
   componentDidMount: function(){
     this.gameListener = GameStore.addListener(this.update);
+    this.summonerListener = SummonerStore.addListener(this.newSummoner);
   },
 
   componentWillUnmount: function(){
     this.gameListener.remove();
+    this.summonerListener.remove();
+  },
+
+  newSummoner: function() {
+    LeagueUtil.fetchGameStats(SummonerStore.summoner().id);
   },
 
   update: function(){
