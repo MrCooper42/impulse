@@ -3,4 +3,5 @@ module.exports = {
   "CompareStats": true,
   "RecentGame": true,
   "Weather": true,
+  "Quote": true
 };

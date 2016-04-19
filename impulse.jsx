@@ -57,7 +57,6 @@ var App = React.createClass({
       <div style={divStyle}>
         <Search />
         {this.chooseWidgets()}
-        <Quote />
       </div>
     )
   }
