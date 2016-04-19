@@ -1,5 +1,5 @@
 var React = require('react');
-var quotes = require('../app/assets/maps/quotes.js');
+var quotes = require('../app/assets/objects/quotes.js');
 
 
 
