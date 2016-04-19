@@ -53,9 +53,24 @@ var App = React.createClass({
 
   getUrl: function() {
     // chooses random url from list
+    if (!localStorage['bgUrl']) {
+      this.generateBgUrl()
+    } else {
+      var previousUrlUpdate = new Date(JSON.parse(localStorage['bgUrl']).date)
+      var currentDate = new Date();
+      if (currentDate.getDate() !== previousUrlUpdate.getDate()) {
+        this.generateBgUrl();
+      }
+    }
+  },
+
+  generateBgUrl: function() {
     var idx = Math.random() * bgUrls.urls.length;
     idx = Math.floor(idx);
-    return bgUrls.urls[idx];
+    localStorage['bgUrl'] = JSON.stringify({
+      url: bgUrls.urls[idx],
+      date: new Date()
+    })
   },
 
   displayWidgets: function() {
@@ -68,10 +83,11 @@ var App = React.createClass({
   },
 
   render: function() {
+    this.getUrl()
     var divStyle = {
         height: '100%',
         width: '100%',
-        backgroundImage: 'url(' + this.getUrl() + ')',
+        backgroundImage: 'url(' + JSON.parse(localStorage['bgUrl']).url + ')',
         backgroundRepeat: 'no-repeat',
         backgroundAttachment: 'fixed',
         backgroundPosition: 'center',
