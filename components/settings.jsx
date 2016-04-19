@@ -9,7 +9,7 @@ var Settings = React.createClass({
 
   getInitialState: function() {
     return ({
-      settings: DEFAULTS
+      settings: SettingStore.settings()
     });
   },
 
