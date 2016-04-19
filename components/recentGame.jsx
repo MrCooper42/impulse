@@ -3,7 +3,7 @@ var LeagueUtil = require('../util/leagueUtil');
 var SummonerStore = require('../stores/summonerStore');
 var GameStore = require('../stores/gameStore');
 
-var CHAMPIONS = require('../app/assets/maps/champions.js');
+var CHAMPIONS = require('../app/assets/objects/championsMap.js');
 var CHAMP_SQUARES = require('../app/assets/images/squares.js');
 
 var RecentGame = React.createClass({

@@ -1,7 +1,7 @@
 var React = require('react');
 var GameStore = require('../stores/gameStore');
 
-var CHAMPIONS = require('../app/assets/maps/champions.js');
+var CHAMPIONS = require('../app/assets/objects/championsMap.js');
 
 var CompareStats = React.createClass({
   getInitialState: function(){
