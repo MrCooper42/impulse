@@ -17,11 +17,11 @@ var CompareStats = React.createClass({
 
   componentWillUnmount: function(){
     this.gameListener.remove();
-  },  
+  },
 
   update: function(){
     this.setState({
-      recentGame: GameStore.lastGame(), 
+      recentGame: GameStore.lastGame(),
       otherGames: GameStore.allGames().slice(1)
     })
   },
@@ -32,17 +32,19 @@ var CompareStats = React.createClass({
     var assistSum = 0;
     var goldSum = 0;
     var minionSum = 0;
-    var damageSum = 0; 
+    var damageSum = 0;
     var numGames = this.state.otherGames.length;
 
     this.state.otherGames.forEach(function(game, idx){
-      killSum = game.stats.championsKilled ? killSum + game.stats.championsKilled : killSum;
-      deathSum = game.stats.numDeaths ? deathSum + game.stats.numDeaths : deathSum;
-      assistSum = game.stats.assists ? assistSum + game.stats.assists : assistSum;
-      goldSum = game.stats.goldEarned ? goldSum + game.stats.goldEarned : goldSum;
-      minionSum = game.stats.minionsKilled ? minionSum + game.stats.minionsKilled : minionSum;
-      damageSum = game.stats.totalDamageDealtToChampions ? damageSum + game.stats.totalDamageDealtToChampions : damageSum;
+      var stats = game.stats;
+      killSum = stats.championsKilled ? killSum + stats.championsKilled : killSum;
+      deathSum = stats.numDeaths ? deathSum + stats.numDeaths : deathSum;
+      assistSum = stats.assists ? assistSum + stats.assists : assistSum;
+      goldSum = stats.goldEarned ? goldSum + stats.goldEarned : goldSum;
+      minionSum = stats.minionsKilled ? minionSum + stats.minionsKilled : minionSum;
+      damageSum = stats.totalDamageDealtToChampions ? damageSum + stats.totalDamageDealtToChampions : damageSum;
     });
+
     return {
       killAvg: (killSum/numGames).toFixed(2),
       deathAvg: (deathSum/numGames).toFixed(2),
@@ -54,10 +56,6 @@ var CompareStats = React.createClass({
   },
 
   generateStats: function() {
-
-
-
-
     if (this.state.recentGame.stats) {
       var gameStats = this.state.recentGame.stats;
       var averages = this.calcAverages();

@@ -28,7 +28,7 @@ html{
   position: relative;
   color:white;
   text-shadow:
-  -1px -1px 0 #000,  
+  -1px -1px 0 #000,
   1px -1px 0 #000,
   -1px 1px 0 #000,
   1px 1px 0 #000;
@@ -46,6 +46,7 @@ html{
 .searchDiv #searching{
     background: none;
     background-color: black;
+    opacity: 0.8;
     position: absolute;
     border: none;
     color: white;
@@ -58,8 +59,6 @@ html{
     font-family: 'Lato';
     border-radius: 2px;
     left: 0px;
-    opacity: 0.8;
-
 }
 
 .searchDiv #searchSubmit{
@@ -95,7 +94,7 @@ html{
   color:white;
   background-color: black;
   width: 400px;
-  left:250px; 
+  left:250px;
 }
 
 .recentGame h1{

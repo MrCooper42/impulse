@@ -53,11 +53,7 @@ var Weather = React.createClass({
         var temp = (weather.main.temp - 273.15) * 1.8 + 32;
         content += weather.name + "\n";
         content += temp.toFixed(1)  + " degrees";
-        // localStorage["weather"] = content
       }
-      //  else if (localStorage["weather"]){
-      //   content = localStorage["weather"];
-      // }
         else {
         content = "loading weather...";
       }
