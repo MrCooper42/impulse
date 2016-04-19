@@ -11,9 +11,13 @@ var Clock = React.createClass({
 
   componentDidMount: function(){
     var that = this;
-    setInterval(function(){
+    this.timer = setInterval(function(){
       that.setState({time: new Date()});
     } , 5000 )
+  },
+
+  componentWillUnmount: function() {
+    clearInterval(this.timer);
   },
 
   minutes: function() {
