@@ -10,8 +10,9 @@ html{
 .weather{
   font-family: 'Lato';
   font-size: 20px;
-  position: absolute;
-  top:80px;
+  position: fixed;
+  top:0px;
+  right:20px;
   color:white;
 }
 
@@ -25,54 +26,52 @@ html{
 }
 
 .clock{
-  position: relative;
+  position: fixed;
+  display:inline;
   color:white;
   text-shadow:
   -1px -1px 0 #000,
   1px -1px 0 #000,
   -1px 1px 0 #000,
   1px 1px 0 #000;
-  text-align: center;
-  top: 45%;
   font-size:250px;
-  font-family: 'Lato'
+  font-family: 'Lato';
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .clockPeriod{
   font-size: 100px;
-  margin-left: 0px;
+  margin:0;
+  padding:0;
+  display:inline;
 }
 
 .searchDiv #searching{
+    position: fixed;
     background: none;
     background-color: black;
     opacity: 0.8;
     position: absolute;
     border: none;
     color: white;
-    height: 50px;
-    font-size: 30px;
-    width: 250px;
+    height: 100px;
+    font-size: 90px;
+    width: 550px;
     text-align: left;
     padding: 5px;
     padding-left:20px;
     font-family: 'Lato';
-    border-radius: 2px;
-    left: 0px;
+    border-radius: 5px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top:52%;
+    text-align:center;
 }
 
 .searchDiv #searchSubmit{
-    position: absolute;
-    top: 60px;
-    left: 0px;
-    background: none;
-    background-color: black;
-    color: white;
-    border: black;
-    border-radius: 2px;
-    font-family: 'Lato';
-    width: 275px;
-
+    display:none;
 }
 
 .recentGame{
@@ -107,24 +106,30 @@ html{
 
 .settingsMenu {
   position: fixed;
-  right: 10px;
+  left: 10px;
+  bottom:20px;
   color:white;
   background-color: black;
   z-index: 100;
 }
 
+.settingsMenu ul{
+  list-style-type: none;
+}
+
 .quotes {
-  position: relative;
+  position: fixed;
   color:white;
   text-shadow:
   -1px -1px 0 #000,
   1px -1px 0 #000,
   -1px 1px 0 #000,
   1px 1px 0 #000;
-  text-align: center;
-  top: 50%;
-  font-size:20px;
-  font-family: 'Lato'
+  bottom: 40px;
+  font-size:25px;
+  font-family: 'Lato';
+  left:50%;
+  transform: translate(-50%, -50%);
 }
 
 .searchDiv #searchSubmit:hover{
@@ -139,63 +144,3 @@ html{
 }
 
 
-
-.loader,
-.loader:before,
-.loader:after {
-  background: #ffeef7;
-  -webkit-animation: load1 1s infinite ease-in-out;
-  animation: load1 1s infinite ease-in-out;
-  width: 1em;
-  height: 2em;
-}
-.loader:before,
-.loader:after {
-  position: absolute;
-  top: 0;
-  content: '';
-}
-.loader:before {
-  left: -1.5em;
-  -webkit-animation-delay: -0.32s;
-  animation-delay: -0.32s;
-}
-.loader {
-  color: #ffeef7;
-  text-indent: -9999em;
-  left: 20px;
-  position: absolute;
-  font-size: 8px;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-animation-delay: -0.16s;
-  animation-delay: -0.16s;
-}
-.loader:after {
-  left: 1.5em;
-}
-@-webkit-keyframes load1 {
-  0%,
-  80%,
-  100% {
-    box-shadow: 0 0;
-    height: 4em;
-  }
-  40% {
-    box-shadow: 0 -2em;
-    height: 5em;
-  }
-}
-@keyframes load1 {
-  0%,
-  80%,
-  100% {
-    box-shadow: 0 0;
-    height: 4em;
-  }
-  40% {
-    box-shadow: 0 -2em;
-    height: 5em;
-  }
-}

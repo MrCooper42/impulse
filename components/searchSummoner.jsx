@@ -51,7 +51,7 @@ var SearchSummoner = React.createClass({
         <form onSubmit={this._onSubmit}>
           <input id="searching" type="text"
           value={this.state.inputText}
-          onChange={this._onChange}/>
+          onChange={this._onChange} placeholder="summoner"/>
           <input id="searchSubmit" type="submit" value="summoner search"/>
         </form>
       </div>

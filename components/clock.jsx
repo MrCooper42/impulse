@@ -39,7 +39,7 @@ var Clock = React.createClass({
   render: function() {
     return(
       <div className="clock">
-      {this.hours()}:{this.minutes()} <span className="clockPeriod">{this.period()}</span>
+      {this.hours()}:{this.minutes()}
       </div>
     );
   }
