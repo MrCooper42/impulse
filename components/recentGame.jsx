@@ -49,16 +49,16 @@ var RecentGame = React.createClass({
       var death = gameStats.numDeaths ? gameStats.numDeaths : 0;
       var assist = gameStats.assists ? gameStats.assists : 0;
       var date = new Date(this.state.game.createDate);
+      console.log(date);
       stats = (
         <div>
           <div>
-            <img src={SUMMONER_SPELLS[this.state.game.spell1].url}/>
-            <img src={SUMMONER_SPELLS[this.state.game.spell2].url}/>
+            <img src={SUMMONER_SPELLS[this.state.game.spell1].url} className="spell1"/>
+            <img src={SUMMONER_SPELLS[this.state.game.spell2].url} className="spell2"/>
           </div>
-          <div>{date.toString()}</div>
-          <div>{CHAMPIONS[this.state.game.championId]}</div>
-          <div>{kill}/{death}/{assist}</div>
-          <div>{this.state.game.gameMode.toLowerCase()} {this.state.game.gameType.toLowerCase()}</div>
+          <div className="statsName">{CHAMPIONS[this.state.game.championId]}</div>
+          <div className="statsCreate">{date.toString().slice(3,15)}</div>
+          <div className="statsCreate">{this.state.game.gameMode.toLowerCase()} {this.state.game.gameType.toLowerCase()}</div>
         </div>
       )
     }
@@ -70,7 +70,7 @@ var RecentGame = React.createClass({
     var url = CHAMP_SQUARES[champ];
 
     return (
-      <img src={url}/>
+      <img src={url} className="avatar"/>
     );
   },
 

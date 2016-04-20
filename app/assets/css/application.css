@@ -90,10 +90,41 @@ html{
   left:10px;
 }
 
+.recentGame h1{
+  font-family: 'Lato';
+  font-size: 30px;
+  margin: 0;
+  text-align: center;
+}
+
+.recentGame .avatar{
+  background-color: white;
+  margin-left: 40px;
+}
+
+.recentGame .spell1{
+  background-color: white;
+  margin-left: 65px;
+}
+
+.recentGame .spell2{
+  background-color: white;
+  margin-left: 10px;
+}
+
 .recentGame .rd3-chart{
   position: fixed;
   left:200px;
-  top:-10px;
+  top:-40px;
+}
+
+.recentGame .statsName {
+  text-align: center;
+  font-size: 40px;
+}
+
+.recentGame .statsCreate {
+  text-align: center;
 }
 
 .compareStats{
@@ -107,13 +138,6 @@ html{
   left:250px;
 }
 
-.recentGame h1{
-  font-family: 'Lato';
-  font-size: 30px;
-  margin: 0;
-  text-decoration: underline;
-  padding-bottom: 20px;
-}
 
 .settingsMenu {
   position: fixed;
