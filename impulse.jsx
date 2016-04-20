@@ -21,7 +21,7 @@ var RecentGame = require('./components/recentGame.jsx');
 var CompareStats = require('./components/compareStats.jsx');
 var Quote = require('./components/quotes.jsx');
 var SettingsMenu = require('./components/settings.jsx');
-
+var Progression = require('./components/progression.jsx');
 
 // list of image urls
 var bgUrls = require('./app/assets/images/bgUrls.js');
@@ -99,6 +99,7 @@ var App = React.createClass({
       <div className="bg" style={divStyle}>
         <Search />
         {this.displayWidgets()}
+        <Progression />
         <SettingsMenu />
       </div>
     )
