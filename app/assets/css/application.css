@@ -83,11 +83,12 @@ html{
   font-family: 'Lato';
   font-size: 20px;
   position: absolute;
-  top:0px;
+  top:10px;
   color:white;
   background-color: black;
   width: 200px;
   left:10px;
+  padding-bottom: 5px;
 }
 
 .recentGame h1{
@@ -131,11 +132,15 @@ html{
   font-family: 'Lato';
   font-size: 20px;
   position: absolute;
-  top:110px;
+  top:305px;
   color:white;
   background-color: black;
   width: 400px;
-  left:250px;
+  left:10px;
+}
+
+.compareStats ul{
+  list-style-type: none;
 }
 
 

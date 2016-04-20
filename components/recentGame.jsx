@@ -49,7 +49,6 @@ var RecentGame = React.createClass({
       var death = gameStats.numDeaths ? gameStats.numDeaths : 0;
       var assist = gameStats.assists ? gameStats.assists : 0;
       var date = new Date(this.state.game.createDate);
-      console.log(date);
       stats = (
         <div>
           <div>
