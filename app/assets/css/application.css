@@ -83,11 +83,17 @@ html{
   font-family: 'Lato';
   font-size: 20px;
   position: absolute;
-  top:150px;
+  top:0px;
   color:white;
   background-color: black;
   width: 200px;
   left:10px;
+}
+
+.recentGame .rd3-chart{
+  position: fixed;
+  left:200px;
+  top:-10px;
 }
 
 .compareStats{

@@ -23,8 +23,6 @@ var Quote = require('./components/quotes.jsx');
 var SettingsMenu = require('./components/settings.jsx');
 
 
-
-
 // list of image urls
 var bgUrls = require('./app/assets/images/bgUrls.js');
 

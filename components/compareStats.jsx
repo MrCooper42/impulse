@@ -5,6 +5,10 @@ var LeagueUtil = require('../util/leagueUtil')
 
 var CHAMPIONS = require('../app/assets/objects/championsMap.js');
 
+var rd3 = require('react-d3');
+var PieChart = rd3.PieChart;
+
+
 var CompareStats = React.createClass({
   getInitialState: function(){
     return {
