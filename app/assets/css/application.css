@@ -16,6 +16,10 @@ html{
   color:white;
 }
 
+.bg{
+  z-index: -10;
+}
+
 #root{
   position: fixed;
   height:100vh;
@@ -58,7 +62,7 @@ html{
     color: white;
     height: 100px;
     font-size: 90px;
-    width: 550px;
+    width: 590px;
     text-align: left;
     padding: 5px;
     padding-left:20px;
@@ -68,6 +72,7 @@ html{
     transform: translate(-50%, -50%);
     top:52%;
     text-align:center;
+    z-index: 100;
 }
 
 .searchDiv #searchSubmit{
