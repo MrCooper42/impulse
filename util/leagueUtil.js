@@ -11,7 +11,7 @@ var LeagueUtil = {
         LeagueActions.receiveSummoner(summoner)
       },
       error: function(error) {
-        console.log("Summoner not found");
+        window.alert("Summoner not found");
       }
     });
   },
@@ -51,11 +51,11 @@ var LeagueUtil = {
       crossDomain: true,
       url: "https://na.api.pvp.net/championmastery/location/NA1/player/" + summonerID + "/topchampions?api_key=" + key.league,
       method: "GET",
-      
+
       beforeSend: function(xhr){
-        
+
         xhr.setRequestHeader('Origin', 'https://developer.riotgames.com');
-      },   
+      },
       success: function(champions) {
         LeagueActions.receiveChampions(champions)
       },
