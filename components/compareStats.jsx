@@ -83,20 +83,12 @@ var CompareStats = React.createClass({
 
       return (
         <ul>
-           <li>Kills: {gameStats.championsKilled} --> {averages.killAvg}</li>
-           <li>Deaths: {gameStats.numDeaths} --> {averages.deathAvg}</li>
-           <li>Assists: {gameStats.assists} --> {averages.assistAvg}</li>
-           <li>Gold/min: {(gameStats.goldEarned/playTime).toFixed(2)} --> {averages.goldAvg}</li>
-           <li>CS/min: {gameStats.minionsKilled} --> {averages.minionAvg}</li>
-           <li>Dmg/min: {gameStats.totalDamageDealtToChampions} --> {averages.damageAvg}</li>
-
-
-           <li>Kills: {this.killCompare()}</li>
-           <li>Deaths: {this.deathCompare()}</li>
-           <li>Assists: {this.assistCompare()}</li>
-           <li>Gold/min: {this.goldCompare()}</li>
-           <li>CS/min: {this.CSCompare()}</li>
-           <li>Dmg/min: {this.dmgCompare()}</li>
+           <li>Kills: {gameStats.championsKilled} {this.killCompare()} ({averages.killAvg})</li>
+           <li>Deaths: {gameStats.numDeaths} {this.deathCompare()} ({averages.deathAvg})</li>
+           <li>Assists: {gameStats.assists} {this.assistCompare()} ({averages.assistAvg})</li>
+           <li>Gold/min: {(gameStats.goldEarned/playTime).toFixed(2)} {this.goldCompare()} ({averages.goldAvg})</li>
+           <li>CS/min: {gameStats.minionsKilled} {this.CSCompare()} ({averages.minionAvg})</li>
+           <li>Dmg/min: {gameStats.totalDamageDealtToChampions} {this.dmgCompare()} ({averages.damageAvg})</li>
         </ul>
       )
     } else {
@@ -133,7 +125,7 @@ var CompareStats = React.createClass({
       return "↓";
     } else {
       return "↑";
-    }    
+    }
   },
 
   goldCompare: function(){
@@ -144,7 +136,7 @@ var CompareStats = React.createClass({
       return "↓";
     } else {
       return "↑";
-    }    
+    }
   },
 
   CSCompare: function(){
@@ -155,7 +147,7 @@ var CompareStats = React.createClass({
       return "↓";
     } else {
       return "↑";
-    }    
+    }
   },
 
   dmgCompare: function(){
@@ -166,7 +158,7 @@ var CompareStats = React.createClass({
       return "↓";
     } else {
       return "↑";
-    }    
+    }
   },
 
   render: function(){
