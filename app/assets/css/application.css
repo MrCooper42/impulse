@@ -154,6 +154,17 @@ html{
   right:100px;
 }
 
+.summonerSummary {
+  font-family: 'Lato';
+  font-size: 20px;
+  position: absolute;
+  top:100px;
+  color:white;
+  background-color: black;
+  width: 400px;
+  right:100px;
+}
+
 
 .settingsMenu {
   position: fixed;

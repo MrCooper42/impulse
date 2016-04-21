@@ -5,11 +5,15 @@ var Weather = require('../../../components/weather.jsx');
 var RecentGame = require('../../../components/recentGame.jsx');
 var CompareStats = require('../../../components/compareStats.jsx');
 var Quote = require('../../../components/quotes.jsx');
+var Progression = require('../../../components/progression.jsx');
+var SummonerSummary = require('../../../components/summonerSummary.jsx');
 
 module.exports = {
   "Weather": < Weather key="weather"/>,
   "RecentGame": < RecentGame key="recentGame"/>,
   "CompareStats": < CompareStats key="compareStats"/>,
   "Clock": < Clock key="clock"/>,
-  "Quote": < Quote key="quote"/>
+  "Quote": < Quote key="quote"/>,
+  "Progression": < Progression key="progression"/>,
+  "SummonerSummary": < SummonerSummary key="summonerSummary"/>
 }
