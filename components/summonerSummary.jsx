@@ -1,16 +1,18 @@
 var React = require('react');
 var SummonerStore = require('../stores/summonerStore');
+var LeagueUtil = require('../util/leagueUtil');
 
 var SummonerSummary = React.createClass({
 
   getInitialState: function() {
     return ({
-      summoner: SummonerStore.summoner()
+      stats: SummonerStore.stats()
     })
   },
 
   componentDidMount: function() {
     this.summonerListener = SummonerStore.addListener(this.update);
+    LeagueUtil.fetchSummonerStats(SummonerStore.summoner().id);
   },
 
   componentWillUnmount: function() {
@@ -18,13 +20,12 @@ var SummonerSummary = React.createClass({
   },
 
   update: function() {
-    this.setState({summoner: SummonerStore.summoner()});
+    this.setState({ stats: SummonerStore.stats() });
   },
 
   render: function() {
     return (
       <div className="summonerSummary">
-        {this.state.summoner.id}
       </div>
     )
   }

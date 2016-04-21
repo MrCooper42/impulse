@@ -21,6 +21,7 @@ var LeagueUtil = {
   },
 
   fetchSummonerStats: function(summonerId) {
+    debugger;
     $.ajax({
       url: "https://na.api.pvp.net/api/lol/na/v1.3/stats/by-summoner/" + summonerId + "/summary?season=SEASON2016&api_key=" + key.league,
       method: "GET",

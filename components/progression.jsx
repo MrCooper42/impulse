@@ -18,16 +18,11 @@ var Progression = React.createClass({
 
   componentDidMount: function(){
     this.gameListener = GameStore.addListener(this.update);
-    this.summonerListener = SummonerStore.addListener(this.newSummoner);
   },
 
   componentWillUnmount: function(){
     this.gameListener.remove();
     this.summonerListener.remove();
-  },
-
-  newSummoner: function() {
-    LeagueUtil.fetchGameStats(SummonerStore.summoner().id);
   },
 
   update: function(){
