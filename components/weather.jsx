@@ -58,7 +58,7 @@ var Weather = React.createClass({
     } else if(weather === "Snow"){
       return <img src="http://res.cloudinary.com/mshencloudinary/image/upload/v1461107847/13d_zkqbv1.png"/>
     } else {
-      return <img src="http://res.cloudinary.com/mshencloudinary/image/upload/v1461107626/50d_qvjl1q.png"/>  
+      return <img src="http://res.cloudinary.com/mshencloudinary/image/upload/v1461107626/50d_qvjl1q.png"/>
     }
   },
 
@@ -71,9 +71,8 @@ var Weather = React.createClass({
       var src = this.getWeatherImage();
       var temp = (weather.main.temp - 273.15) * 1.8 + 32;
       city = <div>{weather.name}</div>;
-      string += temp.toFixed(1); 
+      string += temp.toFixed(1);
       content = <span>{string}&deg;</span>
-
     }
 
     else {
