@@ -25,7 +25,7 @@ SummonerStore.__onDispatch = function(payload) {
       SummonerStore.__emitChange();
       break;
     case 'RECEIVE_STATS':
-      resetStats(payload.summaryStats);
+      resetStats(payload.stats);
       SummonerStore.__emitChange();
       break;
   };

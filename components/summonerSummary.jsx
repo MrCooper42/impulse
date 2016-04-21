@@ -23,9 +23,28 @@ var SummonerSummary = React.createClass({
     this.setState({ stats: SummonerStore.stats() });
   },
 
+  getStats: function() {
+    var result = (<div/>);
+    if (this.state.stats.playerStatSummaries) {
+      var stats = this.state.stats.playerStatSummaries[6].aggregatedStats;
+      result = (
+        <ul>
+          <h3>Unranked 5v5 stats</h3>
+          <li>{this.state.stats.playerStatSummaries[6].wins} Wins</li>
+          <li>{stats.totalChampionKills} Kills</li>
+          <li>{stats.totalAssists} Assists</li>
+          <li>{stats.totalMinionKills} CS</li>
+          <li>{stats.totalTurretsKilled} Turret takedowns</li>
+        </ul>
+      )
+    }
+    return result;
+  },
+
   render: function() {
     return (
       <div className="summonerSummary">
+        {this.getStats()}
       </div>
     )
   }

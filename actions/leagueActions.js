@@ -30,6 +30,13 @@ var LeagueActions = {
       actionType: "RECEIVE_GAMES",
       games: games
     });
+  },
+
+  receiveSummaryStats: function(summaryStats) {
+    Dispatcher.dispatch({
+      actionType: "RECEIVE_STATS",
+      stats: summaryStats
+    });
   }
 
 };

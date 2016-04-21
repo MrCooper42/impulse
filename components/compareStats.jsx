@@ -21,7 +21,6 @@ var CompareStats = React.createClass({
 
   componentWillUnmount: function(){
     this.gameListener.remove();
-    this.summonerListener.remove();
   },
 
   update: function(){
