@@ -5,7 +5,10 @@ var GameStore = require('../stores/gameStore');
 
 var CHAMPIONS = require('../app/assets/objects/championsMap.js');
 var CHAMP_SQUARES = require('../app/assets/images/squares.js');
-var SUMMONER_SPELLS = require('../app/assets/images/summonerSpells.js')
+var SUMMONER_SPELLS = require('../app/assets/images/summonerSpells.js');
+
+var rd3 = require('react-d3');
+var PieChart = rd3.PieChart;
 
 var RecentGame = React.createClass({
 
@@ -49,13 +52,12 @@ var RecentGame = React.createClass({
       stats = (
         <div>
           <div>
-            <img src={SUMMONER_SPELLS[this.state.game.spell1].url}/>
-            <img src={SUMMONER_SPELLS[this.state.game.spell2].url}/>
+            <img src={SUMMONER_SPELLS[this.state.game.spell1].url} className="spell1"/>
+            <img src={SUMMONER_SPELLS[this.state.game.spell2].url} className="spell2"/>
           </div>
-          <div>{date.toString()}</div>
-          <div>{CHAMPIONS[this.state.game.championId]}</div>
-          <div>{kill}/{death}/{assist}</div>
-          <div>{this.state.game.gameMode.toLowerCase()} {this.state.game.gameType.toLowerCase()}</div>
+          <div className="statsName">{CHAMPIONS[this.state.game.championId]}</div>
+          <div className="statsCreate">{date.toString().slice(3,15)}</div>
+          <div className="statsCreate">{this.state.game.gameMode.toLowerCase()} {this.state.game.gameType.toLowerCase()}</div>
         </div>
       )
     }
@@ -67,16 +69,49 @@ var RecentGame = React.createClass({
     var url = CHAMP_SQUARES[champ];
 
     return (
-      <img src={url}/>
+      <img src={url} className="avatar"/>
     );
   },
 
+  getPieData: function(){
+    var gameStats = this.state.game.stats;
+    if (gameStats) {
+      var kill = gameStats.championsKilled ? gameStats.championsKilled : 0;
+      var death = gameStats.numDeaths ? gameStats.numDeaths : 0;
+      var assist = gameStats.assists ? gameStats.assists : 0;
+      return [
+        {label: 'Kills', value: kill},
+        {label: 'Deaths', value: death},
+        {label: 'Assists', value: assist }
+      ];
+    }
+    else{
+      return [
+        {label: 'Kills', value: 0.0},
+        {label: 'Deaths', value: 0.0},
+        {label: 'Assists', value: 0.0 }
+      ];
+    }
+  },
+
+
   render: function() {
+
+
     return (
       <div className="recentGame">
         <h1>Recent Game</h1>
+        <PieChart
+          data={this.getPieData()}
+          width={400}
+          height={400}
+          radius={100}
+          innerRadius={20}
+          sectorBorderColor="white"
+          labelTextFill="white"/>
         {this.getImage()}
         {this.getStats()}
+
       </div>
     );
   }

@@ -3,11 +3,12 @@ var GameStore = require('../stores/gameStore');
 var SummonerStore = require('../stores/summonerStore');
 var LeagueUtil = require('../util/leagueUtil')
 
-var CHAMPIONS = require('../app/assets/objects/championsMap.js');
+var rd3 = require('react-d3');
+var LineChart = rd3.LineChart;
 
 
 
-var CompareStats = React.createClass({
+var Progression = React.createClass({
   getInitialState: function(){
     return {
       recentGame: GameStore.lastGame(),
@@ -89,14 +90,6 @@ var CompareStats = React.createClass({
            <li>Gold/min: {(gameStats.goldEarned/playTime).toFixed(2)} --> {averages.goldAvg}</li>
            <li>CS/min: {gameStats.minionsKilled} --> {averages.minionAvg}</li>
            <li>Dmg/min: {gameStats.totalDamageDealtToChampions} --> {averages.damageAvg}</li>
-
-
-           <li>Kills: {this.killCompare()}</li>
-           <li>Deaths: {this.deathCompare()}</li>
-           <li>Assists: {this.assistCompare()}</li>
-           <li>Gold/min: {this.goldCompare()}</li>
-           <li>CS/min: {this.CSCompare()}</li>
-           <li>Dmg/min: {this.dmgCompare()}</li>
         </ul>
       )
     } else {
@@ -106,77 +99,17 @@ var CompareStats = React.createClass({
     }
   },
 
-  killCompare: function(){
-    var gameStats = this.state.recentGame.stats;
-    var averages = this.calcAverages();
-    if(gameStats.championsKilled < averages.killAvg){
-      return "↓";
-    } else {
-      return "↑";
-    }
-  },
-
-  deathCompare: function(){
-    var gameStats = this.state.recentGame.stats;
-    var averages = this.calcAverages();
-    if(gameStats.numDeaths < averages.deathAvg){
-      return "↓";
-    } else {
-      return "↑";
-    }
-  },
-
-  assistCompare: function(){
-    var gameStats = this.state.recentGame.stats;
-    var averages = this.calcAverages();
-    if(gameStats.assists < averages.assistAvg){
-      return "↓";
-    } else {
-      return "↑";
-    }    
-  },
-
-  goldCompare: function(){
-    var gameStats = this.state.recentGame.stats;
-    var averages = this.calcAverages();
-    var playTime = gameStats.timePlayed/60;
-    if(gameStats.goldEarned/playTime < averages.goldAvg){
-      return "↓";
-    } else {
-      return "↑";
-    }    
-  },
-
-  CSCompare: function(){
-    var gameStats = this.state.recentGame.stats;
-    var averages = this.calcAverages();
-    var playTime = gameStats.timePlayed/60;
-    if(gameStats.minionsKilled < averages.minionAvg){
-      return "↓";
-    } else {
-      return "↑";
-    }    
-  },
-
-  dmgCompare: function(){
-    var gameStats = this.state.recentGame.stats;
-    var averages = this.calcAverages();
-    var playTime = gameStats.timePlayed/60;
-    if(gameStats.totalDamageDealtToChampions < averages.damageAvg){
-      return "↓";
-    } else {
-      return "↑";
-    }    
-  },
 
   render: function(){
+
     return (
-      <div className="compareStats">
+      <div className="progression">
         {this.generateStats()}
+
       </div>
     )
   }
 
 });
 
-module.exports = CompareStats;
+module.exports = Progression;
