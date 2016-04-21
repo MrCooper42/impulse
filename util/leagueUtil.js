@@ -20,18 +20,18 @@ var LeagueUtil = {
     LeagueActions.setSummoner(summoner);
   },
 
-  // fetchSummonerStats: function(summonerId) {
-  //   $.ajax({
-  //     url: "https://na.api.pvp.net/api/lol/na/v1.3/stats/by-summoner/60131288/summary?season=SEASON2016&api_key=" + key.league,
-  //     method: "GET",
-  //     success: function(stats) {
-  //       console.log("success!!");
-  //     },
-  //     error: function(error) {
-  //       console.log("Error");
-  //     }
-  //   });
-  // },
+  fetchSummonerStats: function(summonerId) {
+    $.ajax({
+      url: "https://na.api.pvp.net/api/lol/na/v1.3/stats/by-summoner/" + summonerId + "/summary?season=SEASON2016&api_key=" + key.league,
+      method: "GET",
+      success: function(stats) {
+        console.log("Success!!");
+      },
+      error: function(error) {
+        console.log("Error");
+      }
+    });
+  },
 
   fetchGameStats: function(summonerId) {
     $.ajax({

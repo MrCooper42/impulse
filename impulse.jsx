@@ -13,16 +13,8 @@ var WIDGETS = require('./app/assets/objects/widgetList');
 var SettingStore = require('./stores/settingStore');
 
 // COMPONENTS
-var Clock = require('./components/clock.jsx');
 var Search = require('./components/searchSummoner.jsx');
-var TopChampionsIndex = require('./components/topChampionsIndex.jsx');
-var Weather = require('./components/weather.jsx');
-var RecentGame = require('./components/recentGame.jsx');
-var CompareStats = require('./components/compareStats.jsx');
-var Quote = require('./components/quotes.jsx');
 var SettingsMenu = require('./components/settings.jsx');
-var Progression = require('./components/progression.jsx');
-var SummonerSummary = require('./components/summonerSummary.jsx');
 
 // list of image urls
 var bgUrls = require('./app/assets/images/bgUrls.js');
