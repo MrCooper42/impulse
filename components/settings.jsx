@@ -30,7 +30,7 @@ var Settings = React.createClass({
 
   changeSettings: function(event) {
     event.preventDefault();
-    var widget = event.currentTarget.className;
+    var widget = event.currentTarget.id;
     var newSettings = this.state.settings;
     newSettings[widget] = !newSettings[widget];
     SettingsUtil.setSettings(newSettings);
@@ -39,11 +39,12 @@ var Settings = React.createClass({
   displaySettings: function() {
     that = this
     return Object.keys(this.state.settings).map(function(widget, idx) {
+      var toggled = that.state.settings[widget] ? "settingsButtonOn" : "settingsButtonOff"
       return (
         <li key={idx}>
           <div>
-            {widget}
-            <button onClick={that.changeSettings} className={widget}/>
+            <span>{widget}</span>
+            <button onClick={that.changeSettings} id={widget} className={toggled} value="toggle"/>
           </div>
         </li>
       );

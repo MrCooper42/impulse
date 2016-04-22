@@ -165,7 +165,6 @@ ul {
   right:100px;
 }
 
-
 .settingsMenu {
   position: fixed;
   left: 10px;
@@ -177,6 +176,26 @@ ul {
 
 .settingsMenu ul{
   list-style-type: none;
+}
+
+.settingsButton {
+  width: 50px;
+  height: 20px;
+  margin: 5px;
+}
+
+.settingsButtonOn {
+  width: 50px;
+  height: 20px;
+  margin: 5px;
+  background-color: green;
+}
+
+.settingsButtonOff {
+  width: 50px;
+  height: 20px;
+  margin: 5px;
+  background-color: red;
 }
 
 .quotes {
