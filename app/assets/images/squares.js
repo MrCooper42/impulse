@@ -201,7 +201,7 @@ module.exports = {
 
   "Talon": "http://res.cloudinary.com/dzyfczxnr/image/upload/v1460752794/champSquares/TalonSquare.png",
 
-  "Taric": "http://res.cloudinary.com/dzyfczxnr/image/upload/v1460752794/champSquares/TaricSquare.png",
+  "Taric": "http://res.cloudinary.com/dzyfczxnr/image/upload/v1461282557/champSquares/taric.jpg",
 
   "Teemo": "http://res.cloudinary.com/dzyfczxnr/image/upload/v1460752794/champSquares/TeemoSquare.png",
 

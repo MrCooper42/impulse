@@ -11,8 +11,8 @@ var SummonerSummary = React.createClass({
   },
 
   componentDidMount: function() {
-    this.summonerListener = SummonerStore.addListener(this.update);
     LeagueUtil.fetchSummonerStats(SummonerStore.summoner().id);
+    this.summonerListener = SummonerStore.addListener(this.update);
   },
 
   componentWillUnmount: function() {
@@ -20,17 +20,19 @@ var SummonerSummary = React.createClass({
   },
 
   update: function() {
+    LeagueUtil.fetchSummonerStats(SummonerStore.summoner().id);
     this.setState({ stats: SummonerStore.stats() });
   },
 
   getStats: function() {
     var result = (<div/>);
     if (this.state.stats.playerStatSummaries) {
-      var stats = this.state.stats.playerStatSummaries[6].aggregatedStats;
+      var unrankedIdx = this.getIdx("Unranked");
+      var stats = this.state.stats.playerStatSummaries[unrankedIdx].aggregatedStats;
       result = (
         <ul>
           <h3>Unranked 5v5 stats</h3>
-          <li>{this.state.stats.playerStatSummaries[6].wins} Wins</li>
+          <li>{this.state.stats.playerStatSummaries[unrankedIdx].wins} Wins</li>
           <li>{stats.totalChampionKills} Kills</li>
           <li>{stats.totalAssists} Assists</li>
           <li>{stats.totalMinionKills} CS</li>
@@ -39,6 +41,16 @@ var SummonerSummary = React.createClass({
       )
     }
     return result;
+  },
+
+  getIdx: function(mode) {
+    var index = -1;
+    this.state.stats.playerStatSummaries.forEach(function(gameMode, idx) {
+      if (gameMode.playerStatSummaryType === mode) {
+        index = idx
+      }
+    });
+    return index;
   },
 
   render: function() {
