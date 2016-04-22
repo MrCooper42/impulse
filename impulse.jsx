@@ -16,6 +16,7 @@ var SettingStore = require('./stores/settingStore');
 var Search = require('./components/searchSummoner');
 var SettingsMenu = require('./components/settings');
 var LockBackground = require('./components/lockBackground');
+var RefreshBackground = require('./components/refreshBackground');
 
 // list of image urls
 var bgUrls = require('./app/assets/images/bgUrls');
@@ -95,6 +96,7 @@ var App = React.createClass({
         {this.displayWidgets()}
         <SettingsMenu />
         <LockBackground />
+        <RefreshBackground />
       </div>
     )
   }
