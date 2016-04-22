@@ -34,7 +34,7 @@ var App = React.createClass({
   },
 
   componentDidMount: function() {
-    this.settingsListener = SettingStore.addListener(this.setSettings)
+    this.settingsListener = SettingStore.addListener(this.setSettings);
   },
 
   componentWillUnmount: function() {

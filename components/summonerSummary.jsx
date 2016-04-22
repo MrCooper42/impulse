@@ -11,7 +11,6 @@ var SummonerSummary = React.createClass({
   },
 
   componentDidMount: function() {
-    LeagueUtil.fetchSummonerStats(SummonerStore.summoner().id);
     this.summonerListener = SummonerStore.addListener(this.update);
   },
 
@@ -20,7 +19,6 @@ var SummonerSummary = React.createClass({
   },
 
   update: function() {
-    LeagueUtil.fetchSummonerStats(SummonerStore.summoner().id);
     this.setState({ stats: SummonerStore.stats() });
   },
 

@@ -20,8 +20,7 @@ var RecentGame = React.createClass({
 
   componentDidMount: function() {
     this.gameListener = GameStore.addListener(this.updateGames);
-    this.summonerListener = SummonerStore.addListener(this.newSummoner);
-    LeagueUtil.fetchGameStats(SummonerStore.summoner().id);
+    this.summonerListener = SummonerStore.addListener(this.updateGames);
   },
 
   componentWillUnmount: function() {
@@ -31,10 +30,6 @@ var RecentGame = React.createClass({
 
   updateGames: function() {
     this.setState( { game: GameStore.lastGame() } );
-  },
-
-  newSummoner: function() {
-    LeagueUtil.fetchGameStats(SummonerStore.summoner().id);
   },
 
   getStats: function() {
