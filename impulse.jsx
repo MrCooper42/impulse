@@ -4,8 +4,8 @@ var ReactDOM = require('react-dom');
 var LeagueStore = require('./stores/summonerStore');
 
 // FLUX
-var leagueUtil = require('./util/leagueUtil.js')
-var SettingsUtil = require('./util/settingsUtil.js')
+var leagueUtil = require('./util/leagueUtil')
+var SettingsUtil = require('./util/settingsUtil')
 
 // SETTINGS
 var DEFAULT_SETTINGS = require('./app/assets/objects/defaultSettings');
@@ -13,11 +13,12 @@ var WIDGETS = require('./app/assets/objects/widgetList');
 var SettingStore = require('./stores/settingStore');
 
 // COMPONENTS
-var Search = require('./components/searchSummoner.jsx');
-var SettingsMenu = require('./components/settings.jsx');
+var Search = require('./components/searchSummoner');
+var SettingsMenu = require('./components/settings');
+var LockBackground = require('./components/lockBackground');
 
 // list of image urls
-var bgUrls = require('./app/assets/images/bgUrls.js');
+var bgUrls = require('./app/assets/images/bgUrls');
 
 // ---------------CLASS DEFINITION ------------------------------------*****
 var App = React.createClass({
@@ -49,7 +50,7 @@ var App = React.createClass({
     // chooses random url from list
     if (!localStorage['bgUrl']) {
       this.generateBgUrl()
-    } else {
+    } else if (localStorage['bgLocked'] === 'false'){
       var previousUrlUpdate = new Date(JSON.parse(localStorage['bgUrl']).date)
       var currentDate = new Date();
       if (currentDate.getDate() !== previousUrlUpdate.getDate()) {
@@ -93,6 +94,7 @@ var App = React.createClass({
         <Search />
         {this.displayWidgets()}
         <SettingsMenu />
+        <LockBackground />
       </div>
     )
   }
