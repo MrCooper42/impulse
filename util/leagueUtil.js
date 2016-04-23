@@ -9,7 +9,6 @@ var LeagueUtil = {
       url: "https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/" + summonerName + "?api_key=" + key.league,
       method: "GET",
       success: function(summoner) {
-        console.log("summoner info call");
         that.fetchGameStats(summoner[Object.keys(summoner)[0]].id);
         that.fetchSummonerStats(summoner[Object.keys(summoner)[0]].id);
         LeagueActions.receiveSummoner(summoner)
@@ -31,7 +30,6 @@ var LeagueUtil = {
       url: "https://na.api.pvp.net/api/lol/na/v1.3/stats/by-summoner/" + summonerId + "/summary?season=SEASON2016&api_key=" + key.league,
       method: "GET",
       success: function(stats) {
-        console.log("summoner stats call");
         LeagueActions.receiveSummaryStats(stats);
       },
       error: function(error) {
@@ -45,7 +43,6 @@ var LeagueUtil = {
       url: "https://na.api.pvp.net/api/lol/na/v1.3/game/by-summoner/" + summonerId + "/recent?api_key=" + key.league,
       method: "GET",
       success: function(data) {
-        console.log("game stats call");
         LeagueActions.receiveGames(data.games);
       },
       error: function(error) {
@@ -65,7 +62,6 @@ var LeagueUtil = {
         xhr.setRequestHeader('Origin', 'https://developer.riotgames.com');
       },
       success: function(champions) {
-        console.log("top champtions call");
         LeagueActions.receiveChampions(champions)
       },
       error: function(error){

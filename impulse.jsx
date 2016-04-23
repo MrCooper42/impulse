@@ -55,7 +55,7 @@ var App = React.createClass({
       var previousUrlUpdate = new Date(JSON.parse(localStorage['bgUrl']).date)
       var currentDate = new Date();
       if (currentDate.getDate() !== previousUrlUpdate.getDate()) {
-        this.generateBgUrl();
+        this.generateBgUrl(); 
       }
     }
   },
