@@ -132,7 +132,9 @@ var URLS = {
     "http://res.cloudinary.com/dzyfczxnr/image/upload/v1461368205/impulseBgs/yObTBib.jpg",
     "http://res.cloudinary.com/dzyfczxnr/image/upload/v1461368206/impulseBgs/yqcTt7T.jpg",
     "http://res.cloudinary.com/dzyfczxnr/image/upload/v1461368206/impulseBgs/zUsI8Yv.jpg",
-    "http://res.cloudinary.com/dzyfczxnr/image/upload/v1461368206/impulseBgs/zxtHQBl.png"
+    "http://res.cloudinary.com/dzyfczxnr/image/upload/v1461368206/impulseBgs/zxtHQBl.png",
+    "http://res.cloudinary.com/dzyfczxnr/image/upload/v1461478073/impulseBgs/CxjBMQN.jpg",
+    "http://res.cloudinary.com/dzyfczxnr/image/upload/v1461478163/impulseBgs/nOymKWG.jpg"
   ]
 
 };
