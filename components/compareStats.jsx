@@ -52,6 +52,7 @@ var CompareStats = React.createClass({
       gameTimeSum = stats.timePlayed ? gameTimeSum + stats.timePlayed : gameTimeSum;
     });
     var avgGameTimeMin = Math.floor((gameTimeSum/numGames)/60);
+
     return {
       killAvg: (killSum/numGames).toFixed(2),
       deathAvg: (deathSum/numGames).toFixed(2),
@@ -65,24 +66,25 @@ var CompareStats = React.createClass({
   generateStats: function() {
     if (this.state.recentGame.stats) {
       var gameStats = this.state.recentGame.stats;
-      var averages = this.calcAverages();
       var playTime = gameStats.timePlayed/60;
+      var averages = this.calcAverages();
+      var displayStats = {}
 
-      gameStats.championsKilled = gameStats.championsKilled ? gameStats.championsKilled : 0;
-      gameStats.numDeaths = gameStats.numDeaths ? gameStats.numDeaths : 0;
-      gameStats.assists = gameStats.assists ? gameStats.assists : 0;
-      gameStats.minionsKilled = gameStats.minionsKilled ? (gameStats.minionsKilled/playTime).toFixed(2) : 0;
-      gameStats.totalDamageDealtToChampions = gameStats.totalDamageDealtToChampions ? (gameStats.totalDamageDealtToChampions/playTime).toFixed(2) : 0;
-
+      displayStats.championsKilled = gameStats.championsKilled ? gameStats.championsKilled : 0;
+      displayStats.numDeaths = gameStats.numDeaths ? gameStats.numDeaths : 0;
+      displayStats.assists = gameStats.assists ? gameStats.assists : 0;
+      displayStats.goldEarned = gameStats.goldEarned ? (gameStats.goldEarned/playTime).toFixed(2) : 0;
+      displayStats.minionsKilled = gameStats.minionsKilled ? (gameStats.minionsKilled/playTime).toFixed(2) : 0;
+      displayStats.totalDamageDealtToChampions = gameStats.totalDamageDealtToChampions ? (gameStats.totalDamageDealtToChampions/playTime).toFixed(2) : 0;
 
       return (
         <ul>
-           <li>Kills: {gameStats.championsKilled} {this.killCompare()} ({averages.killAvg})</li>
-           <li>Deaths: {gameStats.numDeaths} {this.deathCompare()} ({averages.deathAvg})</li>
-           <li>Assists: {gameStats.assists} {this.assistCompare()} ({averages.assistAvg})</li>
-           <li>Gold/min: {(gameStats.goldEarned/playTime).toFixed(2)} {this.goldCompare()} ({averages.goldAvg})</li>
-           <li>CS/min: {gameStats.minionsKilled} {this.CSCompare()} ({averages.minionAvg})</li>
-           <li>Dmg/min: {gameStats.totalDamageDealtToChampions} {this.dmgCompare()} ({averages.damageAvg})</li>
+           <li>Kills: {displayStats.championsKilled} {this.killCompare(averages)} ({averages.killAvg})</li>
+           <li>Deaths: {displayStats.numDeaths} {this.deathCompare(averages)} ({averages.deathAvg})</li>
+           <li>Assists: {displayStats.assists} {this.assistCompare(averages)} ({averages.assistAvg})</li>
+           <li>Gold/min: {(displayStats.goldEarned/playTime).toFixed(2)} {this.goldCompare(averages)} ({averages.goldAvg})</li>
+           <li>CS/min: {displayStats.minionsKilled} {this.CSCompare(averages)} ({averages.minionAvg})</li>
+           <li>Dmg/min: {displayStats.totalDamageDealtToChampions} {this.dmgCompare(averages)} ({averages.damageAvg})</li>
         </ul>
       )
     } else {
@@ -92,9 +94,8 @@ var CompareStats = React.createClass({
     }
   },
 
-  killCompare: function(){
+  killCompare: function(averages){
     var gameStats = this.state.recentGame.stats;
-    var averages = this.calcAverages();
     if(gameStats.championsKilled < averages.killAvg){
       return "↓";
     } else {
@@ -102,9 +103,8 @@ var CompareStats = React.createClass({
     }
   },
 
-  deathCompare: function(){
+  deathCompare: function(averages){
     var gameStats = this.state.recentGame.stats;
-    var averages = this.calcAverages();
     if(gameStats.numDeaths < averages.deathAvg){
       return "↓";
     } else {
@@ -112,9 +112,8 @@ var CompareStats = React.createClass({
     }
   },
 
-  assistCompare: function(){
+  assistCompare: function(averages){
     var gameStats = this.state.recentGame.stats;
-    var averages = this.calcAverages();
     if(gameStats.assists < averages.assistAvg){
       return "↓";
     } else {
@@ -122,9 +121,8 @@ var CompareStats = React.createClass({
     }
   },
 
-  goldCompare: function(){
+  goldCompare: function(averages){
     var gameStats = this.state.recentGame.stats;
-    var averages = this.calcAverages();
     var playTime = gameStats.timePlayed/60;
     if(gameStats.goldEarned/playTime < averages.goldAvg){
       return "↓";
@@ -133,22 +131,20 @@ var CompareStats = React.createClass({
     }
   },
 
-  CSCompare: function(){
+  CSCompare: function(averages){
     var gameStats = this.state.recentGame.stats;
-    var averages = this.calcAverages();
     var playTime = gameStats.timePlayed/60;
-    if(gameStats.minionsKilled < averages.minionAvg){
+    if(gameStats.minionsKilled/playTime < averages.minionAvg){
       return "↓";
     } else {
       return "↑";
     }
   },
 
-  dmgCompare: function(){
+  dmgCompare: function(averages){
     var gameStats = this.state.recentGame.stats;
-    var averages = this.calcAverages();
     var playTime = gameStats.timePlayed/60;
-    if(gameStats.totalDamageDealtToChampions < averages.damageAvg){
+    if(gameStats.totalDamageDealtToChampions/playTime < averages.damageAvg){
       return "↓";
     } else {
       return "↑";
