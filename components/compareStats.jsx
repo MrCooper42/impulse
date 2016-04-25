@@ -82,7 +82,7 @@ var CompareStats = React.createClass({
            <li>Kills: {displayStats.championsKilled} {this.killCompare(averages)} ({averages.killAvg})</li>
            <li>Deaths: {displayStats.numDeaths} {this.deathCompare(averages)} ({averages.deathAvg})</li>
            <li>Assists: {displayStats.assists} {this.assistCompare(averages)} ({averages.assistAvg})</li>
-           <li>Gold/min: {(displayStats.goldEarned/playTime).toFixed(2)} {this.goldCompare(averages)} ({averages.goldAvg})</li>
+           <li>Gold/min: {displayStats.goldEarned} {this.goldCompare(averages)} ({averages.goldAvg})</li>
            <li>CS/min: {displayStats.minionsKilled} {this.CSCompare(averages)} ({averages.minionAvg})</li>
            <li>Dmg/min: {displayStats.totalDamageDealtToChampions} {this.dmgCompare(averages)} ({averages.damageAvg})</li>
         </ul>
