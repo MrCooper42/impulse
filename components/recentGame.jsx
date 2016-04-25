@@ -3,9 +3,10 @@ var LeagueUtil = require('../util/leagueUtil');
 var SummonerStore = require('../stores/summonerStore');
 var GameStore = require('../stores/gameStore');
 
-var CHAMPIONS = require('../app/assets/objects/championsMap.js');
-var CHAMP_SQUARES = require('../app/assets/images/squares.js');
-var SUMMONER_SPELLS = require('../app/assets/images/summonerSpells.js');
+var CHAMPIONS = require('../app/assets/objects/championsMap');
+var CHAMP_SQUARES = require('../app/assets/images/squares');
+var SUMMONER_SPELLS = require('../app/assets/images/summonerSpells');
+var GAME_MODES = require('../app/assets/objects/gameModes');
 
 var rd3 = require('react-d3');
 var PieChart = rd3.PieChart;
@@ -44,6 +45,10 @@ var RecentGame = React.createClass({
       var death = gameStats.numDeaths ? gameStats.numDeaths : 0;
       var assist = gameStats.assists ? gameStats.assists : 0;
       var date = new Date(this.state.game.createDate);
+      var subType = GAME_MODES[this.state.game.subType]
+      if (subType) {
+        subType = "(" + subType + ")";
+      }
       stats = (
         <div>
           <div>
@@ -52,7 +57,9 @@ var RecentGame = React.createClass({
           </div>
           <div className="statsName">{CHAMPIONS[this.state.game.championId]}</div>
           <div className="statsCreate">{date.toString().slice(3,15)}</div>
-          <div className="statsCreate">{this.state.game.gameMode.toLowerCase()} {this.state.game.gameType.toLowerCase()}</div>
+          <div className="statsCreate">
+            {GAME_MODES[this.state.game.gameMode]} {GAME_MODES[this.state.game.gameType]} {subType}
+          </div>
         </div>
       )
     }
