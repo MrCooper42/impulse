@@ -284,7 +284,9 @@ ul {
 }
 
 .summaryButtonOn {
-  border: 1px solid white;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
   background-color: green;
   transition: 1s;
 }
