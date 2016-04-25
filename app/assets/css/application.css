@@ -264,12 +264,41 @@ ul {
   transition: 1s;
 }
 .searchDiv #searchSubmit:hover{
-    background-color: white;
-    color: black;
-    cursor: pointer;
-    transition: 1s;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  transition: 1s;
 }
 
 .searchDiv input:focus{
   outline: none;
+}
+
+.summaryButtons {
+  display: flex;
+}
+
+.summaryButtonOff {
+  border: 1px solid white;
+  transition: 1s;
+}
+
+.summaryButtonOn {
+  border: 1px solid white;
+  background-color: green;
+  transition: 1s;
+}
+
+.summaryButtonOn:hover {
+  cursor: pointer;
+  color: black;
+  background-color: white;
+  transition: 1s;
+}
+
+.summaryButtonOff:hover {
+  cursor: pointer;
+  color: black;
+  background-color: white;
+  transition: 1s;
 }

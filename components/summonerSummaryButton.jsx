@@ -34,10 +34,16 @@ var SummonerSummaryButton = React.createClass({
     SettingsUtil.setSummaryType(this.props.summaryType);
   },
 
+  getClassname: function() {
+    return this.state.toggledOn ? "summaryButtonOn" : "summaryButtonOff"
+  },
+
   render: function() {
+    var toggled = this.getClassname();
+
     return (
-      <div onClick={this.click}>
-        {GAME_MODES[this.props.summaryType]} - {this.state.toggledOn ? "ON" : "OFF"}
+      <div className={toggled} onClick={this.click}>
+        {GAME_MODES[this.props.summaryType]}
       </div>
     );
   }
