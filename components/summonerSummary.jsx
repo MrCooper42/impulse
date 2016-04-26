@@ -19,7 +19,13 @@ var SummonerSummary = React.createClass({
   componentDidMount: function() {
     this.summonerListener = SummonerStore.addListener(this.updateStats);
     this.statsListener = StatsStore.addListener(this.updateSummaryType);
-    // TODO: check for summoner in localStorage
+    if (localStorage['summaryStats']) {
+      var summaryStats = JSON.parse(localStorage['summaryStats']);
+      this.setState({
+        stats: summaryStats,
+        summaryType: StatsStore.summaryType()
+      });
+    }
   },
 
   componentWillUnmount: function() {
