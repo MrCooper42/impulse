@@ -1,4 +1,5 @@
 var React = require('react');
+var SettingsUtil = require('../util/settingsUtil');
 
 var HideAllButton = React.createClass({
 
@@ -10,7 +11,7 @@ var HideAllButton = React.createClass({
 
   toggleHide: function() {
     localStorage['hideAll'] = localStorage['hideAll'] === 'true' ? 'false' : 'true'
-    location.reload()
+    SettingsUtil.refresh();
   },
 
   render: function() {

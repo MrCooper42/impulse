@@ -1,4 +1,5 @@
 var React = require('react');
+var SettingsUtil = require('../util/settingsUtil');
 
 var LockBackground = React.createClass({
 
@@ -17,6 +18,7 @@ var LockBackground = React.createClass({
   },
 
   toggleLock: function() {
+    SettingsUtil.refresh();
     localStorage['bgLocked'] = !this.state.locked;
     this.setState({ locked: !this.state.locked });
   },

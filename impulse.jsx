@@ -88,6 +88,21 @@ var App = React.createClass({
     }
   },
 
+  getBackgroundButtons: function() {
+    var buttons = (
+      <LockBackground />
+    );
+    if (localStorage['bgLocked'] !== 'true') {
+      buttons = (
+        <div>
+          <LockBackground />
+          <RefreshBackground />
+        </div>
+      );
+    };
+    return buttons;
+  },
+
   render: function() {
     this.getUrl()
     var divStyle = {
@@ -105,8 +120,7 @@ var App = React.createClass({
         {this.getDisplay()}
         <HideAllButton />
         <SettingsButton />
-        <LockBackground />
-        <RefreshBackground />
+        {this.getBackgroundButtons()}
       </div>
     )
   }

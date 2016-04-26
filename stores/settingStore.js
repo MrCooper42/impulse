@@ -17,6 +17,9 @@ SettingStore.__onDispatch = function(payload) {
       resetSettings(payload.settings);
       SettingStore.__emitChange();
       break;
+    case "REFRESH_SETTINGS":
+      SettingStore.__emitChange();
+      break;
   }
 };
 
