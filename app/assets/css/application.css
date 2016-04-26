@@ -139,11 +139,15 @@ ul {
   font-family: 'Lato';
   font-size: 20px;
   position: absolute;
-  top:100px;
-  color:white;
-  width: 400px;
-  right:100px;
+  top:10px;
+  background-color: white;
+  opacity: 0.9;
+  color:black;
+  width: 750px;
+  left:30%;
+
 }
+
 
 .line-chart{
   color: white;
