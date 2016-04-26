@@ -1,11 +1,10 @@
 var React = require('react');
 var GameStore = require('../stores/gameStore');
 var SummonerStore = require('../stores/summonerStore');
-var LeagueUtil = require('../util/leagueUtil')
+var LeagueUtil = require('../util/leagueUtil');
 
-var rd3 = require('react-d3');
-var LineChart = rd3.LineChart;
-
+var REC = require("react-easy-chart");
+var LineChart = REC.LineChart;
 
 
 var Progression = React.createClass({
@@ -95,10 +94,35 @@ var Progression = React.createClass({
 
 
   render: function(){
+        var lineData = [
+          {
+            name: "series1",
+            values: [ { x: 0, y: 20 }, { x: 24, y: 10 } ],
+            strokeWidth: 3,
+            strokeDashArray: "5,5"
+          }
+        ];
 
     return (
       <div className="progression">
         {this.generateStats()}
+
+        <LineChart
+          xType={'time'}
+          axes
+          grid
+          verticalGrid
+          interpolate={'cardinal'}
+          lineColors={['yellow', 'cyan']}
+          width={750}
+          height={250}
+          data={[
+            [{x: '1-Jan-15', y: 20}, {x: '1-Feb-15', y: 10}, {x: '1-Mar-15', y: 33}, {x: '1-Apr-15', y: 45}, {x: '1-May-15', y: 15}],
+            [{x: '1-Jan-15', y: 10}, {x: '1-Feb-15', y: 15}, {x: '1-Mar-15', y: 13}, {x: '1-Apr-15', y: 15}, {x: '1-May-15', y: 10}]
+          ]}
+        />
+        
+      
 
       </div>
     )
