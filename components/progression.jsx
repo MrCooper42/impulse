@@ -162,28 +162,31 @@ var Progression = React.createClass({
     }
   },
 
-  getData: function(){
+  getAllData: function(){
 
     if (this.state.allGames.length > 0) {
-      var dates = [];
+      var killDates = [];
+      var deathDates = [];
+      var assistDates = [];
       var allGames = this.state.allGames;
 
       allGames.forEach(function(game, idx){
-        // var date = new Date(game.createDate)
-        // var formatDate = date.getDate() + "-" + date.toString().slice(4,7) + "-" + date.getFullYear().toString().slice(2);
-        dates.push({x: 10-idx, y: (game.stats.championsKilled ? game.stats.championsKilled : 0)})
+        killDates.push({x: 10-idx, y: (game.stats.championsKilled ? game.stats.championsKilled : 0)})
+      });
+      allGames.forEach(function(game, idx){
+        deathDates.push({x: 10-idx, y: (game.stats.numDeaths ? game.stats.numDeaths : 0)})
+      });
+      allGames.forEach(function(game, idx){
+        assistDates.push({x: 10-idx, y: (game.stats.assists ? game.stats.assists : 0)})
       });
 
-      var reverseDate = dates.reverse();
       return [
-        reverseDate
+        killDates, deathDates, assistDates
       ];
-
     } else {
-      console.log("nope")
-      return [
-        [{x: 1, y:2}]
-      ];
+        return [
+          [{x: 0, y:0}]
+        ];
     }
 
 
@@ -198,13 +201,14 @@ var Progression = React.createClass({
 
         <LineChart
           axes
+          dataPoints
           grid
           verticalGrid
           xDomainRange={[1,10]}
-          lineColors={['red', 'blue']}
+          lineColors={["#F9BA32", "#426E86" , "#2F3131"]}
           width={750}
           height={250}
-          data={this.getData()}
+          data={this.getAllData()}
         />
         
       
