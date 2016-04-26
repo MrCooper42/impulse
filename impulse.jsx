@@ -71,9 +71,11 @@ var App = React.createClass({
 
   displayWidgets: function() {
     var settings = this.state.settings
-    return Object.keys(WIDGETS).map(function(widget) {
+    return Object.keys(WIDGETS).map(function(widget, idx) {
       if (settings[widget]) {
         return (WIDGETS[widget]);
+      } else {
+        return (<div key={idx}/>)
       }
     });
   },
@@ -92,7 +94,6 @@ var App = React.createClass({
 
     return (
       <div className="bg" style={divStyle}>
-        <Search />
         {this.displayWidgets()}
         <SettingsButton />
         <LockBackground />

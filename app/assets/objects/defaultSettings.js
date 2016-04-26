@@ -1,9 +1,10 @@
 module.exports = {
-  "Clock": true,
-  "Weather": true,
-  "Quote": true,
+  "Search": true,
+  "SummonerSummary": false,
   "RecentGame": false,
   "CompareStats": false,
-  "SummonerSummary": false,
-  "Progression": false
+  "Progression": false,
+  "Clock": true,
+  "Quote": true,
+  "Weather": true
 };
