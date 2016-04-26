@@ -14,7 +14,7 @@ var SettingStore = require('./stores/settingStore');
 
 // COMPONENTS
 var Search = require('./components/searchSummoner');
-var SettingsMenu = require('./components/settings');
+var SettingsButton = require('./components/settingsButton');
 var LockBackground = require('./components/lockBackground');
 var RefreshBackground = require('./components/refreshBackground');
 
@@ -55,7 +55,7 @@ var App = React.createClass({
       var previousUrlUpdate = new Date(JSON.parse(localStorage['bgUrl']).date)
       var currentDate = new Date();
       if (currentDate.getDate() !== previousUrlUpdate.getDate()) {
-        this.generateBgUrl(); 
+        this.generateBgUrl();
       }
     }
   },
@@ -94,7 +94,7 @@ var App = React.createClass({
       <div className="bg" style={divStyle}>
         <Search />
         {this.displayWidgets()}
-        <SettingsMenu />
+        <SettingsButton />
         <LockBackground />
         <RefreshBackground />
       </div>

@@ -165,10 +165,21 @@ ul {
   right:100px;
 }
 
+.settingsIcon {
+  position: fixed;
+  left: 10px;
+  bottom: 20px;
+  background-color: white;
+}
+
+.settingsIcon:hover {
+  cursor: pointer;
+}
+
 .settingsMenu {
   position: fixed;
   left: 10px;
-  bottom:20px;
+  bottom:40px;
   color:white;
   background-color: black;
   z-index: 100;
