@@ -6,7 +6,6 @@ var LeagueUtil = require('../util/leagueUtil')
 var CHAMPIONS = require('../app/assets/objects/championsMap.js');
 
 
-
 var CompareStats = React.createClass({
   getInitialState: function(){
     return {
@@ -17,7 +16,13 @@ var CompareStats = React.createClass({
 
   componentDidMount: function(){
     this.gameListener = GameStore.addListener(this.update);
-    // TODO: check localStorage for games
+    if (localStorage['leagueGames']) {
+      var games = JSON.parse(localStorage['leagueGames']);
+      this.setState({
+        recentGame: games.length === 0 ? {} : games[0],
+        otherGames: games.slice(1)
+      });
+    }
   },
 
   componentWillUnmount: function(){
