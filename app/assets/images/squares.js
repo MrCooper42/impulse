@@ -207,7 +207,7 @@ module.exports = {
 
   "Thresh": "http://res.cloudinary.com/dzyfczxnr/image/upload/v1460752795/champSquares/ThreshSquare.png",
 
-  "Tristana": "http://res.cloudinary.com/dzyfczxnr/image/upload/v1461004048/champSquares/TristanaSquare.jpg",
+  "Tristana": "http://res.cloudinary.com/dzyfczxnr/image/upload/v1461702050/champSquares/Tristana_Square_02.png",
 
   "Trundle": "http://res.cloudinary.com/dzyfczxnr/image/upload/v1460752795/champSquares/TrundleSquare.png",
 

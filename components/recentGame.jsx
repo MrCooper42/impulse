@@ -82,11 +82,21 @@ var RecentGame = React.createClass({
       var kill = gameStats.championsKilled ? gameStats.championsKilled : 0;
       var death = gameStats.numDeaths ? gameStats.numDeaths : 0;
       var assist = gameStats.assists ? gameStats.assists : 0;
-      return [
-        {label: 'Kills', value: kill},
-        {label: 'Deaths', value: death},
-        {label: 'Assists', value: assist }
-      ];
+
+      var stats = [{"Kills": kill}, {"Deaths": death}, {"Assists": assist}];
+      var data = [];
+
+
+      stats.forEach(function(stat){
+        var key = Object.keys(stat)[0];
+        if (stat[key] !== 0){
+          data.push({label: key, value: stat[key]})
+        }
+      })
+
+      return data;
+
+
     }
     else{
       return [

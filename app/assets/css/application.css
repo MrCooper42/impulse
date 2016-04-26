@@ -184,8 +184,12 @@ ul {
   background-color: green;
   border: green;
   outline: none;
+  border-radius: 2px;
 }
 
+.settingsButtonOn:hover{
+  cursor: pointer;
+}
 
 .settingsButtonOff {
   width: 15px;
@@ -194,6 +198,11 @@ ul {
   background-color: red;
   border: red;
   outline: none;
+  border-radius: 2px;
+}
+
+.settingsButtonOff:hover{
+  cursor: pointer;
 }
 
 .quotes {
