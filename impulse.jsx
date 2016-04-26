@@ -17,6 +17,7 @@ var Search = require('./components/searchSummoner');
 var SettingsButton = require('./components/settingsButton');
 var LockBackground = require('./components/lockBackground');
 var RefreshBackground = require('./components/refreshBackground');
+var HideAllButton = require('./components/hideAllButton');
 
 // list of image urls
 var bgUrls = require('./app/assets/images/bgUrls');
@@ -80,6 +81,14 @@ var App = React.createClass({
     });
   },
 
+  getDisplay: function() {
+    if (localStorage['hideAll'] === 'true') {
+      return <div/>
+    } else {
+      return this.displayWidgets()
+    }
+  },
+
   render: function() {
     this.getUrl()
     var divStyle = {
@@ -94,7 +103,8 @@ var App = React.createClass({
 
     return (
       <div className="bg" style={divStyle}>
-        {this.displayWidgets()}
+        {this.getDisplay()}
+        <HideAllButton />
         <SettingsButton />
         <LockBackground />
         <RefreshBackground />

@@ -167,7 +167,7 @@ ul {
 
 .settingsIcon {
   position: fixed;
-  left: 10px;
+  left: 20px;
   bottom: 20px;
   background-color: white;
 }
@@ -314,4 +314,15 @@ ul {
   color: black;
   background-color: white;
   transition: 1s;
+}
+
+.hideAllButton {
+  position: fixed;
+  bottom: 60px;
+  left: 20px;
+  background-color: white;
+}
+
+.hideAllButton:hover {
+  cursor: pointer;
 }
