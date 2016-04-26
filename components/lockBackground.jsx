@@ -22,7 +22,7 @@ var LockBackground = React.createClass({
   },
 
   buttonValue: function() {
-    return this.state.locked ? "background locked" : "background unlocked"
+    return this.state.locked ? "locked" : "unlocked"
   },
 
   className: function() {
