@@ -83,19 +83,11 @@ html{
   font-family: 'Lato';
   font-size: 20px;
   position: absolute;
-  top:10px;
+  top:102px;
   color:white;
-  background-color: black;
   width: 200px;
-  left:10px;
+  left:95px;
   padding-bottom: 5px;
-}
-
-.recentGame h1{
-  font-family: 'Lato';
-  font-size: 30px;
-  margin: 0;
-  text-align: center;
 }
 
 .recentGame .avatar{
@@ -115,7 +107,7 @@ html{
 
 .recentGame .rd3-chart{
   position: fixed;
-  left:200px;
+  left:0px;
   top:-40px;
 }
 
@@ -172,6 +164,7 @@ ul {
   color:white;
   background-color: black;
   z-index: 100;
+  text-align: right;
 }
 
 .settingsMenu ul{
@@ -185,17 +178,22 @@ ul {
 }
 
 .settingsButtonOn {
-  width: 50px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   margin: 5px;
   background-color: green;
+  border: green;
+  outline: none;
 }
 
+
 .settingsButtonOff {
-  width: 50px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   margin: 5px;
   background-color: red;
+  border: red;
+  outline: none;
 }
 
 .quotes {
