@@ -13,7 +13,6 @@ var WIDGETS = require('./app/assets/objects/widgetList');
 var SettingStore = require('./stores/settingStore');
 
 // COMPONENTS
-var Search = require('./components/searchSummoner');
 var SettingsButton = require('./components/settingsButton');
 var LockBackground = require('./components/lockBackground');
 var RefreshBackground = require('./components/refreshBackground');

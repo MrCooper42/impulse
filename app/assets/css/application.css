@@ -169,11 +169,17 @@ ul {
   position: fixed;
   left: 20px;
   bottom: 20px;
+  padding: 5px;
+  border-radius: 3px;
   background-color: white;
+  transition: 1s;
 }
 
 .settingsIcon:hover {
   cursor: pointer;
+  color: white;
+  background-color: black;
+  transition: 1s;
 }
 
 .settingsMenu {
@@ -320,9 +326,15 @@ ul {
   position: fixed;
   bottom: 60px;
   left: 20px;
+  padding: 5px;
+  border-radius: 3px;
   background-color: white;
+  transition: 1s;
 }
 
 .hideAllButton:hover {
   cursor: pointer;
+  color: white;
+  background-color: black;
+  transition: 1s;
 }
