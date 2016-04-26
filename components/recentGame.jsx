@@ -22,6 +22,7 @@ var RecentGame = React.createClass({
   componentDidMount: function() {
     this.gameListener = GameStore.addListener(this.updateGames);
     this.summonerListener = SummonerStore.addListener(this.updateGames);
+    // TODO: check localStorage if game is there
   },
 
   componentWillUnmount: function() {
