@@ -7,6 +7,10 @@ var SettingsUtil = {
 
   setSummaryType: function(type) {
     SettingActions.receiveSummaryType(type);
+  },
+
+  refresh: function() {
+    SettingActions.refresh();
   }
 }
 

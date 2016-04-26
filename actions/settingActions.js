@@ -13,6 +13,12 @@ var SettingActions = {
       actionType: "RECEIVE_SUMMARY_TYPE",
       summaryType: type
     })
+  },
+
+  refresh: function() {
+    Dispatcher.dispatch({
+      actionType: "REFRESH_SETTINGS"
+    });
   }
 };
 

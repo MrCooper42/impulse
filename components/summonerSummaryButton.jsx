@@ -39,10 +39,8 @@ var SummonerSummaryButton = React.createClass({
   },
 
   render: function() {
-    var toggled = this.getClassname();
-
     return (
-      <div className={toggled} onClick={this.click}>
+      <div className={this.getClassname()} onClick={this.click}>
         {GAME_MODES[this.props.summaryType]}
       </div>
     );

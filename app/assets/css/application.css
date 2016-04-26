@@ -161,10 +161,27 @@ ul {
   right:100px;
 }
 
+.settingsIcon {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  padding: 5px;
+  border-radius: 3px;
+  background-color: white;
+  transition: 1s;
+}
+
+.settingsIcon:hover {
+  cursor: pointer;
+  color: white;
+  background-color: black;
+  transition: 1s;
+}
+
 .settingsMenu {
   position: fixed;
   left: 10px;
-  bottom:20px;
+  bottom:40px;
   color:white;
   background-color: black;
   z-index: 100;
@@ -313,5 +330,22 @@ ul {
   cursor: pointer;
   color: black;
   background-color: white;
+  transition: 1s;
+}
+
+.hideAllButton {
+  position: fixed;
+  bottom: 60px;
+  left: 20px;
+  padding: 5px;
+  border-radius: 3px;
+  background-color: white;
+  transition: 1s;
+}
+
+.hideAllButton:hover {
+  cursor: pointer;
+  color: white;
+  background-color: black;
   transition: 1s;
 }

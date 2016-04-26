@@ -13,10 +13,10 @@ var WIDGETS = require('./app/assets/objects/widgetList');
 var SettingStore = require('./stores/settingStore');
 
 // COMPONENTS
-var Search = require('./components/searchSummoner');
-var SettingsMenu = require('./components/settings');
+var SettingsButton = require('./components/settingsButton');
 var LockBackground = require('./components/lockBackground');
 var RefreshBackground = require('./components/refreshBackground');
+var HideAllButton = require('./components/hideAllButton');
 
 // list of image urls
 var bgUrls = require('./app/assets/images/bgUrls');
@@ -55,7 +55,7 @@ var App = React.createClass({
       var previousUrlUpdate = new Date(JSON.parse(localStorage['bgUrl']).date)
       var currentDate = new Date();
       if (currentDate.getDate() !== previousUrlUpdate.getDate()) {
-        this.generateBgUrl(); 
+        this.generateBgUrl();
       }
     }
   },
@@ -71,11 +71,36 @@ var App = React.createClass({
 
   displayWidgets: function() {
     var settings = this.state.settings
-    return Object.keys(WIDGETS).map(function(widget) {
+    return Object.keys(WIDGETS).map(function(widget, idx) {
       if (settings[widget]) {
         return (WIDGETS[widget]);
+      } else {
+        return (<div key={idx}/>)
       }
     });
+  },
+
+  getDisplay: function() {
+    if (localStorage['hideAll'] === 'true') {
+      return <div/>
+    } else {
+      return this.displayWidgets()
+    }
+  },
+
+  getBackgroundButtons: function() {
+    var buttons = (
+      <LockBackground />
+    );
+    if (localStorage['bgLocked'] !== 'true') {
+      buttons = (
+        <div>
+          <LockBackground />
+          <RefreshBackground />
+        </div>
+      );
+    };
+    return buttons;
   },
 
   render: function() {
@@ -92,11 +117,10 @@ var App = React.createClass({
 
     return (
       <div className="bg" style={divStyle}>
-        <Search />
-        {this.displayWidgets()}
-        <SettingsMenu />
-        <LockBackground />
-        <RefreshBackground />
+        {this.getDisplay()}
+        <HideAllButton />
+        <SettingsButton />
+        {this.getBackgroundButtons()}
       </div>
     )
   }
