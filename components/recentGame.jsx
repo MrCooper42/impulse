@@ -22,7 +22,12 @@ var RecentGame = React.createClass({
   componentDidMount: function() {
     this.gameListener = GameStore.addListener(this.updateGames);
     this.summonerListener = SummonerStore.addListener(this.updateGames);
-    // TODO: check localStorage if game is there
+    if (localStorage['leagueGames']) {
+      var games = JSON.parse(localStorage['leagueGames']);
+      this.setState({
+        game: games.length === 0 ? {} : games[0]
+      });
+    }
   },
 
   componentWillUnmount: function() {

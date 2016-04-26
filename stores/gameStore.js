@@ -28,6 +28,7 @@ GameStore.__onDispatch = function(payload) {
 
 var resetGames = function(games) {
   _games = games;
+  localStorage['leagueGames'] = JSON.stringify(games)
 };
 
 

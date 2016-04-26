@@ -43,6 +43,7 @@ var setSummoner = function(summoner) {
 
 var resetStats = function(summaryStats) {
   _summaryStats = summaryStats;
+  localStorage["summaryStats"] = JSON.stringify(summaryStats);
 }
 
 module.exports = SummonerStore;
