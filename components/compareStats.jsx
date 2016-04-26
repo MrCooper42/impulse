@@ -17,6 +17,7 @@ var CompareStats = React.createClass({
 
   componentDidMount: function(){
     this.gameListener = GameStore.addListener(this.update);
+    // TODO: check localStorage for games
   },
 
   componentWillUnmount: function(){
