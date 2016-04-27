@@ -197,13 +197,14 @@ var Progression = React.createClass({
 
     return (
       <div className="progression">
-        {this.generateStats()}
-
         <LineChart
           axes
+          axisLabels={{x: 'Game (most recent)', y: 'Stats'}}
           dataPoints
           grid
+          xTicks={5}
           verticalGrid
+          interpolate={'linear'}
           xDomainRange={[1,10]}
           lineColors={["#F9BA32", "#426E86" , "#2F3131"]}
           width={750}
