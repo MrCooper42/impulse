@@ -44,6 +44,14 @@
 .progression svg{
   background-color: #F8F1E5;
 }
+.progression .showKDAoptions{
+  display: "";
+}
+
+.progression .hideKDAoptions{
+  display:none;
+}
+
 
 .line-chart{
   color: white;

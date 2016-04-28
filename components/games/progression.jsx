@@ -17,7 +17,8 @@ var Progression = React.createClass({
       lineColors: ["#F9BA32", "#426E86" , "#2F3131"],
       KDA: true,
       Gold: false,
-      CS: false
+      CS: false,
+      KDAoptions: true
     };
   },
 
@@ -246,6 +247,7 @@ var Progression = React.createClass({
   showKDA: function(){
     this.setState({KDA: true, Gold: false, CS: false})
     this.setState({KDAdisplay: [true, true, true]})
+    this.setState({KDAoptions: !this.state.KDAoptions})
   },
 
   showGold: function(){
@@ -268,6 +270,13 @@ var Progression = React.createClass({
 
   render: function(){
 
+    var KDAoptions;
+
+    if(this.state.KDAoptions){
+      KDAoptions = "showKDAoptions";
+    } else {
+      KDAoptions = "hideKDAoptions";
+    }
 
     return (
       <div className="progression">
@@ -286,12 +295,14 @@ var Progression = React.createClass({
           data={this.getAllData()}/>
 
 
+        <div className={KDAoptions}>    
+          <span onClick={this.showK}> Kill </span>
+          <span onClick={this.showD}> Death </span>
+          <span onClick={this.showA}> Assist </span>
+        </div>
 
-        <span onClick={this.showK}> Kill </span>
-        <span onClick={this.showD}> Death </span>
-        <span onClick={this.showA}> Assist </span>
-        <span onClick={this.showKDA}> KDA</span>
-        <span onClick={this.showGold}> Gold</span>
+          <span onClick={this.showKDA}> KDA</span>
+          <span onClick={this.showGold}> Gold</span>
 
       </div>
     )
