@@ -11,6 +11,7 @@ var LeagueUtil = {
       success: function(summoner) {
         that.fetchGameStats(summoner[Object.keys(summoner)[0]].id);
         that.fetchSummonerStats(summoner[Object.keys(summoner)[0]].id);
+        that.fetchRankedInfo(summoner[Object.keys(summoner)[0]].id);
         LeagueActions.receiveSummoner(summoner)
       },
       error: function(error) {
@@ -23,7 +24,6 @@ var LeagueUtil = {
     LeagueActions.setSummoner(summoner);
     this.fetchGameStats(summoner.id);
     this.fetchSummonerStats(summoner.id);
-    this.fetchRankedInfo(summoner.id);
   },
 
   fetchSummonerStats: function(summonerId) {

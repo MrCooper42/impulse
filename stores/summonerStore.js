@@ -16,6 +16,10 @@ SummonerStore.stats = function() {
   return _summaryStats;
 };
 
+SummonerStore.rank = function() {
+  return _rank;
+};
+
 SummonerStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
     case 'RECEIVE_SUMMONER':

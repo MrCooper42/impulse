@@ -5,7 +5,7 @@ var DEFAULTS = require('../app/assets/objects/defaultSettings');
 
 var SettingStore = new Store(Dispatcher);
 
-_settings = DEFAULTS;
+var _settings = DEFAULTS;
 
 SettingStore.settings = function() {
   return _settings
