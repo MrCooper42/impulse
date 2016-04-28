@@ -36,6 +36,19 @@ var LeagueActions = {
       actionType: "RECEIVE_STATS",
       stats: summaryStats
     });
+  },
+
+  receiveRankedData: function(data) {
+    Dispatcher.dispatch({
+      actionType: "RECEIVE_RANK",
+      data: data
+    });
+  },
+
+  receiveUnrankedData: function() {
+    Dispatcher.dispatch({
+      actionType: "NO_RANK"
+    })
   }
 
 };

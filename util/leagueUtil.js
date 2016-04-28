@@ -23,6 +23,7 @@ var LeagueUtil = {
     LeagueActions.setSummoner(summoner);
     this.fetchGameStats(summoner.id);
     this.fetchSummonerStats(summoner.id);
+    this.fetchRankedInfo(summoner.id);
   },
 
   fetchSummonerStats: function(summonerId) {
@@ -47,6 +48,19 @@ var LeagueUtil = {
       },
       error: function(error) {
         console.log("No Games Found");
+      }
+    })
+  },
+
+  fetchRankedInfo: function(summonerId) {
+    $.ajax({
+      url: "https://na.api.pvp.net/api/lol/na/v2.5/league/by-summoner/" + summonerId + "/entry?api_key=" + key.league,
+      method: "GET",
+      success: function(data) {
+        LeagueActions.receiveRankedData(data);
+      },
+      error: function(error) {
+        LeagueActions.receiveUnrankedData();
       }
     })
   },
