@@ -5,7 +5,7 @@ var Weather = require('../../../components/widgets/weather.jsx');
 var RecentGame = require('../../../components/games/recentGame.jsx');
 var CompareStats = require('../../../components/games/compareStats.jsx');
 var Quote = require('../../../components/widgets/quotes.jsx');
-var Progression = require('../../../components/summoner/progression.jsx');
+var Progression = require('../../../components/games/progression.jsx');
 var SummonerSummary = require('../../../components/summoner/summonerSummary.jsx');
 var SearchSummoner = require('../../../components/summoner/searchSummoner.jsx');
 

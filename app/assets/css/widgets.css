@@ -1,0 +1,48 @@
+
+.quotes {
+  position: fixed;
+  color:white;
+  text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+  bottom: 40px;
+  font-size:25px;
+  font-family: 'Lato';
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+
+.clock{
+  position: fixed;
+  display:inline;
+  color:white;
+  text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+  font-size:200px;
+  font-family: 'Lato';
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.clockPeriod{
+  font-size: 100px;
+  margin:0;
+  padding:0;
+  display:inline;
+}
+
+
+.weather{
+  font-family: 'Lato';
+  font-size: 20px;
+  position: fixed;
+  top:0px;
+  right:20px;
+  color:white;
+}

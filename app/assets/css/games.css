@@ -1,0 +1,98 @@
+.infoButton {
+  position: fixed;
+  top: 220px;
+  left: 275px;
+}
+
+.infoButton:hover {
+  cursor: pointer;
+}
+
+.spell {
+  margin: 5px;
+}
+
+.recentGameInfo {
+  background-color: black;
+  color: white;
+  display: flex;
+  width: 350px;
+  height: 100px;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 140px;
+  left: 320px;
+  padding: 10px 30px;
+}
+
+
+.progression {
+  font-family: 'Lato';
+  font-size: 20px;
+  position: absolute;
+  top:50px;
+  background-color: #F8F1E5;
+  opacity: 0.95;
+  width: 500px;
+  left:50%;
+  transform: translate(-50%, -50%);
+  top: 20%;
+  border-radius: 5px;
+}
+
+.line-chart{
+  color: white;
+}
+
+.recentGame{
+  font-family: 'Lato';
+  font-size: 20px;
+  position: absolute;
+  top:102px;
+  color:white;
+  width: 200px;
+  left:95px;
+  padding-bottom: 5px;
+}
+
+.recentGame .avatar{
+  background-color: white;
+  margin-left: 40px;
+}
+
+.recentGame .spell1{
+  background-color: white;
+  margin-left: 65px;
+}
+
+.recentGame .spell2{
+  background-color: white;
+  margin-left: 10px;
+}
+
+.recentGame .rd3-chart{
+  position: fixed;
+  left:0px;
+  top:-40px;
+}
+
+.recentGame .statsName {
+  text-align: center;
+  font-size: 40px;
+}
+
+.recentGame .statsCreate {
+  text-align: center;
+}
+
+.compareStats{
+  font-family: 'Lato';
+  font-size: 20px;
+  position: absolute;
+  top:305px;
+  color:white;
+  background-color: black;
+  width: 350px;
+  left:10px;
+}
