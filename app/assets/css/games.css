@@ -12,6 +12,10 @@
   margin: 5px;
 }
 
+.item {
+  margin: 5px;
+}
+
 .recentGameInfo {
   background-color: black;
   color: white;
@@ -95,4 +99,12 @@
   background-color: black;
   width: 220px;
   left: 10px;
+}
+
+.itemList {
+  display: flex;
+  width: 100px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
