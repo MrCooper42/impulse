@@ -32,13 +32,17 @@
   font-size: 20px;
   position: absolute;
   top:50px;
-  background-color: #F8F1E5;
+  background-color: white;
   opacity: 0.95;
   width: 500px;
   left:50%;
   transform: translate(-50%, -50%);
   top: 20%;
   border-radius: 5px;
+}
+
+.progression svg{
+  background-color: #F8F1E5;
 }
 
 .line-chart{

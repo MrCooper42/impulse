@@ -12,7 +12,9 @@ var Progression = React.createClass({
     return {
       recentGame: GameStore.lastGame(),
       otherGames: GameStore.allGames().slice(1),
-      allGames: GameStore.allGames()
+      allGames: GameStore.allGames(),
+      display: [true, true, true],
+      lineColors: ["#F9BA32", "#426E86" , "#2F3131"]
     };
   },
 
@@ -180,14 +182,94 @@ var Progression = React.createClass({
         assistDates.push({x: 10-idx, y: (game.stats.assists ? game.stats.assists : 0)})
       });
 
-      return [
-        killDates, deathDates, assistDates
-      ];
+      var result = [];
+
+      if (this.state.display[0]){
+        result.push(killDates);
+      }
+
+      if(this.state.display[1]){
+        result.push(deathDates);
+      }
+
+      if(this.state.display[2]){
+        result.push(assistDates)
+      }
+
+      return result.length === 0 ? [[{x: 0, y:0}]] : result
+
+
+
+      // if (this.state.showKillsOnly && !this.state.showAssistsOnly && !this.state.showDeathsOnly){
+      //   return [
+      //     killDates
+      //   ];
+      // } else if(this.state.showAssistsOnly && !this.state.showKillsOnly && !this.state.showDeathsOnly){
+      //   return [
+      //     assistDates
+      //   ];
+      // } else if(this.state.showDeathsOnly && !this.state.showAssistsOnly && !this.state.showKillsOnly){
+      //   return [
+      //     deathDates
+      //   ];
+      // }
+      //  else {
+      //   return [
+      //     killDates, deathDates, assistDates
+      //   ];
+      // };
+
     } else {
         return [
           [{x: 0, y:0}]
         ];
     }
+  },
+
+  showK: function(){
+    var oldDisplay = this.state.display
+    var newDisplay = [!oldDisplay[0], oldDisplay[1], oldDisplay[2]];
+    this.setState({
+      display: newDisplay
+    });
+  },
+
+  showD: function(){
+    var oldDisplay = this.state.display
+    var newDisplay = [oldDisplay[0], !oldDisplay[1], oldDisplay[2]];
+    this.setState({
+      display: newDisplay
+    });
+  },
+
+  showA: function(){
+    var oldDisplay = this.state.display
+    var newDisplay = [oldDisplay[0], oldDisplay[1], !oldDisplay[2]];
+    this.setState({
+      display: newDisplay
+    });
+  },
+
+  showKDA: function(){
+    var oldDisplay = this.state.display
+
+    if (oldDisplay.every(function(el){return el})){
+      this.setState({display: [false, false, false]})
+    } else {
+      this.setState({display: [true, true, true]})
+    }
+  },
+
+  getLineColors: function(){
+
+    var colors = [];
+    var that = this;
+    this.state.display.forEach(function(el, idx){
+      if(el){
+        colors.push(that.state.lineColors[idx]);
+      }
+    });
+    return colors
 
 
   },
@@ -197,7 +279,7 @@ var Progression = React.createClass({
 
     return (
       <div className="progression">
-        <LineChart
+        <LineChart 
           axes
           axisLabels={{x: 'Game (most recent)', y: 'Stats'}}
           dataPoints
@@ -206,13 +288,17 @@ var Progression = React.createClass({
           verticalGrid
           interpolate={'linear'}
           xDomainRange={[1,10]}
-          lineColors={["#F9BA32", "#426E86" , "#2F3131"]}
+          lineColors={this.getLineColors()}
           width={500}
           height={250}
-          data={this.getAllData()}
-        />
+          data={this.getAllData()}/>
 
 
+
+        <span onClick={this.showK}> Kill </span>
+        <span onClick={this.showD}> Death </span>
+        <span onClick={this.showA}> Assist </span>
+        <span onClick={this.showKDA}> KDA</span>
 
       </div>
     )
