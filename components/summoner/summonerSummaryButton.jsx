@@ -1,9 +1,9 @@
 var React = require('react');
 
-var StatsStore = require('../stores/statsStore');
-var SettingsUtil = require('../util/settingsUtil');
+var StatsStore = require('../../stores/statsStore');
+var SettingsUtil = require('../../util/settingsUtil');
 
-var GAME_MODES = require('../app/assets/objects/gameModes');
+var GAME_MODES = require('../../app/assets/objects/gameModes');
 
 var SummonerSummaryButton = React.createClass({
 

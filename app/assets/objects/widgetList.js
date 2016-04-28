@@ -1,13 +1,13 @@
 var React = require('react');
 
-var Clock = require('../../../components/clock.jsx');
-var Weather = require('../../../components/weather.jsx');
-var RecentGame = require('../../../components/recentGame.jsx');
-var CompareStats = require('../../../components/compareStats.jsx');
-var Quote = require('../../../components/quotes.jsx');
-var Progression = require('../../../components/progression.jsx');
-var SummonerSummary = require('../../../components/summonerSummary.jsx');
-var SearchSummoner = require('../../../components/searchSummoner.jsx');
+var Clock = require('../../../components/widgets/clock.jsx');
+var Weather = require('../../../components/widgets/weather.jsx');
+var RecentGame = require('../../../components/games/recentGame.jsx');
+var CompareStats = require('../../../components/games/compareStats.jsx');
+var Quote = require('../../../components/widgets/quotes.jsx');
+var Progression = require('../../../components/summoner/progression.jsx');
+var SummonerSummary = require('../../../components/summoner/summonerSummary.jsx');
+var SearchSummoner = require('../../../components/summoner/searchSummoner.jsx');
 
 module.exports = {
   "Search": < SearchSummoner key="search" />,

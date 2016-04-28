@@ -1,9 +1,9 @@
 var React = require('react');
 
-var SummonerStore = require('../stores/summonerStore');
-var StatsStore = require('../stores/statsStore');
+var SummonerStore = require('../../stores/summonerStore');
+var StatsStore = require('../../stores/statsStore');
 
-var LeagueUtil = require('../util/leagueUtil');
+var LeagueUtil = require('../../util/leagueUtil');
 
 var SummonerSummaryButton = require('./summonerSummaryButton');
 

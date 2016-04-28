@@ -1,12 +1,12 @@
 var React = require('react');
-var LeagueUtil = require('../util/leagueUtil');
-var SummonerStore = require('../stores/summonerStore');
-var GameStore = require('../stores/gameStore');
+var LeagueUtil = require('../../util/leagueUtil');
+var SummonerStore = require('../../stores/summonerStore');
+var GameStore = require('../../stores/gameStore');
 
-var CHAMPIONS = require('../app/assets/objects/championsMap');
-var CHAMP_SQUARES = require('../app/assets/images/squares');
-var SUMMONER_SPELLS = require('../app/assets/images/summonerSpells');
-var GAME_MODES = require('../app/assets/objects/gameModes');
+var CHAMPIONS = require('../../app/assets/objects/championsMap');
+var CHAMP_SQUARES = require('../../app/assets/images/squares');
+var SUMMONER_SPELLS = require('../../app/assets/images/summonerSpells');
+var GAME_MODES = require('../../app/assets/objects/gameModes');
 
 var rd3 = require('react-d3');
 var PieChart = rd3.PieChart;

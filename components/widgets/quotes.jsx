@@ -1,5 +1,5 @@
 var React = require('react');
-var quotes = require('../app/assets/objects/quotes.js');
+var quotes = require('../../app/assets/objects/quotes.js');
 
 
 var Quotes = React.createClass({

@@ -7,16 +7,18 @@ var LeagueStore = require('./stores/summonerStore');
 var leagueUtil = require('./util/leagueUtil')
 var SettingsUtil = require('./util/settingsUtil')
 
+// STORES
+var SettingStore = require('./stores/settingStore');
+
 // SETTINGS
 var DEFAULT_SETTINGS = require('./app/assets/objects/defaultSettings');
 var WIDGETS = require('./app/assets/objects/widgetList');
-var SettingStore = require('./stores/settingStore');
 
 // COMPONENTS
-var SettingsButton = require('./components/settingsButton');
-var LockBackground = require('./components/lockBackground');
-var RefreshBackground = require('./components/refreshBackground');
-var HideAllButton = require('./components/hideAllButton');
+var SettingsButton = require('./components/settings/settingsButton');
+var LockBackground = require('./components/settings/lockBackground');
+var RefreshBackground = require('./components/settings/refreshBackground');
+var HideAllButton = require('./components/settings/hideAllButton');
 
 // list of image urls
 var bgUrls = require('./app/assets/images/bgUrls');

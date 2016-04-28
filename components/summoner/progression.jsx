@@ -1,7 +1,7 @@
 var React = require('react');
-var GameStore = require('../stores/gameStore');
-var SummonerStore = require('../stores/summonerStore');
-var LeagueUtil = require('../util/leagueUtil');
+var GameStore = require('../../stores/gameStore');
+var SummonerStore = require('../../stores/summonerStore');
+var LeagueUtil = require('../../util/leagueUtil');
 
 var REC = require("react-easy-chart");
 var LineChart = REC.LineChart;
@@ -211,8 +211,8 @@ var Progression = React.createClass({
           height={250}
           data={this.getAllData()}
         />
-        
-      
+
+
 
       </div>
     )

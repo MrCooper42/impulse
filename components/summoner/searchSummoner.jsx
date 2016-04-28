@@ -1,6 +1,6 @@
 var React = require('react');
-var LeagueUtil = require('../util/leagueUtil');
-var SummonerStore = require('../stores/summonerStore');
+var LeagueUtil = require('../../util/leagueUtil');
+var SummonerStore = require('../../stores/summonerStore');
 
 // ---------------CLASS DEFINITION ------------------------------------*****
 var SearchSummoner = React.createClass({

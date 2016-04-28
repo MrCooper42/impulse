@@ -1,14 +1,14 @@
 var React = require('react');
-var LeagueUtil = require('../util/leagueUtil');
-var SummonerStore = require('../stores/summonerStore');
-var ChampionStore = require('../stores/championStore');
+var LeagueUtil = require('../../util/leagueUtil');
+var SummonerStore = require('../../stores/summonerStore');
+var ChampionStore = require('../../stores/championStore');
 
 
 var TopChampionsIndex = React.createClass({
 
   getInitialState: function(){
-    return { 
-      champions: [] 
+    return {
+      champions: []
     }
   },
 

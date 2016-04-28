@@ -1,5 +1,5 @@
 var React = require('react');
-var SettingsUtil = require('../util/settingsUtil');
+var SettingsUtil = require('../../util/settingsUtil');
 
 var HideAllButton = React.createClass({
 

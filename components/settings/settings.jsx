@@ -1,9 +1,9 @@
 var React = require('react');
-var SettingStore = require('../stores/settingStore');
-var SettingsUtil = require('../util/settingsUtil');
+var SettingStore = require('../../stores/settingStore');
+var SettingsUtil = require('../../util/settingsUtil');
 
-var WIDGETS = require('../app/assets/objects/widgetList');
-var DEFAULTS = require('../app/assets/objects/defaultSettings');
+var WIDGETS = require('../../app/assets/objects/widgetList');
+var DEFAULTS = require('../../app/assets/objects/defaultSettings');
 
 var Settings = React.createClass({
 

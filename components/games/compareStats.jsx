@@ -1,9 +1,9 @@
 var React = require('react');
-var GameStore = require('../stores/gameStore');
-var SummonerStore = require('../stores/summonerStore');
-var LeagueUtil = require('../util/leagueUtil')
+var GameStore = require('../../stores/gameStore');
+var SummonerStore = require('../../stores/summonerStore');
+var LeagueUtil = require('../../util/leagueUtil')
 
-var CHAMPIONS = require('../app/assets/objects/championsMap.js');
+var CHAMPIONS = require('../../app/assets/objects/championsMap.js');
 
 
 var CompareStats = React.createClass({
