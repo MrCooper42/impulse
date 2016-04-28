@@ -1,13 +1,22 @@
 var React = require('react');
+
+// FLUX
 var LeagueUtil = require('../../util/leagueUtil');
+
+// STORES
 var SummonerStore = require('../../stores/summonerStore');
 var GameStore = require('../../stores/gameStore');
 
+// OBJECTS
 var CHAMPIONS = require('../../app/assets/objects/championsMap');
 var CHAMP_SQUARES = require('../../app/assets/images/squares');
 var SUMMONER_SPELLS = require('../../app/assets/images/summonerSpells');
 var GAME_MODES = require('../../app/assets/objects/gameModes');
 
+// COMPONENTS
+var RecentGameInfoButton = require('./recentGameInfoButton');
+
+// D3
 var rd3 = require('react-d3');
 var PieChart = rd3.PieChart;
 
@@ -128,6 +137,7 @@ var RecentGame = React.createClass({
             colorAccessor={function(d, idx)  {return idx;}}
             valueTextFormatter={function(val)  {return ( val);}}/>
           {this.getImage()}
+          <RecentGameInfoButton />
         </div>
       );
   }
