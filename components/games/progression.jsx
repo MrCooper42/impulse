@@ -13,8 +13,11 @@ var Progression = React.createClass({
       recentGame: GameStore.lastGame(),
       otherGames: GameStore.allGames().slice(1),
       allGames: GameStore.allGames(),
-      display: [true, true, true],
-      lineColors: ["#F9BA32", "#426E86" , "#2F3131"]
+      KDAdisplay: [true, true, true],
+      lineColors: ["#F9BA32", "#426E86" , "#2F3131"],
+      KDA: true,
+      Gold: false,
+      CS: false
     };
   },
 
@@ -170,6 +173,7 @@ var Progression = React.createClass({
       var killDates = [];
       var deathDates = [];
       var assistDates = [];
+      var goldDates = [];
       var allGames = this.state.allGames;
 
       allGames.forEach(function(game, idx){
@@ -182,42 +186,31 @@ var Progression = React.createClass({
         assistDates.push({x: 10-idx, y: (game.stats.assists ? game.stats.assists : 0)})
       });
 
+      allGames.forEach(function(game, idx){
+        goldDates.push({x:10-idx, y: (game.stats.goldEarned ? game.stats.goldEarned : 0)})
+      });
+
       var result = [];
 
-      if (this.state.display[0]){
-        result.push(killDates);
-      }
+      if(this.state.Gold){
+          result.push(goldDates)
+      } 
 
-      if(this.state.display[1]){
-        result.push(deathDates);
-      }
+      else if(this.state.KDA){
+          if (this.state.KDAdisplay[0]){
+            result.push(killDates);
+          }
 
-      if(this.state.display[2]){
-        result.push(assistDates)
+          if(this.state.KDAdisplay[1]){
+            result.push(deathDates);
+          }
+
+          if(this.state.KDAdisplay[2]){
+            result.push(assistDates)
+          }
       }
 
       return result.length === 0 ? [[{x: 0, y:0}]] : result
-
-
-
-      // if (this.state.showKillsOnly && !this.state.showAssistsOnly && !this.state.showDeathsOnly){
-      //   return [
-      //     killDates
-      //   ];
-      // } else if(this.state.showAssistsOnly && !this.state.showKillsOnly && !this.state.showDeathsOnly){
-      //   return [
-      //     assistDates
-      //   ];
-      // } else if(this.state.showDeathsOnly && !this.state.showAssistsOnly && !this.state.showKillsOnly){
-      //   return [
-      //     deathDates
-      //   ];
-      // }
-      //  else {
-      //   return [
-      //     killDates, deathDates, assistDates
-      //   ];
-      // };
 
     } else {
         return [
@@ -227,44 +220,43 @@ var Progression = React.createClass({
   },
 
   showK: function(){
-    var oldDisplay = this.state.display
+    var oldDisplay = this.state.KDAdisplay
     var newDisplay = [!oldDisplay[0], oldDisplay[1], oldDisplay[2]];
     this.setState({
-      display: newDisplay
+      KDAdisplay: newDisplay
     });
   },
 
   showD: function(){
-    var oldDisplay = this.state.display
+    var oldDisplay = this.state.KDAdisplay
     var newDisplay = [oldDisplay[0], !oldDisplay[1], oldDisplay[2]];
     this.setState({
-      display: newDisplay
+      KDAdisplay: newDisplay
     });
   },
 
   showA: function(){
-    var oldDisplay = this.state.display
+    var oldDisplay = this.state.KDAdisplay
     var newDisplay = [oldDisplay[0], oldDisplay[1], !oldDisplay[2]];
     this.setState({
-      display: newDisplay
+      KDAdisplay: newDisplay
     });
   },
 
   showKDA: function(){
-    var oldDisplay = this.state.display
+    this.setState({KDA: true, Gold: false, CS: false})
+    this.setState({KDAdisplay: [true, true, true]})
+  },
 
-    if (oldDisplay.every(function(el){return el})){
-      this.setState({display: [false, false, false]})
-    } else {
-      this.setState({display: [true, true, true]})
-    }
+  showGold: function(){
+    this.setState({KDA: false, Gold: true, CS: false});
   },
 
   getLineColors: function(){
 
     var colors = [];
     var that = this;
-    this.state.display.forEach(function(el, idx){
+    this.state.KDAdisplay.forEach(function(el, idx){
       if(el){
         colors.push(that.state.lineColors[idx]);
       }
@@ -299,6 +291,7 @@ var Progression = React.createClass({
         <span onClick={this.showD}> Death </span>
         <span onClick={this.showA}> Assist </span>
         <span onClick={this.showKDA}> KDA</span>
+        <span onClick={this.showGold}> Gold</span>
 
       </div>
     )
