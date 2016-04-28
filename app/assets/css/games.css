@@ -8,7 +8,7 @@
   cursor: pointer;
 }
 
-.spell {
+.icon {
   margin: 5px;
 }
 
@@ -99,4 +99,23 @@
   background-color: black;
   width: 220px;
   left: 10px;
+}
+
+.itemsList {
+  display: flex;
+  width: 100px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.gameStatsSummary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.statModule {
+  display: flex;
+  align-items: center;
 }
