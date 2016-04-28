@@ -1,10 +1,33 @@
 var React = require('react');
 
+// COMPONENTS
+var RecentGameInfo = require('./recentGameInfo');
+
+// OBJECTS
+var ICONS = require('../../app/assets/images/icons');
+
 var RecentGameInfoButton = React.createClass({
+
+  getInitialState: function() {
+    return ({
+      showInfo: false
+    });
+  },
+
+  toggleInfo: function() {
+    this.setState({ showInfo: !this.state.showInfo });
+  },
+
+  showInfo: function() {
+    return (<RecentGameInfo />);
+  },
+
   render: function() {
     return (
-      <div>
-        I, BUTTON
+      <div className="infoButton">
+        <img src={ICONS["info"]}
+             onClick={this.toggleInfo}/>
+        {this.state.showInfo ? this.showInfo() : <div/>}
       </div>
     )
   }

@@ -3,7 +3,11 @@ var Dispatcher = require('../dispatcher/dispatcher');
 
 var GameStore = new Store(Dispatcher);
 
-_games = [];
+var _games = [];
+
+if (localStorage['leagueGames']) {
+  _games = JSON.parse(localStorage['leagueGames']);
+}
 
 GameStore.allGames = function() {
   return _games;

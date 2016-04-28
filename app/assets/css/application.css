@@ -354,3 +354,31 @@ ul {
   background-color: black;
   transition: 1s;
 }
+
+.infoButton {
+  position: fixed;
+  top: 220px;
+  left: 280px;
+}
+
+.infoButton:hover {
+  cursor: pointer;
+}
+
+.spell {
+  margin: 5px;
+}
+
+.recentGameInfo {
+  background-color: black;
+  color: white;
+  display: flex;
+  width: 350px;
+  height: 100px;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 140px;
+  left: 320px;
+  padding: 10px 30px;
+}

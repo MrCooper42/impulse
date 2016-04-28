@@ -124,19 +124,21 @@ var RecentGame = React.createClass({
 
   render: function() {
     return (
-        <div className="recentGame">
-          <PieChart
-            data={this.getPieData()}
-            width={400}
-            height={400}
-            radius={100}
-            innerRadius={55}
-            sectorBorderColor="white"
-            labelTextFill="white"
-            colors={d3.scale.ordinal().range(["#F9BA32", "#426E86" , "#2F3131"])}
-            colorAccessor={function(d, idx)  {return idx;}}
-            valueTextFormatter={function(val)  {return ( val);}}/>
-          {this.getImage()}
+        <div className="recentGameWrapper">
+          <div className="recentGame">
+            <PieChart
+              data={this.getPieData()}
+              width={400}
+              height={400}
+              radius={100}
+              innerRadius={55}
+              sectorBorderColor="white"
+              labelTextFill="white"
+              colors={d3.scale.ordinal().range(["#F9BA32", "#426E86" , "#2F3131"])}
+              colorAccessor={function(d, idx)  {return idx;}}
+              valueTextFormatter={function(val)  {return ( val);}}/>
+            {this.getImage()}
+          </div>
           <RecentGameInfoButton />
         </div>
       );
