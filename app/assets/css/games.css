@@ -1,7 +1,7 @@
 .infoButton {
   position: fixed;
-  top: 220px;
-  left: 275px;
+  top: 260px;
+  left: 180px;
 }
 
 .infoButton:hover {
@@ -16,16 +16,16 @@
   background-color: black;
   color: white;
   display: flex;
-  width: 350px;
-  height: 100px;
+  flex-direction: column;
+  width: 100px;
+  height: 350px;
   align-items: center;
   justify-content: space-between;
   position: fixed;
-  top: 140px;
-  left: 320px;
+  top: 300px;
+  left: 20px;
   padding: 10px 30px;
 }
-
 
 .progression {
   font-family: 'Lato';
@@ -90,9 +90,9 @@
   font-family: 'Lato';
   font-size: 20px;
   position: absolute;
-  top:305px;
-  color:white;
+  top: 40px;
+  color: white;
   background-color: black;
-  width: 350px;
-  left:10px;
+  width: 220px;
+  left: 10px;
 }

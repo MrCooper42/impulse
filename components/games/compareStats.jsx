@@ -83,14 +83,22 @@ var CompareStats = React.createClass({
       displayStats.minionsKilled = gameStats.minionsKilled ? (gameStats.minionsKilled/playTime).toFixed(2) : 0;
       displayStats.totalDamageDealtToChampions = gameStats.totalDamageDealtToChampions ? (gameStats.totalDamageDealtToChampions/playTime).toFixed(2) : 0;
 
+      // TODO: make averages appear on hover of each <li/>
+      
+      // <li>Kills: {displayStats.championsKilled} {this.killCompare(averages)} ({averages.killAvg})</li>
+      // <li>Deaths: {displayStats.numDeaths} {this.deathCompare(averages)} ({averages.deathAvg})</li>
+      // <li>Assists: {displayStats.assists} {this.assistCompare(averages)} ({averages.assistAvg})</li>
+      // <li>Gold/min: {displayStats.goldEarned} {this.goldCompare(averages)} ({averages.goldAvg})</li>
+      // <li>CS/min: {displayStats.minionsKilled} {this.CSCompare(averages)} ({averages.minionAvg})</li>
+      // <li>Dmg/min: {displayStats.totalDamageDealtToChampions} {this.dmgCompare(averages)} ({averages.damageAvg})</li>
       return (
         <ul>
-           <li>Kills: {displayStats.championsKilled} {this.killCompare(averages)} ({averages.killAvg})</li>
-           <li>Deaths: {displayStats.numDeaths} {this.deathCompare(averages)} ({averages.deathAvg})</li>
-           <li>Assists: {displayStats.assists} {this.assistCompare(averages)} ({averages.assistAvg})</li>
-           <li>Gold/min: {displayStats.goldEarned} {this.goldCompare(averages)} ({averages.goldAvg})</li>
-           <li>CS/min: {displayStats.minionsKilled} {this.CSCompare(averages)} ({averages.minionAvg})</li>
-           <li>Dmg/min: {displayStats.totalDamageDealtToChampions} {this.dmgCompare(averages)} ({averages.damageAvg})</li>
+          <li>Kills: {displayStats.championsKilled} {this.killCompare(averages)}</li>
+          <li>Deaths: {displayStats.numDeaths} {this.deathCompare(averages)}</li>
+          <li>Assists: {displayStats.assists} {this.assistCompare(averages)}</li>
+          <li>Gold/min: {displayStats.goldEarned} {this.goldCompare(averages)}</li>
+          <li>CS/min: {displayStats.minionsKilled} {this.CSCompare(averages)}</li>
+          <li>Dmg/min: {displayStats.totalDamageDealtToChampions} {this.dmgCompare(averages)}</li>
         </ul>
       )
     } else {

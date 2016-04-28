@@ -2,6 +2,7 @@ var React = require('react');
 
 // COMPONENTS
 var RecentGameInfo = require('./recentGameInfo');
+var CompareStats = require('./compareStats');
 
 // OBJECTS
 var ICONS = require('../../app/assets/images/icons');
@@ -19,7 +20,12 @@ var RecentGameInfoButton = React.createClass({
   },
 
   showInfo: function() {
-    return (<RecentGameInfo />);
+    return (
+      <div>
+        <RecentGameInfo />
+        <CompareStats />
+      </div>
+    );
   },
 
   render: function() {
