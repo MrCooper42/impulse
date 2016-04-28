@@ -44,12 +44,12 @@ SummonerStore.__onDispatch = function(payload) {
 var setRank = function(data) {
   var summonerData = data[Object.keys(data)[0]][0];
   _rank = summonerData.tier + " " + summonerData.entries[0].division
-  localStorage["summonerRank"] = JSON.stringify(_rank);
-
+  localStorage["summonerRank"] = _rank;
 };
 
 var resetRank = function() {
   _rank = "";
+  localStorage["summonerRank"] = _rank;
 };
 
 var resetSummoner = function(summoner) {
@@ -75,7 +75,7 @@ var checkStorage = function() {
     var _summoner = JSON.parse(localStorage['summaryStats']);
   }
   if (localStorage['summonerRank']) {
-    var _summoner = JSON.parse(localStorage['summonerRank']);
+    var _summoner = localStorage['summonerRank'];
   }
 };
 
