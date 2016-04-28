@@ -19,3 +19,7 @@ html{
 ul {
   list-style-type: none;
 }
+
+h2 {
+ margin: 5px;
+}

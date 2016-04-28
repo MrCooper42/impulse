@@ -8,11 +8,7 @@
   cursor: pointer;
 }
 
-.spell {
-  margin: 5px;
-}
-
-.item {
+.icon {
   margin: 5px;
 }
 
@@ -101,10 +97,21 @@
   left: 10px;
 }
 
-.itemList {
+.itemsList {
   display: flex;
   width: 100px;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+}
+
+.gameStatsSummary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.statModule {
+  display: flex;
+  align-items: center;
 }
