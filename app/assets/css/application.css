@@ -139,11 +139,13 @@ ul {
   font-family: 'Lato';
   font-size: 20px;
   position: absolute;
-  top:100px;
+  top:50px;
   background-color: #F8F1E5;
   opacity: 0.95;
-  width: 750px;
-  left:30%;
+  width: 500px;
+  left:50%;
+  transform: translate(-50%, -50%);
+  top: 20%;
   border-radius: 5px;
 }
 

@@ -207,7 +207,7 @@ var Progression = React.createClass({
           interpolate={'linear'}
           xDomainRange={[1,10]}
           lineColors={["#F9BA32", "#426E86" , "#2F3131"]}
-          width={750}
+          width={500}
           height={250}
           data={this.getAllData()}
         />
