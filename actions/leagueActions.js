@@ -24,7 +24,6 @@ var LeagueActions = {
     });
   },
 
-
   receiveGames: function(games) {
     Dispatcher.dispatch({
       actionType: "RECEIVE_GAMES",
