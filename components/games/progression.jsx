@@ -233,6 +233,28 @@ var Progression = React.createClass({
       KDAoptions = "hideKDAoptions";
     }
 
+    var toggle1;
+    var toggle2;
+    var toggle3;
+
+    if(this.state.KDAdisplay[0]){
+      toggle1 = "onToggle1"
+    } else {
+      toggle1 = ""
+    }
+
+    if(this.state.KDAdisplay[1]){
+      toggle2 = "onToggle2"
+    } else {
+      toggle2 = ""
+    }
+
+    if(this.state.KDAdisplay[2]){
+      toggle3 = "onToggle3"
+    } else {
+      toggle3 = ""
+    }
+
     return (
       <div className="progression">
         <LineChart 
@@ -241,6 +263,7 @@ var Progression = React.createClass({
           dataPoints
           grid
           xTicks={5}
+          yTicks={8}
           verticalGrid
           interpolate={'linear'}
           xDomainRange={[1,10]}
@@ -250,9 +273,9 @@ var Progression = React.createClass({
           data={this.getAllData()}/>
 
         <div id="KDAoptions" className={KDAoptions}>    
-          <span onClick={this.showK}>Kill</span>
-          <span onClick={this.showD}>Death</span>
-          <span onClick={this.showA}>Assist</span>
+          <span className={toggle1} onClick={this.showK}>Kill</span>
+          <span className={toggle2} onClick={this.showD}>Death</span>
+          <span className={toggle3} onClick={this.showA}>Assist</span>
         </div>
 
         <div id="progressionOptions">

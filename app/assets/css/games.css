@@ -71,6 +71,21 @@
   transition: 1s;
 }
 
+.onToggle1 {
+  background-color: #F9BA32;
+}
+
+.onToggle2 {
+  background-color: #F9BA32;
+}
+
+.onToggle3 {
+  background-color: #F9BA32;
+}
+
+
+
+
 #progressionOptions{
   cursor: pointer;
   text-align: center;
@@ -88,6 +103,8 @@
   background-color: #2F3131;
   transition: 1s;
 }
+
+
 
 
 .line-chart{
