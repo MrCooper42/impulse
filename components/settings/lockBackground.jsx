@@ -27,13 +27,9 @@ var LockBackground = React.createClass({
     return this.state.locked ? "locked" : "unlocked"
   },
 
-  className: function() {
-    return this.state.locked ? "lockBackgroundOn" : "lockBackgroundOff"
-  },
-
   render: function() {
     return (
-      <div className={this.className()} onClick={this.toggleLock}>
+      <div className="lockBackground" onClick={this.toggleLock}>
         {this.buttonValue()}
       </div>
     );

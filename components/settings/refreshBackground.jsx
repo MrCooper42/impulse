@@ -10,7 +10,7 @@ var RefreshBackground = React.createClass({
   render: function() {
     return (
       <div onClick={this.refreshBackground} className="refreshBackground">
-        Change Background
+        Change
       </div>
     );
   }

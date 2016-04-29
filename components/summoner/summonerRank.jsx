@@ -2,6 +2,8 @@ var React = require('react');
 
 var SummonerStore = require('../../stores/summonerStore');
 
+var RANKS = require('../../app/assets/images/rankBadges');
+
 var SummonerRank = React.createClass({
 
   getInitialState: function() {
@@ -25,7 +27,8 @@ var SummonerRank = React.createClass({
   render: function() {
     return (
       <div className="summonerRank">
-        {this.state.rank}
+        <img src={RANKS[this.state.rank.split(" ")[0]]} />
+        <span className="division">{this.state.rank.split(" ")[1]}</span>
       </div>
     );
   }

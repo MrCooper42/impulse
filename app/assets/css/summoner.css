@@ -79,3 +79,17 @@
 .searchDiv #searchSubmit{
     display:none;
 }
+
+.summonerRank {
+  position: fixed;
+  right: 160px;  
+}
+
+.division {
+  position: fixed;
+  top: 30px;
+  right: 140px;
+  font-size: 40px;
+  color: white;
+  text-shadow: 3px 3px black;
+}

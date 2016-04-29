@@ -52,7 +52,7 @@ var setRank = function(data) {
 };
 
 var resetRank = function() {
-  _rank = "";
+  _rank = "UNRANKED";
   localStorage["summonerRank"] = _rank;
 };
 
@@ -73,13 +73,13 @@ var resetStats = function(summaryStats) {
 
 var checkStorage = function() {
   if (localStorage['summoner']) {
-    var _summoner = JSON.parse(localStorage['summoner']);
+    _summoner = JSON.parse(localStorage['summoner']);
   }
   if (localStorage['summaryStats']) {
-    var _summoner = JSON.parse(localStorage['summaryStats']);
+    _summaryStats = JSON.parse(localStorage['summaryStats']);
   }
   if (localStorage['summonerRank']) {
-    var _summoner = localStorage['summonerRank'];
+    _rank = localStorage['summonerRank'];
   }
 };
 
