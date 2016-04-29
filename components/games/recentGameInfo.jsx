@@ -9,12 +9,11 @@ var GameStore = require('../../stores/gameStore');
 // OBJECTS
 var CHAMPIONS = require('../../app/assets/objects/championsMap');
 var GAME_MODES = require('../../app/assets/objects/gameModes');
-var ITEM_NAMES = require('../../app/assets/objects/items');
+var ITEMS = require('../../app/assets/objects/items');
 
 // IMAGE URLS
 var CHAMP_SQUARES = require('../../app/assets/images/squares');
 var SUMMONER_SPELLS = require('../../app/assets/images/summonerSpells');
-var ITEMS = require('../../app/assets/images/items');
 var ICONS = require('../../app/assets/images/icons');
 
 
@@ -62,7 +61,9 @@ var RecentGameInfo = React.createClass({
           </div>
           {this.getSummaryStats()}
           {this.getSpells()}
-          {this.getItems()}
+          <div className="itemsList">
+            {this.getItems()}
+          </div>
           <div className="statsCreate">{date.toString().slice(3,15)}</div>
         </div>
       )
@@ -104,20 +105,20 @@ var RecentGameInfo = React.createClass({
   },
 
   getItems: function() {
-    var items = ITEM_NAMES;
+    var items = ITEMS;
     var gameStats = this.state.game.stats;
-    debugger;
-    return (
-      <div className="itemsList">
-        <img src={ITEMS["default"]} className="icon"/>
-        <img src={ITEMS["default"]} className="icon"/>
-        <img src={ITEMS["default"]} className="icon"/>
-        <img src={ITEMS["default"]} className="icon"/>
-        <img src={ITEMS["default"]} className="icon"/>
-        <img src={ITEMS["default"]} className="icon"/>
-        <img src={ITEMS["trinket-default"]} className="icon"/>
-      </div>
-    )
+    var itemImageIds = [];
+
+    for (var i = 0; i < 7; i++) {
+      if (gameStats["item"+i]) {
+        itemImageIds.push(gameStats["item"+i]);
+      }
+    }
+    return itemImageIds.map(function(id) {
+      return (<img src={"http://ddragon.leagueoflegends.com/cdn/6.9.1/img/item/" + id + ".png"}
+                   className="icon"
+                   key={id}/>);
+    });
   },
 
   render: function() {
