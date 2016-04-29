@@ -19,6 +19,7 @@ var Progression = React.createClass({
       Gold: false,
       CS: false,
       Dmg: false,
+      Time: false,
       KDAoptions: true
     };
   },
@@ -92,6 +93,7 @@ var Progression = React.createClass({
       var goldDates = [];
       var CSDates = [];
       var DmgDates = [];
+      var TimeDates = [];
       var allGames = this.state.allGames;
 
       allGames.forEach(function(game, idx){
@@ -116,6 +118,9 @@ var Progression = React.createClass({
         DmgDates.push({x:10-idx, y: (game.stats.totalDamageDealtToChampions ? game.stats.totalDamageDealtToChampions : 0)})
       });
 
+      allGames.forEach(function(game, idx){
+        TimeDates.push({x:10-idx, y: (game.stats.timePlayed ? game.stats.timePlayed : 0)})
+      });
 
       var result = [];
 
@@ -127,6 +132,9 @@ var Progression = React.createClass({
       }
       else if(this.state.Dmg){
         result.push(DmgDates)
+      }
+      else if(this.state.Time){
+        result.push(TimeDates)
       }
       else if(this.state.KDA){
           if (this.state.KDAdisplay[0]){
@@ -176,23 +184,28 @@ var Progression = React.createClass({
   },
 
   showKDA: function(){
-    this.setState({KDA: true, Gold: false, CS: false, Dmg: false})
+    this.setState({KDA: true, Gold: false, CS: false, Dmg: false, Time: false})
     this.setState({KDAdisplay: [true, true, true]})
     this.setState({KDAoptions: true})
   },
 
   showGold: function(){
-    this.setState({KDA: false, Gold: true, CS: false, Dmg: false});
+    this.setState({KDA: false, Gold: true, CS: false, Dmg: false, Time: false});
     this.setState({KDAoptions: false})
   },
 
   showMinions: function(){
-    this.setState({KDA: false, Gold: false, CS: true, Dmg: false});
+    this.setState({KDA: false, Gold: false, CS: true, Dmg: false, Time: false});
     this.setState({KDAoptions: false})
   },
 
   showDmg: function(){
-    this.setState({KDA: false, Gold: false, CS: false, Dmg: true});
+    this.setState({KDA: false, Gold: false, CS: false, Dmg: true, Time: false});
+    this.setState({KDAoptions: false})
+  },
+
+  showTime: function(){
+    this.setState({KDA: false, Gold: false, CS: false, Dmg: false, Time: true});
     this.setState({KDAoptions: false})
   },
 
@@ -247,6 +260,7 @@ var Progression = React.createClass({
           <span onClick={this.showGold}>Gold</span>
           <span onClick={this.showMinions}>CS</span>
           <span onClick={this.showDmg}>Damage</span>
+          <span onClick={this.showTime}>Time</span>
         </div>
 
 
