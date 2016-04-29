@@ -219,6 +219,25 @@ var Progression = React.createClass({
       }
     });
     return colors
+  },
+
+  getLabels: function(){
+    states = [this.state.KDA, this.state.Gold, this.state.CS, this.state.Dmg, this.state.Time];
+
+    console.log(states);
+
+
+    if(states[0] && states[1] === false && states[2] === false && states[3] === false && states[4] === false){
+      return {x: 'Game (most recent)', y: 'Stats'};
+    } else if(states[1] && states[0] === false && states[2] === false && states[3] === false && states[4] === false){
+      return {x: 'Game (most recent)', y: 'Gold'};
+    } else if(states[2] && states[0] === false && states[1] === false && states[3] === false && states[4] === false){
+      return {x: 'Game (most recent)', y: 'CS'};
+    } else if(states[3] && states[0] === false && states[1] === false && states[2] === false && states[4] === false){
+      return {x: 'Game (most recent)', y: 'Dmg to Champ'};
+    } else {
+      return {x: 'Game (most recent)', y: 'Time (s)'};
+    }
 
 
   },
@@ -259,7 +278,7 @@ var Progression = React.createClass({
       <div className="progression">
         <LineChart 
           axes
-          axisLabels={{x: 'Game (most recent)', y: ''}}
+          axisLabels={this.getLabels()}
           dataPoints
           grid
           xTicks={5}
