@@ -32,7 +32,7 @@
   font-size: 20px;
   position: absolute;
   top:50px;
-  background-color: white;
+  background-color: black;
   opacity: 0.95;
   width: 500px;
   left:50%;
@@ -43,6 +43,7 @@
 
 .progression svg{
   background-color: #F8F1E5;
+  margin-bottom: 2px;
 }
 .progression .showKDAoptions{
   display: "";
@@ -50,6 +51,42 @@
 
 .progression .hideKDAoptions{
   display:none;
+}
+
+#KDAoptions{
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#KDAoptions span{
+  margin-left: 10px;
+  padding: 5px;
+  border-radius: 2px;
+  color: #426E86;
+}
+
+#KDAoptions span:hover{
+  background-color: #F9BA32;
+  transition: 1s;
+}
+
+#progressionOptions{
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 5px;
+  color: #426E86;
+}
+
+#progressionOptions span{
+  margin-left: 10px;
+  padding: 5px;
+  border-radius: 2px;
+}
+
+#progressionOptions span:hover{
+  background-color: #2F3131;
+  transition: 1s;
 }
 
 

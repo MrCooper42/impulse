@@ -18,6 +18,7 @@ var Progression = React.createClass({
       KDA: true,
       Gold: false,
       CS: false,
+      Dmg: false,
       KDAoptions: true
     };
   },
@@ -80,93 +81,7 @@ var Progression = React.createClass({
     }
   },
 
-  generateStats: function() {
-    if (this.state.recentGame.stats) {
-      var gameStats = this.state.recentGame.stats;
-      var playTime = gameStats.timePlayed/60;
-      var averages = this.calcAverages();
-      var displayStats = {}
 
-      displayStats.championsKilled = gameStats.championsKilled ? gameStats.championsKilled : 0;
-      displayStats.numDeaths = gameStats.numDeaths ? gameStats.numDeaths : 0;
-      displayStats.assists = gameStats.assists ? gameStats.assists : 0;
-      displayStats.goldEarned = gameStats.goldEarned ? (gameStats.goldEarned/playTime).toFixed(2) : 0;
-      displayStats.minionsKilled = gameStats.minionsKilled ? (gameStats.minionsKilled/playTime).toFixed(2) : 0;
-      displayStats.totalDamageDealtToChampions = gameStats.totalDamageDealtToChampions ? (gameStats.totalDamageDealtToChampions/playTime).toFixed(2) : 0;
-
-      return (
-        <ul>
-           <li>Kills: {displayStats.championsKilled} {this.killCompare(averages)} ({averages.killAvg})</li>
-           <li>Deaths: {displayStats.numDeaths} {this.deathCompare(averages)} ({averages.deathAvg})</li>
-           <li>Assists: {displayStats.assists} {this.assistCompare(averages)} ({averages.assistAvg})</li>
-           <li>Gold/min: {displayStats.goldEarned} {this.goldCompare(averages)} ({averages.goldAvg})</li>
-           <li>CS/min: {displayStats.minionsKilled} {this.CSCompare(averages)} ({averages.minionAvg})</li>
-           <li>Dmg/min: {displayStats.totalDamageDealtToChampions} {this.dmgCompare(averages)} ({averages.damageAvg})</li>
-        </ul>
-      )
-    } else {
-      return (
-        <div/>
-      )
-    }
-  },
-
-  killCompare: function(averages){
-    var gameStats = this.state.recentGame.stats;
-    if(gameStats.championsKilled < averages.killAvg){
-      return "↓";
-    } else {
-      return "↑";
-    }
-  },
-
-  deathCompare: function(averages){
-    var gameStats = this.state.recentGame.stats;
-    if(gameStats.numDeaths < averages.deathAvg){
-      return "↓";
-    } else {
-      return "↑";
-    }
-  },
-
-  assistCompare: function(averages){
-    var gameStats = this.state.recentGame.stats;
-    if(gameStats.assists < averages.assistAvg){
-      return "↓";
-    } else {
-      return "↑";
-    }
-  },
-
-  goldCompare: function(averages){
-    var gameStats = this.state.recentGame.stats;
-    var playTime = gameStats.timePlayed/60;
-    if(gameStats.goldEarned/playTime < averages.goldAvg){
-      return "↓";
-    } else {
-      return "↑";
-    }
-  },
-
-  CSCompare: function(averages){
-    var gameStats = this.state.recentGame.stats;
-    var playTime = gameStats.timePlayed/60;
-    if(gameStats.minionsKilled/playTime < averages.minionAvg){
-      return "↓";
-    } else {
-      return "↑";
-    }
-  },
-
-  dmgCompare: function(averages){
-    var gameStats = this.state.recentGame.stats;
-    var playTime = gameStats.timePlayed/60;
-    if(gameStats.totalDamageDealtToChampions/playTime < averages.damageAvg){
-      return "↓";
-    } else {
-      return "↑";
-    }
-  },
 
   getAllData: function(){
 
@@ -175,6 +90,8 @@ var Progression = React.createClass({
       var deathDates = [];
       var assistDates = [];
       var goldDates = [];
+      var CSDates = [];
+      var DmgDates = [];
       var allGames = this.state.allGames;
 
       allGames.forEach(function(game, idx){
@@ -191,12 +108,26 @@ var Progression = React.createClass({
         goldDates.push({x:10-idx, y: (game.stats.goldEarned ? game.stats.goldEarned : 0)})
       });
 
+      allGames.forEach(function(game, idx){
+        CSDates.push({x:10-idx, y: (game.stats.minionsKilled ? game.stats.minionsKilled : 0)})
+      });   
+
+      allGames.forEach(function(game, idx){
+        DmgDates.push({x:10-idx, y: (game.stats.totalDamageDealtToChampions ? game.stats.totalDamageDealtToChampions : 0)})
+      });
+
+
       var result = [];
 
       if(this.state.Gold){
-          result.push(goldDates)
+        result.push(goldDates)
       } 
-
+      else if(this.state.CS){
+        result.push(CSDates)
+      }
+      else if(this.state.Dmg){
+        result.push(DmgDates)
+      }
       else if(this.state.KDA){
           if (this.state.KDAdisplay[0]){
             result.push(killDates);
@@ -245,13 +176,24 @@ var Progression = React.createClass({
   },
 
   showKDA: function(){
-    this.setState({KDA: true, Gold: false, CS: false})
+    this.setState({KDA: true, Gold: false, CS: false, Dmg: false})
     this.setState({KDAdisplay: [true, true, true]})
-    this.setState({KDAoptions: !this.state.KDAoptions})
+    this.setState({KDAoptions: true})
   },
 
   showGold: function(){
-    this.setState({KDA: false, Gold: true, CS: false});
+    this.setState({KDA: false, Gold: true, CS: false, Dmg: false});
+    this.setState({KDAoptions: false})
+  },
+
+  showMinions: function(){
+    this.setState({KDA: false, Gold: false, CS: true, Dmg: false});
+    this.setState({KDAoptions: false})
+  },
+
+  showDmg: function(){
+    this.setState({KDA: false, Gold: false, CS: false, Dmg: true});
+    this.setState({KDAoptions: false})
   },
 
   getLineColors: function(){
@@ -282,7 +224,7 @@ var Progression = React.createClass({
       <div className="progression">
         <LineChart 
           axes
-          axisLabels={{x: 'Game (most recent)', y: 'Stats'}}
+          axisLabels={{x: 'Game (most recent)', y: ''}}
           dataPoints
           grid
           xTicks={5}
@@ -294,15 +236,19 @@ var Progression = React.createClass({
           height={250}
           data={this.getAllData()}/>
 
-
-        <div className={KDAoptions}>    
-          <span onClick={this.showK}> Kill </span>
-          <span onClick={this.showD}> Death </span>
-          <span onClick={this.showA}> Assist </span>
+        <div id="KDAoptions" className={KDAoptions}>    
+          <span onClick={this.showK}>Kill</span>
+          <span onClick={this.showD}>Death</span>
+          <span onClick={this.showA}>Assist</span>
         </div>
 
-          <span onClick={this.showKDA}> KDA</span>
-          <span onClick={this.showGold}> Gold</span>
+        <div id="progressionOptions">
+          <span onClick={this.showKDA}>KDA</span>
+          <span onClick={this.showGold}>Gold</span>
+          <span onClick={this.showMinions}>CS</span>
+          <span onClick={this.showDmg}>Damage</span>
+        </div>
+
 
       </div>
     )
