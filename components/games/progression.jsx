@@ -223,10 +223,7 @@ var Progression = React.createClass({
 
   getLabels: function(){
     states = [this.state.KDA, this.state.Gold, this.state.CS, this.state.Dmg, this.state.Time];
-
-    console.log(states);
-
-
+    
     if(states[0] && states[1] === false && states[2] === false && states[3] === false && states[4] === false){
       return {x: 'Game (most recent)', y: 'Stats'};
     } else if(states[1] && states[0] === false && states[2] === false && states[3] === false && states[4] === false){
