@@ -9,6 +9,7 @@ var GameStore = require('../../stores/gameStore');
 // OBJECTS
 var CHAMPIONS = require('../../app/assets/objects/championsMap');
 var GAME_MODES = require('../../app/assets/objects/gameModes');
+var ITEM_NAMES = require('../../app/assets/objects/items');
 
 // IMAGE URLS
 var CHAMP_SQUARES = require('../../app/assets/images/squares');
@@ -103,6 +104,9 @@ var RecentGameInfo = React.createClass({
   },
 
   getItems: function() {
+    var items = ITEM_NAMES;
+    var gameStats = this.state.game.stats;
+    debugger;
     return (
       <div className="itemsList">
         <img src={ITEMS["default"]} className="icon"/>
@@ -121,7 +125,7 @@ var RecentGameInfo = React.createClass({
       <div>
         {this.getStats()}
       </div>
-    )
+    );
   }
 });
 

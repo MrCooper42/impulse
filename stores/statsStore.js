@@ -3,7 +3,7 @@ var Dispatcher = require('../dispatcher/dispatcher');
 
 var StatsStore = new Store(Dispatcher);
 
-_summaryType = "Unranked";
+var _summaryType = "Unranked";
 
 StatsStore.summaryType = function() {
   return _summaryType

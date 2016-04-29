@@ -6,6 +6,7 @@ var StatsStore = require('../../stores/statsStore');
 var LeagueUtil = require('../../util/leagueUtil');
 
 var SummonerSummaryButton = require('./summonerSummaryButton');
+var SummonerRank = require('./summonerRank');
 
 var SummonerSummary = React.createClass({
 
@@ -71,14 +72,17 @@ var SummonerSummary = React.createClass({
 
   render: function() {
     return (
-      <div className="summonerSummary">
-        <div className="summaryButtons">
-          <SummonerSummaryButton summaryType="CoopVsAI" />
-          <SummonerSummaryButton summaryType="Unranked" />
-          <SummonerSummaryButton summaryType="AramUnranked5x5" />
-          <SummonerSummaryButton summaryType="RankedSolo5x5" />
+      <div>
+        <SummonerRank />
+        <div className="summonerSummary">
+          <div className="summaryButtons">
+            <SummonerSummaryButton summaryType="CoopVsAI" />
+            <SummonerSummaryButton summaryType="Unranked" />
+            <SummonerSummaryButton summaryType="AramUnranked5x5" />
+            <SummonerSummaryButton summaryType="RankedSolo5x5" />
+          </div>
+          {this.getStats()}
         </div>
-        {this.getStats()}
       </div>
     )
   }
