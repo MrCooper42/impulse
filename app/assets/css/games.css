@@ -59,6 +59,15 @@
   display:none;
 }
 
+.xyValue {
+  text-align: right;
+  margin-right: 10px;
+}
+
+.xyValueOff {
+  display: none;
+}
+
 #KDAoptions{
   cursor: pointer;
   text-align: center;

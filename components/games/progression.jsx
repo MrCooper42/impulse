@@ -22,8 +22,6 @@ var Progression = React.createClass({
       Time: false,
       KDAoptions: true,
       showToolTip: false,
-      top: '',
-      left:'',
       x:0,
       y:0
     };
@@ -120,11 +118,11 @@ var Progression = React.createClass({
       });   
 
       allGames.forEach(function(game, idx){
-        DmgDates.push({x:10-idx, y: (game.stats.totalDamageDealtToChampions ? game.stats.totalDamageDealtToChampions : 0)})
+        DmgDates.push({x:10-idx, y: (game.stats.totalDamageDealtToChampions ? Math.floor(game.stats.totalDamageDealtToChampions/1000) : 0)})
       });
 
       allGames.forEach(function(game, idx){
-        TimeDates.push({x:10-idx, y: (game.stats.timePlayed ? game.stats.timePlayed : 0)})
+        TimeDates.push({x:10-idx, y: (game.stats.timePlayed ? Math.floor(game.stats.timePlayed/60) : 0)})
       });
 
       var result = [];
@@ -236,9 +234,9 @@ var Progression = React.createClass({
     } else if(states[2] && states[0] === false && states[1] === false && states[3] === false && states[4] === false){
       return {x: 'Game (most recent)', y: 'CS'};
     } else if(states[3] && states[0] === false && states[1] === false && states[2] === false && states[4] === false){
-      return {x: 'Game (most recent)', y: 'Dmg to Champ'};
+      return {x: 'Game (most recent)', y: 'Dmg to Champ (1000\'s\)'};
     } else {
-      return {x: 'Game (most recent)', y: 'Time (s)'};
+      return {x: 'Game (most recent)', y: 'Time (min)'};
     }
 
 
@@ -249,7 +247,7 @@ var Progression = React.createClass({
       showToolTip: true,
       y: d.y,
       x: d.x});
-    console.log(d.x + " game " + d.y + " kills");
+    console.log(d);
   },
 
   mouseMoveHandler: function(e) {
@@ -302,7 +300,6 @@ var Progression = React.createClass({
       toggleGold = ""
     }
 
-
     if(this.state.CS){
       toggleCS = "toggleCS"
     } else {
@@ -321,8 +318,16 @@ var Progression = React.createClass({
       toggleTime = ""
     }
 
+
+    if(this.state.x === 0 && this.state.y === 0){
+      xyToggle = "xyValueOff"
+    } else {
+      xyToggle = "xyValue"
+    }
+
     return (
       <div className="progression">
+
 
         <LineChart 
           axes
@@ -342,7 +347,7 @@ var Progression = React.createClass({
           height={250}
           data={this.getAllData()}/>
 
-        <a className="xAndY">{this.state.x} {this.state.y}</a>
+        <div className={xyToggle}>x: {this.state.x}, y: {this.state.y}</div>
 
         <div id="KDAoptions" className={KDAoptions}>    
           <span className={onToggleKill} onClick={this.showK}>Kill</span>
