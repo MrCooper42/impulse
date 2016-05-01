@@ -344,7 +344,7 @@ var Progression = React.createClass({
           mouseMoveHandler={this.mouseMoveHandler}
           lineColors={this.getLineColors()}
           width={500}
-          height={250}
+          height={200}
           data={this.getAllData()}/>
 
         <div className={xyToggle}>x: {this.state.x}, y: {this.state.y}</div>

@@ -61,7 +61,7 @@
     position: absolute;
     border: none;
     color: white;
-    height: 100px;
+    height: 90px;
     font-size: 60px;
     width: 590px;
     text-align: left;
@@ -71,7 +71,7 @@
     border-radius: 5px;
     left: 50%;
     transform: translate(-50%, -50%);
-    top:52%;
+    top:58%;
     text-align:center;
     z-index: 100;
 }
