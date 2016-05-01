@@ -44,6 +44,7 @@
 }
 
 .progression svg{
+  font-family: 'Lato';
   background-color: #F4F4EF;
   color: white;
   margin-bottom: 2px;

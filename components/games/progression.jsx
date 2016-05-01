@@ -20,7 +20,12 @@ var Progression = React.createClass({
       CS: false,
       Dmg: false,
       Time: false,
-      KDAoptions: true
+      KDAoptions: true,
+      showToolTip: false,
+      top: '',
+      left:'',
+      x:0,
+      y:0
     };
   },
 
@@ -239,8 +244,28 @@ var Progression = React.createClass({
 
   },
 
+  mouseOverHandler: function(d, e) {
+    this.setState({
+      showToolTip: true,
+      y: d.y,
+      x: d.x});
+    console.log(d.x + " game " + d.y + " kills");
+  },
+
+  mouseMoveHandler: function(e) {
+    if (this.state.showToolTip) {
+      this.setState({top: `${e.y - 10}px`, left: `${e.x + 10}px`});
+    }
+  },
+
+  mouseOutHandler: function() {
+    this.setState({showToolTip: false});
+  },
+
+
   render: function(){
 
+    
     if(this.state.KDAoptions){
       KDAoptions = "showKDAoptions";
     } else {
@@ -298,6 +323,7 @@ var Progression = React.createClass({
 
     return (
       <div className="progression">
+
         <LineChart 
           axes
           axisLabels={this.getLabels()}
@@ -308,10 +334,15 @@ var Progression = React.createClass({
           verticalGrid
           interpolate={'linear'}
           xDomainRange={[1,10]}
+          mouseOverHandler={this.mouseOverHandler}
+          mouseOutHandler={this.mouseOutHandler}
+          mouseMoveHandler={this.mouseMoveHandler}
           lineColors={this.getLineColors()}
           width={500}
           height={250}
           data={this.getAllData()}/>
+
+        <a className="xAndY">{this.state.x} {this.state.y}</a>
 
         <div id="KDAoptions" className={KDAoptions}>    
           <span className={onToggleKill} onClick={this.showK}>Kill</span>
