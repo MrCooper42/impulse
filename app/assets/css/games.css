@@ -32,21 +32,23 @@
   font-family: 'Lato';
   font-size: 20px;
   position: absolute;
-  top:50px;
-  background-color: black;
-  opacity: 0.95;
+
+  background-color: #F4F4EF;
   width: 500px;
   left:50%;
   transform: translate(-50%, -50%);
-  top: 20%;
+  top: 30%;
   border-radius: 5px;
   padding-right:20px;
+  padding-bottom: 5px;
 }
 
 .progression svg{
-  background-color: #F8F1E5;
+  background-color: #F4F4EF;
+  color: white;
   margin-bottom: 2px;
   padding: 10px;
+  border-radius: 5px 5px 0 0;
 }
 .progression .showKDAoptions{
   display: "";
@@ -64,29 +66,49 @@
 
 #KDAoptions span{
   margin-left: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
   padding-bottom:5px;
   padding-top:5px;
-  border-radius: 2px;
-  color: #426E86;
 }
 
 #KDAoptions span:hover{
-  background-color: #F9BA32;
-  transition: 1s;
+  border-bottom: solid #20232A 3px;
 }
 
 .onToggle1 {
-  background-color: #F9BA32;
+  border-bottom: solid #20232A 3px;
+  color: #A01D26;
 }
 
 .onToggle2 {
-  background-color: #F9BA32;
+  border-bottom: solid #20232A 3px;
+  color: #20232A;
 }
 
 .onToggle3 {
-  background-color: #F9BA32;
+  border-bottom: solid #20232A 3px;
+  color: #ACBEBE;
+}
+
+.toggleKDAoptions {
+  border-bottom: solid #A01D26 3px;
+}
+
+.toggleGold {
+  border-bottom: solid #A01D26 3px;
+}
+
+.toggleCS {
+  border-bottom: solid #A01D26 3px;
+}
+
+.toggleDmg {
+  border-bottom: solid #A01D26 3px;
+}
+
+.toggleTime {
+  border-bottom: solid #A01D26 3px;
 }
 
 
@@ -96,7 +118,8 @@
   cursor: pointer;
   text-align: center;
   margin-bottom: 5px;
-  color: #426E86;
+  color: #20232A;
+  padding-bottom: 5px;
 }
 
 #progressionOptions span{
@@ -106,8 +129,7 @@
 }
 
 #progressionOptions span:hover{
-  background-color: #2F3131;
-  transition: 1s;
+  border-bottom: solid #20232A 3px;
 }
 
 

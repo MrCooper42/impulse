@@ -14,7 +14,7 @@ var Progression = React.createClass({
       otherGames: GameStore.allGames().slice(1),
       allGames: GameStore.allGames(),
       KDAdisplay: [true, true, true],
-      lineColors: ["#F9BA32", "#426E86" , "#2F3131"],
+      lineColors: ["#A01D26", "#20232A" , "#ACBEBE"],
       KDA: true,
       Gold: false,
       CS: false,
@@ -252,6 +252,7 @@ var Progression = React.createClass({
     var toggle1;
     var toggle2;
     var toggle3;
+    var toggleGold;
 
     if(this.state.KDAdisplay[0]){
       toggle1 = "onToggle1"
@@ -269,6 +270,37 @@ var Progression = React.createClass({
       toggle3 = "onToggle3"
     } else {
       toggle3 = ""
+    }
+
+    if(this.state.KDAoptions){
+      toggleKDAoptions = "toggleKDAoptions"
+    } else {
+      toggleKDAoptions = ""
+    }
+
+    if(this.state.Gold){
+      toggleGold = "toggleGold"
+    } else {
+      toggleGold = ""
+    }
+
+
+    if(this.state.CS){
+      toggleCS = "toggleCS"
+    } else {
+      toggleCS = ""
+    }
+
+    if(this.state.Dmg){
+      toggleDmg = "toggleDmg"
+    } else {
+      toggleDmg = ""
+    }
+
+    if(this.state.Time){
+      toggleTime = "toggleTime"
+    } else {
+      toggleTime = ""
     }
 
     return (
@@ -295,11 +327,11 @@ var Progression = React.createClass({
         </div>
 
         <div id="progressionOptions">
-          <span onClick={this.showKDA}>KDA</span>
-          <span onClick={this.showGold}>Gold</span>
-          <span onClick={this.showMinions}>CS</span>
-          <span onClick={this.showDmg}>Damage</span>
-          <span onClick={this.showTime}>Time</span>
+          <span className={toggleKDAoptions} onClick={this.showKDA}>KDA</span>
+          <span className={toggleGold} onClick={this.showGold}>Gold</span>
+          <span className={toggleCS} onClick={this.showMinions}>CS</span>
+          <span className={toggleDmg} onClick={this.showDmg}>Damage</span>
+          <span className={toggleTime} onClick={this.showTime}>Time</span>
         </div>
 
 
