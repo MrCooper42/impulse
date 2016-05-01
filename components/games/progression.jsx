@@ -241,35 +241,28 @@ var Progression = React.createClass({
 
   render: function(){
 
-    var KDAoptions;
-
     if(this.state.KDAoptions){
       KDAoptions = "showKDAoptions";
     } else {
       KDAoptions = "hideKDAoptions";
     }
 
-    var toggle1;
-    var toggle2;
-    var toggle3;
-    var toggleGold;
-
     if(this.state.KDAdisplay[0]){
-      toggle1 = "onToggle1"
+      onToggleKill = "onToggleKill"
     } else {
-      toggle1 = ""
+      onToggleKill = ""
     }
 
     if(this.state.KDAdisplay[1]){
-      toggle2 = "onToggle2"
+      onToggleDeath = "onToggleDeath"
     } else {
-      toggle2 = ""
+      onToggleDeath = ""
     }
 
     if(this.state.KDAdisplay[2]){
-      toggle3 = "onToggle3"
+      onToggleAssist = "onToggleAssist"
     } else {
-      toggle3 = ""
+      onToggleAssist = ""
     }
 
     if(this.state.KDAoptions){
@@ -321,9 +314,9 @@ var Progression = React.createClass({
           data={this.getAllData()}/>
 
         <div id="KDAoptions" className={KDAoptions}>    
-          <span className={toggle1} onClick={this.showK}>Kill</span>
-          <span className={toggle2} onClick={this.showD}>Death</span>
-          <span className={toggle3} onClick={this.showA}>Assist</span>
+          <span className={onToggleKill} onClick={this.showK}>Kill</span>
+          <span className={onToggleDeath} onClick={this.showD}>Death</span>
+          <span className={onToggleAssist} onClick={this.showA}>Assist</span>
         </div>
 
         <div id="progressionOptions">

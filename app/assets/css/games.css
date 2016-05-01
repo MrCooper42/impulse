@@ -76,17 +76,17 @@
   border-bottom: solid #20232A 3px;
 }
 
-.onToggle1 {
+.onToggleKill {
   border-bottom: solid #20232A 3px;
   color: #A01D26;
 }
 
-.onToggle2 {
+.onToggleDeath {
   border-bottom: solid #20232A 3px;
   color: #20232A;
 }
 
-.onToggle3 {
+.onToggleAssist {
   border-bottom: solid #20232A 3px;
   color: #ACBEBE;
 }
