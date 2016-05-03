@@ -53,7 +53,7 @@
   color:white;
   background-color: #2F3131;
   right:25px;
-  border-radius: 2px;
+  border-radius: 0 0 5px 5px;
 }
 
 .searchDiv #searching{
