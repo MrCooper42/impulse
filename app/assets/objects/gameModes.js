@@ -1,6 +1,6 @@
 module.exports = {
-  "CoopVsAI": "5v5 AI",
-  "Unranked": "5v5 Normals",
+  "CoopVsAI": "AI",
+  "Unranked": "Normals",
   "AramUnranked5x5": "ARAM",
   "RankedSolo5x5": "Ranked",
   "CLASSIC": "5v5",
