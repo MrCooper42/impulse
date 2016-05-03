@@ -6,7 +6,7 @@
 }
 
 .summaryButtonOff {
-  border: 2px solid black;
+  border: 1.5px solid black;
   transition: 1s;
   padding:5px;
   font-size:20px;
@@ -17,19 +17,19 @@
   transition: 1s;
   padding:10px;
   font-size:27px;
+  color: #A01D26;
 }
 
 .summaryButtonOn:hover {
   cursor: pointer;
-  color: black;
-  background-color: white;
+  background-color: #ACBEBE;
   transition: 1s;
 }
 
 .summaryButtonOff:hover {
   cursor: pointer;
   color: black;
-  background-color: white;
+  background-color: #ACBEBE;
   transition: 1s;
 }
 
@@ -51,8 +51,7 @@
   position: absolute;
   top:113px;
   color:#20232A;
-  background-color: #ACBEBE;
-  width: 300px;
+  background-color: #F4F4EF;
   right:25px;
   border-radius: 2px;
 }

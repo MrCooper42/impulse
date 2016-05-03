@@ -110,7 +110,7 @@ var Progression = React.createClass({
       });
 
       allGames.forEach(function(game, idx){
-        goldDates.push({x:10-idx, y: (game.stats.goldEarned ? game.stats.goldEarned : 0)})
+        goldDates.push({x:10-idx, y: (game.stats.goldEarned ? Math.floor(game.stats.goldEarned/1000) : 0)})
       });
 
       allGames.forEach(function(game, idx){
@@ -230,7 +230,7 @@ var Progression = React.createClass({
     if(states[0] && states[1] === false && states[2] === false && states[3] === false && states[4] === false){
       return {x: 'Game (most recent)', y: 'Stats'};
     } else if(states[1] && states[0] === false && states[2] === false && states[3] === false && states[4] === false){
-      return {x: 'Game (most recent)', y: 'Gold'};
+      return {x: 'Game (most recent)', y: 'Gold (1000\'s\)' };
     } else if(states[2] && states[0] === false && states[1] === false && states[3] === false && states[4] === false){
       return {x: 'Game (most recent)', y: 'CS'};
     } else if(states[3] && states[0] === false && states[1] === false && states[2] === false && states[4] === false){

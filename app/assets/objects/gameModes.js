@@ -1,5 +1,5 @@
 module.exports = {
-  "CoopVsAI": "AI",
+  "CoopVsAI": "Bots",
   "Unranked": "Normals",
   "AramUnranked5x5": "ARAM",
   "RankedSolo5x5": "Ranked",
