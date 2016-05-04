@@ -5,6 +5,10 @@ var ChampionStore = new Store(Dispatcher);
 
 var _champions = [];
 
+if (localStorage["champions"]) {
+  _champions = JSON.parse(localStorage["champions"]);
+}
+
 ChampionStore.champions = function(){
   return _champions;
 };

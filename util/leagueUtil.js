@@ -24,8 +24,8 @@ var LeagueUtil = {
     LeagueActions.setSummoner(summoner);
     this.fetchGameStats(summoner.id);
     this.fetchSummonerStats(summoner.id);
-    // this.fetchCurrentGameInfo(summoner.id);
-    // this.fetchTopChampions(summoner.id);
+    this.fetchCurrentGameInfo(summoner.id);
+    this.fetchTopChampions(summoner.id);
   },
 
   fetchSummonerStats: function(summonerId) {
@@ -74,34 +74,31 @@ var LeagueUtil = {
       success: function(gameData) {
         LeagueActions.receiveCurrentGameData(gameData);
       },
-      error: function() {
+      error: function(a, b, c) {
         LeagueActions.noCurrentGameAvailable();
       }
     });
   },
 
-  fetchTopChampions: function(summonerID){
+  fetchTopChampions: function(summonerId){
     $.ajax({
-      crossDomain: true,
-      url: "https://na.api.pvp.net/championmastery/location/NA1/player/" + summonerID + "/topchampions?api_key=" + key.league,
+      url: "https://na.api.pvp.net/championmastery/location/NA1/player/" + summonerId + "/topchampions?api_key=" + key.league,
       method: "GET",
-
-      beforeSend: function(xhr){
-
-        xhr.setRequestHeader('Origin', 'https://developer.riotgames.com');
-      },
       success: function(champions) {
-        LeagueActions.receiveChampions(champions)
+        LeagueActions.receiveChampions(champions);
       },
       error: function(error){
-        console.log("Champions not found")
+        console.log("Champions not found");
       }
     });
   },
 
   setChampions: function(champions){
     LeagueActions.receiveChampions(champions);
-  }
+  },
+
 }
+
+
 
 module.exports = LeagueUtil;

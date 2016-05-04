@@ -1,30 +1,26 @@
 var React = require('react');
+
+// FLUX
 var LeagueUtil = require('../../util/leagueUtil');
+
+// STORES
 var SummonerStore = require('../../stores/summonerStore');
 var ChampionStore = require('../../stores/championStore');
 
+// OBJECTS
+var CHAMPION_SQUARES = require('../../app/assets/images/squares');
+var CHAMPIONS = require('../../app/assets/objects/championsMap');
 
 var TopChampionsIndex = React.createClass({
 
   getInitialState: function(){
     return {
-      champions: []
+      champions: ChampionStore.champions()
     }
   },
 
   componentDidMount: function(){
     this.leagueListener = ChampionStore.addListener(this.updateChampions);
-
-    if (localStorage["champions"]){
-      var champions = JSON.parse(localStorage["champions"]);
-      this.setState({
-        champions: champions
-      })
-      LeagueUtil.setChampions(champions)
-    } else {
-      var summoner = SummonerStore.summoner();
-      LeagueUtil.fetchTopChampions(summoner[Object.keys(summoner)[0]].id)
-    }
   },
 
   componentWillUnmount: function(){
@@ -33,12 +29,17 @@ var TopChampionsIndex = React.createClass({
 
   champions: function(){
     return this.state.champions.map(function(champ, idx){
+      debugger;
       return (
         <li key={idx}>
-          {champ.championId}
+          <img src={CHAMPION_SQUARES[CHAMPIONS[champ.championId]]} />
         </li>
       )
     });
+  },
+
+  updateChampions: function() {
+    this.setState({ champions: ChampionStore.champions() });
   },
 
   render: function(){

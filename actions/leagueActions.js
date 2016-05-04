@@ -8,14 +8,12 @@ var LeagueActions = {
     });
   },
 
-
   setSummoner: function(summoner) {
     Dispatcher.dispatch({
       actionType: "SET_SUMMONER",
       summoner: summoner
     });
   },
-
 
   receiveChampions: function(champions) {
     Dispatcher.dispatch({

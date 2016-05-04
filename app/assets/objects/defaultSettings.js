@@ -4,6 +4,7 @@ module.exports = {
   "RecentGame": false,
   "Progression": false,
   "CurrentGame": false,
+  "TopChampions": false,
   "Clock": true,
   "Quote": true,
   "Weather": true
