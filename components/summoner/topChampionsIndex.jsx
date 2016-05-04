@@ -29,7 +29,6 @@ var TopChampionsIndex = React.createClass({
 
   champions: function(){
     return this.state.champions.map(function(champ, idx){
-      debugger;
       return (
         <li key={idx}>
           <img src={CHAMPION_SQUARES[CHAMPIONS[champ.championId]]} />
