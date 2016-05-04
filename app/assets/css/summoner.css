@@ -85,7 +85,7 @@
 
 .summonerRank {
   position: fixed;
-  right: 160px;  
+  right: 160px;
 }
 
 .division {
@@ -95,4 +95,14 @@
   font-size: 40px;
   color: white;
   text-shadow: 3px 3px black;
+}
+
+.topChampionsIndex {
+  position: fixed;
+  right: 20px;
+  bottom: 80px;
+}
+
+.topChampionIndexItem {
+  width: 96px;
 }

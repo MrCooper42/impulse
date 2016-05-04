@@ -31,7 +31,7 @@ var TopChampionsIndex = React.createClass({
     return this.state.champions.map(function(champ, idx){
       return (
         <li key={idx}>
-          <img src={CHAMPION_SQUARES[CHAMPIONS[champ.championId]]} />
+          <img className="topChampionIndexItem" src={CHAMPION_SQUARES[CHAMPIONS[champ.championId]]} />
         </li>
       )
     });
@@ -43,7 +43,7 @@ var TopChampionsIndex = React.createClass({
 
   render: function(){
     return (
-      <div>
+      <div className="topChampionsIndex">
         <ul>
           { this.champions() }
         </ul>

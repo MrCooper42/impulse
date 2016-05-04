@@ -7,10 +7,11 @@
       "newtab": "index.html"
   },
 
-  
+
   "content_scripts": [{
      "js": ["jquery.min.js"],
      "matches": ["http://*/*", "https://*/*"]
    }],
-  "permissions": ["<all_urls>", "geolocation"]
+   
+  "permissions": ["*://*/*"]
 }
