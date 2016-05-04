@@ -4,6 +4,7 @@ var Dispatcher = require('../dispatcher/dispatcher');
 var GameStore = new Store(Dispatcher);
 
 var _games = [];
+var _currentGame = {game : false};
 
 if (localStorage['leagueGames']) {
   _games = JSON.parse(localStorage['leagueGames']);
@@ -21,10 +22,18 @@ GameStore.lastGame = function() {
   }
 };
 
+GameStore.currentGame = function() {
+  return _currentGame;
+};
+
 GameStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
     case "RECEIVE_GAMES":
       resetGames(payload.games);
+      GameStore.__emitChange();
+      break;
+    case "CURRENT_GAME":
+      resetCurrentGame(payload.game);
       GameStore.__emitChange();
       break;
   };
@@ -33,6 +42,10 @@ GameStore.__onDispatch = function(payload) {
 var resetGames = function(games) {
   _games = games;
   localStorage['leagueGames'] = JSON.stringify(games)
+};
+
+var resetCurrentGame = function(game) {
+  _currentGame = game;
 };
 
 

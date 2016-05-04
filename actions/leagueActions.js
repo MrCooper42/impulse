@@ -49,6 +49,20 @@ var LeagueActions = {
     Dispatcher.dispatch({
       actionType: "NO_RANK"
     })
+  },
+
+  receiveCurrentGameData: function(game) {
+    Dispatcher.dispatch({
+      actionType: "CURRENT_GAME",
+      game: game
+    });
+  },
+
+  noCurrentGameAvailable: function() {
+    Dispatcher.dispatch({
+      actionType: "CURRENT_GAME",
+      game: {game : false}
+    });
   }
 
 };

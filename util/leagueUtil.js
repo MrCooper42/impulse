@@ -24,6 +24,8 @@ var LeagueUtil = {
     LeagueActions.setSummoner(summoner);
     this.fetchGameStats(summoner.id);
     this.fetchSummonerStats(summoner.id);
+    // this.fetchCurrentGameInfo(summoner.id);
+    // this.fetchTopChampions(summoner.id);
   },
 
   fetchSummonerStats: function(summonerId) {
@@ -62,7 +64,20 @@ var LeagueUtil = {
       error: function(error) {
         LeagueActions.receiveUnrankedData();
       }
-    })
+    });
+  },
+
+  fetchCurrentGameInfo: function(summonerId) {
+    $.ajax({
+      url: "https://na.api.pvp.net/observer-mode/rest/consumer/getSpectatorGameInfo/NA1/" + summonerId + "?api_key=" + key.league,
+      method: "GET",
+      success: function(gameData) {
+        LeagueActions.receiveCurrentGameData(gameData);
+      },
+      error: function() {
+        LeagueActions.noCurrentGameAvailable();
+      }
+    });
   },
 
   fetchTopChampions: function(summonerID){
