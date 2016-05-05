@@ -67,6 +67,14 @@
   display:none;
 }
 
+.progression .showCSOptions{
+  display: "";
+}
+
+.progression .hideCSOptions{
+  display:none;
+}
+
 .xyValue {
   text-align: right;
   margin-right: 10px;
@@ -74,6 +82,20 @@
 
 .xyValueOff {
   display: none;
+}
+
+#CSOptions{
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#CSOptions span{
+  margin-left: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom:5px;
+  padding-top:5px;
 }
 
 #goldOptions{
@@ -102,6 +124,10 @@
   padding-right: 5px;
   padding-bottom:5px;
   padding-top:5px;
+}
+
+#CSOptions span:hover{
+  border-bottom: solid #20232A 3px;
 }
 
 #goldOptions span:hover{
@@ -135,6 +161,16 @@
 .onToggleGoldAvg{
   border-bottom: solid #20232A 3px;
   color: #A01D26;
+}
+
+.onToggleCSTotal{
+  border-bottom: solid #20232A 3px;
+  color: #A01D26;
+}
+
+.onToggleCSAvg{
+  border-bottom: solid #20232A 3px;
+  color: #A01D26; 
 }
 
 .toggleKDAoptions {
