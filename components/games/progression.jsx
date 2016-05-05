@@ -5,6 +5,7 @@ var LeagueUtil = require('../../util/leagueUtil');
 
 var REC = require("react-easy-chart");
 var LineChart = REC.LineChart;
+var ProgressionToolTip = require('./progressionToolTip');
 
 
 var Progression = React.createClass({
@@ -27,7 +28,11 @@ var Progression = React.createClass({
       goldOptions: false,
       CSOptions: false,
       DmgOptions: false,
+
+
       showToolTip: false,
+      top: "",
+      left: "",
       x:0,
       y:0
     };
@@ -334,19 +339,41 @@ var Progression = React.createClass({
   mouseOverHandler: function(d, e) {
     this.setState({
       showToolTip: true,
+      top: (e.offsetY + 5) + "px",
+      left: (e.offsetX + 5) + "px",
       y: d.y,
       x: d.x});
-    console.log(d);
   },
 
-  mouseMoveHandler: function(e) {
-    if (this.state.showToolTip) {
-      this.setState({top: `${e.y - 10}px`, left: `${e.x + 10}px`});
-    }
-  },
 
   mouseOutHandler: function() {
     this.setState({showToolTip: false});
+  },
+
+  getToolTipValue: function(){
+    if(this.state.Gold){
+      if(this.state.GoldDisplay[0])
+        return this.state.y + "K Gold"
+      else{
+        return this.state.y + " Gold/minute"
+      }
+    } else if(this.state.CS){
+        if(this.state.CSDisplay[0])
+          return this.state.y + " Minions"
+        else{
+          return this.state.y + " Minions/minute"
+        }
+    } else if(this.state.Dmg){
+        if(this.state.DmgDisplay[0])
+          return this.state.y + "K Damage"
+        else{
+          return this.state.y + " Damage/minute"
+        }      
+    } else if(this.state.Time){
+        return this.state.y + " minutes played"
+    } else{
+      return this.state.y
+    }
   },
 
 
@@ -462,35 +489,35 @@ var Progression = React.createClass({
     }
 
 
-    if(this.state.x === 0 && this.state.y === 0){
-      xyToggle = "xyValueOff"
-    } else {
-      xyToggle = "xyValue"
-    }
 
     return (
       <div className="progression">
 
 
-        <LineChart 
-          axes
-          axisLabels={this.getLabels()}
-          dataPoints
-          grid
-          xTicks={5}
-          yTicks={8}
-          verticalGrid
-          interpolate={'linear'}
-          xDomainRange={[1,10]}
-          mouseOverHandler={this.mouseOverHandler}
-          mouseOutHandler={this.mouseOutHandler}
-          mouseMoveHandler={this.mouseMoveHandler}
-          lineColors={this.getLineColors()}
-          width={500}
-          height={200}
-          data={this.getAllData()}/>
 
-        <div className={xyToggle}>x: {this.state.x}, y: {this.state.y}</div>
+        <div>
+          <LineChart 
+            axes
+            axisLabels={this.getLabels()}
+            dataPoints
+            grid
+            xTicks={5}
+            yTicks={8}
+            verticalGrid
+            interpolate={'linear'}
+            xDomainRange={[1,10]}
+            mouseOverHandler={this.mouseOverHandler}
+            mouseOutHandler={this.mouseOutHandler}
+            mouseMoveHandler={this.mouseMoveHandler}
+            lineColors={this.getLineColors()}
+            width={500}
+            height={200}
+            data={this.getAllData()}/>
+
+          {this.state.showToolTip ? 
+            <ProgressionToolTip top={this.state.top} left={this.state.left} value={this.getToolTipValue()} /> : <div/>
+          }
+        </div>
 
         <div id="KDAoptions" className={KDAoptions}>    
           <span className={onToggleKill} onClick={this.showK}>Kill</span>

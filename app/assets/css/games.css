@@ -50,7 +50,16 @@
   margin-bottom: 2px;
   padding: 10px;
   border-radius: 5px 5px 0 0;
+
 }
+
+.tooltip {
+  color: white;
+  background-color: black;
+  padding:3px;
+  font-size:12px;
+}
+
 .progression .showKDAoptions{
   display: "";
 }
@@ -83,14 +92,7 @@
   display:none;
 }
 
-.xyValue {
-  text-align: right;
-  margin-right: 10px;
-}
 
-.xyValueOff {
-  display: none;
-}
 
 #DmgOptions{
   cursor: pointer;
