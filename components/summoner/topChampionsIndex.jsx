@@ -26,6 +26,7 @@ var TopChampionsIndex = React.createClass({
 
   componentWillUnmount: function(){
     this.leagueListener.remove();
+    this.summonerListener.remove();
   },
 
   champions: function(){

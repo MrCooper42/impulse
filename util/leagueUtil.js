@@ -12,6 +12,7 @@ var LeagueUtil = {
         that.fetchGameStats(summoner[Object.keys(summoner)[0]].id);
         that.fetchSummonerStats(summoner[Object.keys(summoner)[0]].id);
         that.fetchRankedInfo(summoner[Object.keys(summoner)[0]].id);
+        that.fetchTopChampions(summoner[Object.keys(summoner)[0]].id);
         LeagueActions.receiveSummoner(summoner)
       },
       error: function(error) {
