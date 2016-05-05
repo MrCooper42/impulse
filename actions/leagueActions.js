@@ -59,7 +59,7 @@ var LeagueActions = {
   noCurrentGameAvailable: function() {
     Dispatcher.dispatch({
       actionType: "CURRENT_GAME",
-      game: {game : false}
+      game: {gameId : 0}
     });
   }
 

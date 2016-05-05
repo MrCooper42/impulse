@@ -31,10 +31,15 @@ var CurrentGameInfo = React.createClass({
     })
   },
 
+  getParticipants: function() {
+
+  },
+
   render: function() {
     return (
       <div>
-        INFOOOOOOO
+        {this.state.game.gameMode} {this.state.game.gameType}
+        {this.getParticipants()}
       </div>
     );
   }
