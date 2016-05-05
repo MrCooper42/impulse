@@ -14,6 +14,7 @@ var Progression = React.createClass({
       otherGames: GameStore.allGames().slice(1),
       allGames: GameStore.allGames(),
       KDAdisplay: [true, true, true],
+      GoldDisplay: [true, false],
       lineColors: ["#A01D26", "#20232A" , "#ACBEBE"],
       KDA: true,
       Gold: false,
@@ -21,6 +22,7 @@ var Progression = React.createClass({
       Dmg: false,
       Time: false,
       KDAoptions: true,
+      goldOptions: false,
       showToolTip: false,
       x:0,
       y:0
@@ -94,10 +96,15 @@ var Progression = React.createClass({
       var deathDates = [];
       var assistDates = [];
       var goldDates = [];
+      var goldAvg = [];
       var CSDates = [];
       var DmgDates = [];
       var TimeDates = [];
       var allGames = this.state.allGames;
+
+
+
+
 
       allGames.forEach(function(game, idx){
         killDates.push({x: 10-idx, y: (game.stats.championsKilled ? game.stats.championsKilled : 0)})
@@ -111,6 +118,10 @@ var Progression = React.createClass({
 
       allGames.forEach(function(game, idx){
         goldDates.push({x:10-idx, y: (game.stats.goldEarned ? Math.floor(game.stats.goldEarned/1000) : 0)})
+      });
+
+      allGames.forEach(function(game, idx){
+        goldAvg.push({x:10-idx, y: (game.stats.goldEarned/game.stats.timePlayed ? (game.stats.goldEarned/(game.stats.timePlayed/60)).toFixed(2): 0)})
       });
 
       allGames.forEach(function(game, idx){
@@ -128,7 +139,13 @@ var Progression = React.createClass({
       var result = [];
 
       if(this.state.Gold){
-        result.push(goldDates)
+        if(this.state.GoldDisplay[0]){
+          result.push(goldDates);
+        } 
+
+        if(this.state.GoldDisplay[1]){
+          result.push(goldAvg);
+        }
       } 
       else if(this.state.CS){
         result.push(CSDates)
@@ -190,26 +207,49 @@ var Progression = React.createClass({
     this.setState({KDA: true, Gold: false, CS: false, Dmg: false, Time: false})
     this.setState({KDAdisplay: [true, true, true]})
     this.setState({KDAoptions: true})
+    this.setState({goldOptions: false})
+
+  },
+
+  showTotalGold: function(){
+    var oldDisplay = this.state.GoldDisplay
+    var newDisplay = [true, false];
+    this.setState({
+      GoldDisplay: newDisplay
+    });
+  },
+
+  showAvgGold: function(){
+    var oldDisplay = this.state.GoldDisplay
+    var newDisplay = [false, true];
+    this.setState({
+      GoldDisplay: newDisplay
+    });
   },
 
   showGold: function(){
     this.setState({KDA: false, Gold: true, CS: false, Dmg: false, Time: false});
+    this.setState({GoldDisplay: [true, false]})
     this.setState({KDAoptions: false})
+    this.setState({goldOptions: true})
   },
 
   showMinions: function(){
     this.setState({KDA: false, Gold: false, CS: true, Dmg: false, Time: false});
     this.setState({KDAoptions: false})
+    this.setState({goldOptions: false})
   },
 
   showDmg: function(){
     this.setState({KDA: false, Gold: false, CS: false, Dmg: true, Time: false});
     this.setState({KDAoptions: false})
+    this.setState({goldOptions: false})
   },
 
   showTime: function(){
     this.setState({KDA: false, Gold: false, CS: false, Dmg: false, Time: true});
     this.setState({KDAoptions: false})
+    this.setState({goldOptions: false})
   },
 
   getLineColors: function(){
@@ -230,7 +270,11 @@ var Progression = React.createClass({
     if(states[0] && states[1] === false && states[2] === false && states[3] === false && states[4] === false){
       return {x: 'Game (most recent)', y: 'Stats'};
     } else if(states[1] && states[0] === false && states[2] === false && states[3] === false && states[4] === false){
-      return {x: 'Game (most recent)', y: 'Gold (1000\'s\)' };
+        if(this.state.GoldDisplay[0])
+          return {x: 'Game (most recent)', y: 'Gold (1000\'s\)' };
+        else{
+          return {x: 'Game (most recent)', y: 'Gold/min'};
+        }
     } else if(states[2] && states[0] === false && states[1] === false && states[3] === false && states[4] === false){
       return {x: 'Game (most recent)', y: 'CS'};
     } else if(states[3] && states[0] === false && states[1] === false && states[2] === false && states[4] === false){
@@ -270,6 +314,12 @@ var Progression = React.createClass({
       KDAoptions = "hideKDAoptions";
     }
 
+    if(this.state.goldOptions){
+      goldOptions = "showGoldOptions";
+    } else {
+      goldOptions = "hideGoldOptions";
+    }
+
     if(this.state.KDAdisplay[0]){
       onToggleKill = "onToggleKill"
     } else {
@@ -286,6 +336,18 @@ var Progression = React.createClass({
       onToggleAssist = "onToggleAssist"
     } else {
       onToggleAssist = ""
+    }
+
+    if (this.state.GoldDisplay[0]){ 
+      onToggleGoldTotal = "onToggleGoldTotal"
+    } else {
+      onToggleGoldTotal = ""
+    }
+
+    if (this.state.GoldDisplay[1]){ 
+      onToggleGoldAvg = "onToggleGoldAvg"
+    } else {
+      onToggleGoldAvg = ""
     }
 
     if(this.state.KDAoptions){
@@ -354,6 +416,12 @@ var Progression = React.createClass({
           <span className={onToggleDeath} onClick={this.showD}>Death</span>
           <span className={onToggleAssist} onClick={this.showA}>Assist</span>
         </div>
+
+        <div id="goldOptions" className={goldOptions}>    
+          <span className={onToggleGoldTotal} onClick={this.showTotalGold}>Total</span>
+          <span className={onToggleGoldAvg} onClick={this.showAvgGold}>Per Minute</span>
+        </div>
+
 
         <div id="progressionOptions">
           <span className={toggleKDAoptions} onClick={this.showKDA}>KDA</span>
