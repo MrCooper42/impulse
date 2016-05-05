@@ -4,7 +4,7 @@ var Dispatcher = require('../dispatcher/dispatcher');
 var GameStore = new Store(Dispatcher);
 
 var _games = [];
-var _currentGame = {game : false};
+var _currentGame = {gameId : 0};
 
 if (localStorage['leagueGames']) {
   _games = JSON.parse(localStorage['leagueGames']);

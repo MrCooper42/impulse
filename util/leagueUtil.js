@@ -13,7 +13,8 @@ var LeagueUtil = {
         that.fetchSummonerStats(summoner[Object.keys(summoner)[0]].id);
         that.fetchRankedInfo(summoner[Object.keys(summoner)[0]].id);
         that.fetchTopChampions(summoner[Object.keys(summoner)[0]].id);
-        LeagueActions.receiveSummoner(summoner)
+        that.fetchCurrentGameInfo(summoner[Object.keys(summoner)[0]].id);
+        LeagueActions.receiveSummoner(summoner);
       },
       error: function(error) {
         window.alert("Summoner not found");
@@ -27,6 +28,7 @@ var LeagueUtil = {
     this.fetchSummonerStats(summoner.id);
     this.fetchCurrentGameInfo(summoner.id);
     this.fetchTopChampions(summoner.id);
+    this.fetchCurrentGameInfo(summoner.id);
   },
 
   fetchSummonerStats: function(summonerId) {
