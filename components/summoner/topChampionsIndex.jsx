@@ -21,6 +21,7 @@ var TopChampionsIndex = React.createClass({
 
   componentDidMount: function(){
     this.leagueListener = ChampionStore.addListener(this.updateChampions);
+    this.summonerListener = SummonerStore.addListener(this.updateChampions);
   },
 
   componentWillUnmount: function(){
