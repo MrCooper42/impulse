@@ -59,6 +59,30 @@
   display:none;
 }
 
+.progression .showGoldOptions{
+  display: "";
+}
+
+.progression .hideGoldOptions{
+  display:none;
+}
+
+.progression .showCSOptions{
+  display: "";
+}
+
+.progression .hideCSOptions{
+  display:none;
+}
+
+.progression .showDmgOptions{
+  display: "";
+}
+
+.progression .hideDmgOptions{
+  display:none;
+}
+
 .xyValue {
   text-align: right;
   margin-right: 10px;
@@ -66,6 +90,48 @@
 
 .xyValueOff {
   display: none;
+}
+
+#DmgOptions{
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#DmgOptions span{
+  margin-left: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom:5px;
+  padding-top:5px;  
+}
+
+#CSOptions{
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#CSOptions span{
+  margin-left: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom:5px;
+  padding-top:5px;
+}
+
+#goldOptions{
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#goldOptions span{
+  margin-left: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom:5px;
+  padding-top:5px;
 }
 
 #KDAoptions{
@@ -80,6 +146,18 @@
   padding-right: 5px;
   padding-bottom:5px;
   padding-top:5px;
+}
+
+#DmgOptions span:hover{
+  border-bottom: solid #20232A 3px;
+}
+
+#CSOptions span:hover{
+  border-bottom: solid #20232A 3px;
+}
+
+#goldOptions span:hover{
+  border-bottom: solid #20232A 3px;
 }
 
 #KDAoptions span:hover{
@@ -99,6 +177,36 @@
 .onToggleAssist {
   border-bottom: solid #20232A 3px;
   color: #ACBEBE;
+}
+
+.onToggleGoldTotal{
+  border-bottom: solid #20232A 3px;
+  color: #A01D26;
+}
+
+.onToggleGoldAvg{
+  border-bottom: solid #20232A 3px;
+  color: #A01D26;
+}
+
+.onToggleCSTotal{
+  border-bottom: solid #20232A 3px;
+  color: #A01D26;
+}
+
+.onToggleCSAvg{
+  border-bottom: solid #20232A 3px;
+  color: #A01D26; 
+}
+
+.onToggleDmgTotal{
+  border-bottom: solid #20232A 3px;
+  color: #A01D26;
+}
+
+.onToggleDmgAvg{
+  border-bottom: solid #20232A 3px;
+  color: #A01D26; 
 }
 
 .toggleKDAoptions {
