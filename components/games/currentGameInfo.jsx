@@ -4,6 +4,10 @@ var React = require('react');
 var GameStore = require('../../stores/gameStore');
 var SummonerStore = require('../../stores/summonerStore');
 
+// OBJECTS
+var CHAMPION_SQUARES = require('../../app/assets/images/squares');
+var CHAMPIONS = require('../../app/assets/objects/championsMap');
+var SUMMONER_SPELLS = require('../../app/assets/images/summonerSpells');
 
 var CurrentGameInfo = React.createClass({
 
@@ -34,20 +38,22 @@ var CurrentGameInfo = React.createClass({
   getParticipants: function() {
     return this.state.game.participants.map(function(summoner) {
       return (
-        <ul key={summoner.summonerId}>
-          <li>{summoner.summonerName}</li>
-          <li>Champ: {summoner.championId}</li>
-          <li>{summoner.teamId === "100" ? "Red" : "Blue"}</li>
-          <li>Sp: {summoner.spell1Id}, {summoner.spell2Id}</li>
-        </ul>
+        <div key={summoner.summonerId} className={summoner.teamId === "100" ? "Red" : "Blue"}>
+          <h2>{summoner.summonerName}</h2>
+          <div><img src={CHAMPION_SQUARES[CHAMPIONS[summoner.championId]]}/></div>
+          <div className="currentGameSpells">
+            <img className="icon" src={SUMMONER_SPELLS[summoner.spell1Id].url}/>
+            <img className="icon" src={SUMMONER_SPELLS[summoner.spell2Id].url}/>
+          </div>
+        </div>
       )
     });
   },
 
   render: function() {
     return (
-      <div>
-        {this.state.game.gameMode} {this.state.game.gameType}
+      <div className="currentGameInfo">
+        <h3 className="currentGameHeader">{this.state.game.gameMode} {this.state.game.gameType}</h3>
         {this.getParticipants()}
       </div>
     );

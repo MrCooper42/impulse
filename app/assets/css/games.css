@@ -329,3 +329,36 @@
   display: flex;
   align-items: center;
 }
+
+.Blue {
+  background-color: #0000BB;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.Red {
+  background-color: #BD3737;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.currentGameSpells {
+  display: flex;
+  display: flex;
+  flex-direction: column;
+}
+
+.currentGameHeader {
+
+}
+
+.currentGameInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
