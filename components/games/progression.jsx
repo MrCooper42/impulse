@@ -103,7 +103,7 @@ var Progression = React.createClass({
       }); 
 
       allGames.forEach(function(game, idx){
-        CSAvg.push({x:10-idx, y: (game.stats.minionsKilled/game.stats.timePlayed ? (game.stats.minionsKilled/(game.stats.timePlayed/60)).toFixed(2): 0)})
+        CSAvg.push({x:10-idx, y: (game.stats.minionsKilled/game.stats.timePlayed ? parseInt((game.stats.minionsKilled/(game.stats.timePlayed/60)).toFixed(2)): 0)})
       });
 
 
@@ -112,7 +112,7 @@ var Progression = React.createClass({
       });
 
       allGames.forEach(function(game, idx){
-        DmgAvg.push({x:10-idx, y: (game.stats.totalDamageDealtToChampions/game.stats.timePlayed ? ((game.stats.totalDamageDealtToChampions)/(game.stats.timePlayed/60)).toFixed(2): 0)})
+        DmgAvg.push({x:10-idx, y: (game.stats.totalDamageDealtToChampions ? parseInt(((game.stats.totalDamageDealtToChampions)/(game.stats.timePlayed/60)).toFixed(2)): 0)})
       });
 
 
