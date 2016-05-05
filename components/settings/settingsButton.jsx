@@ -1,6 +1,21 @@
 var React = require('react');
 
+// MODAL
+var Modal = require('boron/OutlineModal');
 var SettingsMenu = require('./settingsMenu');
+
+// MODAL STYLE
+var modalStyle = {
+  transform : 'inherit'
+};
+
+var backdropStyle = {
+    backgroundColor: ''
+};
+
+var contentStyle = {
+    height: '100%'
+};
 
 var SettingsButton = React.createClass({
 
@@ -8,6 +23,14 @@ var SettingsButton = React.createClass({
     return ({
       displayMenu: false
     });
+  },
+
+  showModal: function(){
+    this.refs.modal.show();
+  },
+
+  hideModal: function(){
+    this.refs.modal.hide();
   },
 
   showMenu: function() {
@@ -28,9 +51,16 @@ var SettingsButton = React.createClass({
     return (
       <div>
         {this.display()}
-        <div className="settingsIcon" onClick={this.showMenu}>
+        <div className="settingsIcon" onClick={this.showModal} >
           Settings
         </div>
+        <Modal className="modalWindow"
+               ref="modal"
+               contentStyle={contentStyle}
+               modalStyle={modalStyle}
+               backdropStyle={backdropStyle} >
+          <SettingsMenu modalCallback={this.hideModal}/>
+        </Modal>
       </div>
     )
   }
