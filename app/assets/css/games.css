@@ -75,6 +75,14 @@
   display:none;
 }
 
+.progression .showDmgOptions{
+  display: "";
+}
+
+.progression .hideDmgOptions{
+  display:none;
+}
+
 .xyValue {
   text-align: right;
   margin-right: 10px;
@@ -82,6 +90,20 @@
 
 .xyValueOff {
   display: none;
+}
+
+#DmgOptions{
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#DmgOptions span{
+  margin-left: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom:5px;
+  padding-top:5px;  
 }
 
 #CSOptions{
@@ -124,6 +146,10 @@
   padding-right: 5px;
   padding-bottom:5px;
   padding-top:5px;
+}
+
+#DmgOptions span:hover{
+  border-bottom: solid #20232A 3px;
 }
 
 #CSOptions span:hover{
@@ -169,6 +195,16 @@
 }
 
 .onToggleCSAvg{
+  border-bottom: solid #20232A 3px;
+  color: #A01D26; 
+}
+
+.onToggleDmgTotal{
+  border-bottom: solid #20232A 3px;
+  color: #A01D26;
+}
+
+.onToggleDmgAvg{
   border-bottom: solid #20232A 3px;
   color: #A01D26; 
 }
