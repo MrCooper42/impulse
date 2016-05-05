@@ -32,7 +32,16 @@ var CurrentGameInfo = React.createClass({
   },
 
   getParticipants: function() {
-
+    return this.state.game.participants.map(function(summoner) {
+      return (
+        <ul key={summoner.summonerId}>
+          <li>{summoner.summonerName}</li>
+          <li>Champ: {summoner.championId}</li>
+          <li>{summoner.teamId === "100" ? "Blue" : "Red"}</li>
+          <li>Sp: {summoner.spell1Id}, {summoner.spell2Id}</li>
+        </ul>
+      )
+    });
   },
 
   render: function() {
