@@ -102,9 +102,29 @@
   right: 20px;
   bottom: 80px;
   background-color: yellow;
-
+  padding:0;
 }
 
-.topChampionIndex img {
-  width: 96px;
+.champImgContainer {
+  float:left;
+}
+.champInfoContainer {
+  float:right;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.topChampionsImage {
+  width:100px;
+}
+
+.topChampionsIndex li
+{
+  padding:0;
+  list-style-type: none;
+}
+
+.topChampionsIndex ul {
+    padding: 0;
+    list-style-type: none;
 }
