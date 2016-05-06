@@ -2,6 +2,8 @@
   position: fixed;
   top: 260px;
   left: 180px;
+  z-index:1;
+
 }
 
 .infoButton:hover {
@@ -267,6 +269,7 @@
   width: 200px;
   left:95px;
   padding-bottom: 5px;
+  z-index:1;
 }
 
 .recentGame .avatar{

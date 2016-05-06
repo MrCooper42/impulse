@@ -58,6 +58,7 @@ var TopChampionsIndex = React.createClass({
   render: function(){
     return (
       <div className="topChampionsIndex">
+        <div className="topChampHeader">Top Champions</div>
         <ul>
           { this.champions() }
         </ul>

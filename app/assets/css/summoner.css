@@ -49,12 +49,13 @@
   font-family: 'Lato';
   font-size: 20px;
   position: absolute;
-  top:113px;
+  top:90px;
   color:#2F3131;
   background-color: #C3C2BE;
   right:25px;
   border-radius: 0 0 5px 5px;
   box-shadow: 2px 2px 1px black;
+  z-index:1;
 }
 
 .searchDiv #searching{
@@ -101,17 +102,25 @@
 .topChampionsIndex {
   position: fixed;
   right: 85px;
-  bottom: 50px;
+  bottom: 48px;
   background-color: #2F3131;
   padding-bottom: 5px;
   border-radius: 5px;
   box-shadow: 2px 2px 1px black;
 }
 
+.topChampHeader {
+  margin-top: 5px;
+  text-align: center;
+  color: #EAA732;
+  font-size: 20px;
+}
+
 .champImgContainer {
   float:left;
   padding-bottom: 10px;
 }
+
 .champInfoContainer {
   float:right;
   font-size: 12px;
