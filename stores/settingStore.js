@@ -29,4 +29,13 @@ var resetSettings = function(settings) {
 };
 
 
+var checkStorage = function() {
+  if (localStorage['widgetSettings']) {
+    _settings = JSON.parse(localStorage['widgetSettings']);
+  }
+};
+
+checkStorage();
+
+
 module.exports = SettingStore;

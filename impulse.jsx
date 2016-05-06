@@ -27,13 +27,8 @@ var bgUrls = require('./app/assets/images/bgUrls');
 var App = React.createClass({
 
   getInitialState: function() {
-    var settings = SettingStore.settings();
-    if (localStorage['widgetSettings']) {
-      settings = JSON.parse(localStorage['widgetSettings']);
-      SettingsUtil.setSettings(settings);
-    }
     return ({
-      settings: settings
+      settings: SettingStore.settings()
     });
   },
 

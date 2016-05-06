@@ -6,10 +6,6 @@ var GameStore = new Store(Dispatcher);
 var _games = [];
 var _currentGame = {gameId : 0};
 
-if (localStorage['leagueGames']) {
-  _games = JSON.parse(localStorage['leagueGames']);
-}
-
 GameStore.allGames = function() {
   return _games;
 };
@@ -48,5 +44,12 @@ var resetCurrentGame = function(game) {
   _currentGame = game;
 };
 
+var checkStorage = function() {
+  if (localStorage['leagueGames']) {
+    _games = JSON.parse(localStorage['leagueGames']);
+  }
+};
+
+checkStorage();
 
 module.exports = GameStore;
