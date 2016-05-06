@@ -134,7 +134,7 @@ var RecentGame = React.createClass({
               innerRadius={55}
               sectorBorderColor="white"
               labelTextFill="white"
-              colors={d3.scale.ordinal().range(["#F9BA32", "#426E86" , "#2F3131"])}
+              colors={d3.scale.ordinal().range(["#EAA732", "#2F3131" , "#C3C2BE" ])}
               colorAccessor={function(d, idx)  {return idx;}}
               valueTextFormatter={function(val)  {return ( val);}}/>
             {this.getImage()}

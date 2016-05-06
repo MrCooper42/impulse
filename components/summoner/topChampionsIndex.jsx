@@ -42,7 +42,7 @@ var TopChampionsIndex = React.createClass({
             <img className="topChampionsImage" src={CHAMPION_SQUARES[CHAMPIONS[champ.championId]]} />
           </div>
           <div className="champInfoContainer">
-            <div className="champLevel">Level: {champ.championLevel}</div>
+            <div className="champLevel">Lvl: {champ.championLevel}</div>
             <div className="champPoints">Pts: {champ.championPoints}</div>
             <div className="champDate">{date}</div>
           </div>

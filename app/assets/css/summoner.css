@@ -17,7 +17,7 @@
   transition: 1s;
   padding:10px;
   font-size:27px;
-  color: #A01D26;
+  color: #EAA732;
 }
 
 .summaryButtonOn:hover {
@@ -50,10 +50,11 @@
   font-size: 20px;
   position: absolute;
   top:113px;
-  color:white;
-  background-color: #2F3131;
+  color:#2F3131;
+  background-color: #C3C2BE;
   right:25px;
   border-radius: 0 0 5px 5px;
+  box-shadow: 2px 2px 1px black;
 }
 
 .searchDiv #searching{
@@ -66,7 +67,7 @@
     color: white;
     height: 90px;
     font-size: 60px;
-    width: 590px;
+    width: 500px;
     text-align: left;
     padding: 5px;
     padding-left:20px;
@@ -99,10 +100,12 @@
 
 .topChampionsIndex {
   position: fixed;
-  right: 25px;
-  bottom: 80px;
-  background-color: black;
+  right: 85px;
+  bottom: 50px;
+  background-color: #2F3131;
   padding-bottom: 5px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 1px black;
 }
 
 .champImgContainer {
@@ -111,9 +114,10 @@
 }
 .champInfoContainer {
   float:right;
-  font-size: 15px;
+  font-size: 12px;
   color: white;
-  padding-right: 5px;
+  padding-right: 10px;
+  text-align: right;
 }
 
 .champLevel{
@@ -130,8 +134,10 @@
 }
 
 .topChampionsImage {
-  width:100px;
+  width:80px;
   padding-left: 5px;
+  border-radius: 50%;
+  padding-right: 5px;
 }
 
 .topChampionsIndex li

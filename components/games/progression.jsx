@@ -18,7 +18,7 @@ var Progression = React.createClass({
       GoldDisplay: [true, false],
       CSDisplay: [true, false],
       DmgDisplay: [true, false],
-      lineColors: ["#A01D26", "#20232A" , "#ACBEBE"],
+      lineColors: ["#EAA732", "#000000" , "#C3C2BE"],
       KDA: true,
       Gold: false,
       CS: false,

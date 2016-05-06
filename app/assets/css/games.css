@@ -32,8 +32,7 @@
   font-family: 'Lato';
   font-size: 20px;
   position: absolute;
-
-  background-color: #426E86;
+  background-color: #2F3131;
   width: 500px;
   left:50%;
   transform: translate(-50%, -50%);
@@ -45,7 +44,7 @@
 
 .progression svg{
   font-family: 'Lato';
-  background-color: #426E86;
+  background-color: #2F3131;
   color: white;
   margin-bottom: 2px;
   padding: 10px;
@@ -57,7 +56,7 @@
   color: white;
   background-color: black;
   padding:3px;
-  font-size:12px;
+  font-size:16px;
 }
 
 .progression .showKDAoptions{
@@ -167,68 +166,68 @@
 }
 
 .onToggleKill {
-  border-bottom: solid #20232A 3px;
-  color: #A01D26;
+  border-bottom: solid #EAA732 3px;
+  color: #EAA732;
 }
 
 .onToggleDeath {
-  border-bottom: solid #20232A 3px;
+  border-bottom: solid #EAA732 3px;
   color: #20232A;
 }
 
 .onToggleAssist {
-  border-bottom: solid #20232A 3px;
+  border-bottom: solid #EAA732 3px;
   color: #ACBEBE;
 }
 
 .onToggleGoldTotal{
-  border-bottom: solid #20232A 3px;
-  color: #A01D26;
+  border-bottom: solid #EAA732 3px;
+  color: #EAA732;
 }
 
 .onToggleGoldAvg{
-  border-bottom: solid #20232A 3px;
-  color: #A01D26;
+  border-bottom: solid #EAA732 3px;
+  color: #EAA732;
 }
 
 .onToggleCSTotal{
-  border-bottom: solid #20232A 3px;
-  color: #A01D26;
+  border-bottom: solid #EAA732 3px;
+  color: #EAA732;
 }
 
 .onToggleCSAvg{
-  border-bottom: solid #20232A 3px;
-  color: #A01D26; 
+  border-bottom: solid #EAA732 3px;
+  color: #EAA732; 
 }
 
 .onToggleDmgTotal{
-  border-bottom: solid #20232A 3px;
-  color: #A01D26;
+  border-bottom: solid #EAA732 3px;
+  color: #EAA732;
 }
 
 .onToggleDmgAvg{
-  border-bottom: solid #20232A 3px;
-  color: #A01D26; 
+  border-bottom: solid #EAA732 3px;
+  color: #EAA732; 
 }
 
 .toggleKDAoptions {
-  border-bottom: solid #A01D26 3px;
+  border-bottom: solid #EAA732 3px;
 }
 
 .toggleGold {
-  border-bottom: solid #A01D26 3px;
+  border-bottom: solid #EAA732 3px;
 }
 
 .toggleCS {
-  border-bottom: solid #A01D26 3px;
+  border-bottom: solid #EAA732 3px;
 }
 
 .toggleDmg {
-  border-bottom: solid #A01D26 3px;
+  border-bottom: solid #EAA732 3px;
 }
 
 .toggleTime {
-  border-bottom: solid #A01D26 3px;
+  border-bottom: solid #EAA732 3px;
 }
 
 
@@ -245,7 +244,7 @@
 #progressionOptions span{
   margin-left: 10px;
   padding: 5px;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 #progressionOptions span:hover{
