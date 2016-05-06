@@ -99,23 +99,39 @@
 
 .topChampionsIndex {
   position: fixed;
-  right: 20px;
+  right: 25px;
   bottom: 80px;
-  background-color: yellow;
-  padding:0;
+  background-color: black;
+  padding-bottom: 5px;
 }
 
 .champImgContainer {
   float:left;
+  padding-bottom: 10px;
 }
 .champInfoContainer {
   float:right;
   font-size: 15px;
-  margin-top: 10px;
+  color: white;
+  padding-right: 5px;
+}
+
+.champLevel{
+  margin-top: 15px;
+}
+
+.champDate{
+ 
+}
+
+.champPoints{
+  padding-top: 10px;
+  padding-bottom: 10px; 
 }
 
 .topChampionsImage {
   width:100px;
+  padding-left: 5px;
 }
 
 .topChampionsIndex li
@@ -125,6 +141,6 @@
 }
 
 .topChampionsIndex ul {
-    padding: 0;
-    list-style-type: none;
+  padding: 0;
+  list-style-type: none;
 }

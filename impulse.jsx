@@ -102,7 +102,12 @@ var App = React.createClass({
         </div>
       );
     };
-    return buttons;
+
+    if (localStorage['hideAll'] !== "true"){
+      return buttons;
+    } else{
+      return <div/>
+    }
   },
 
   render: function() {
