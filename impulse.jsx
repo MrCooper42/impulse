@@ -110,6 +110,15 @@ var App = React.createClass({
     }
   },
 
+  settingBtnHidden: function(){
+    if (localStorage["hideAll"] === "true"){
+      return <div/>
+    } else {
+      return <SettingsButton />
+
+    }
+  },
+
   render: function() {
     this.getUrl()
     var divStyle = {
@@ -122,11 +131,13 @@ var App = React.createClass({
         backgroundSize: 'cover'
     }
 
+
+
     return (
       <div className="bg" style={divStyle}>
         {this.getDisplay()}
         <HideAllButton />
-        <SettingsButton />
+        {this.settingBtnHidden()}
         {this.getBackgroundButtons()}
       </div>
     )
