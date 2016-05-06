@@ -38,7 +38,7 @@ var CurrentGameInfo = React.createClass({
   getParticipants: function() {
     return this.state.game.participants.map(function(summoner) {
       return (
-        <div key={summoner.summonerId} className={summoner.teamId === "100" ? "Red" : "Blue"}>
+        <div key={summoner.summonerId} className={summoner.teamId === 100 ? "redTeam" : "blueTeam"}>
           <h2>{summoner.summonerName}</h2>
           <div><img src={CHAMPION_SQUARES[CHAMPIONS[summoner.championId]]}/></div>
           <div className="currentGameSpells">

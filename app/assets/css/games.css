@@ -330,7 +330,7 @@
   align-items: center;
 }
 
-.Blue {
+.blueTeam {
   background-color: #0000BB;
   display: flex;
   align-items: center;
@@ -338,7 +338,7 @@
   width: 100%;
 }
 
-.Red {
+.redTeam {
   background-color: #BD3737;
   display: flex;
   align-items: center;
@@ -361,12 +361,16 @@
 }
 
 .currentGameButton {
-  transition: .8s;
+  position: fixed;
+  transition: 1s;
   width: 24px;
+  z-index: 1050;
+  top: 20px;
+  right: 300px;
 }
 
 .currentGameButton:hover {
   cursor: pointer;
-  width: 28px;
-  transition: .8s;
+  transform: rotate(360deg);
+  transition: 1s;
 }
