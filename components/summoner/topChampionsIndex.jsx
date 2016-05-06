@@ -29,11 +29,12 @@ var TopChampionsIndex = React.createClass({
     this.summonerListener.remove();
   },
 
+
   champions: function(){
     return this.state.champions.map(function(champ, idx){
       return (
         <li key={idx}>
-          <img className="topChampionIndexItem" src={CHAMPION_SQUARES[CHAMPIONS[champ.championId]]} />
+          <img src={CHAMPION_SQUARES[CHAMPIONS[champ.championId]]} />
         </li>
       )
     });
