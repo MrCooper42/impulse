@@ -17,7 +17,7 @@
   transition: 1s;
   padding:10px;
   font-size:27px;
-  color: #A01D26;
+  color: #EAA732;
 }
 
 .summaryButtonOn:hover {
@@ -49,11 +49,13 @@
   font-family: 'Lato';
   font-size: 20px;
   position: absolute;
-  top:113px;
-  color:white;
-  background-color: #2F3131;
+  top:90px;
+  color:#2F3131;
+  background-color: #C3C2BE;
   right:25px;
   border-radius: 0 0 5px 5px;
+  box-shadow: 2px 2px 1px black;
+  z-index:1;
 }
 
 .searchDiv #searching{
@@ -66,7 +68,7 @@
     color: white;
     height: 90px;
     font-size: 60px;
-    width: 590px;
+    width: 500px;
     text-align: left;
     padding: 5px;
     padding-left:20px;
@@ -99,12 +101,61 @@
 
 .topChampionsIndex {
   position: fixed;
-  right: 20px;
-  bottom: 80px;
-  background-color: yellow;
-
+  right: 85px;
+  bottom: 48px;
+  background-color: #2F3131;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 1px black;
 }
 
-.topChampionIndex img {
-  width: 96px;
+.topChampHeader {
+  margin-top: 5px;
+  text-align: center;
+  color: #EAA732;
+  font-size: 20px;
+}
+
+.champImgContainer {
+  float:left;
+  padding-bottom: 10px;
+}
+
+.champInfoContainer {
+  float:right;
+  font-size: 12px;
+  color: white;
+  padding-right: 10px;
+  text-align: right;
+}
+
+.champLevel{
+  margin-top: 15px;
+}
+
+.champDate{
+ 
+}
+
+.champPoints{
+  padding-top: 10px;
+  padding-bottom: 10px; 
+}
+
+.topChampionsImage {
+  width:80px;
+  padding-left: 5px;
+  border-radius: 50%;
+  padding-right: 5px;
+}
+
+.topChampionsIndex li
+{
+  padding:0;
+  list-style-type: none;
+}
+
+.topChampionsIndex ul {
+  padding: 0;
+  list-style-type: none;
 }

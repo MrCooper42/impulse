@@ -31,10 +31,21 @@ var TopChampionsIndex = React.createClass({
 
 
   champions: function(){
+
+    
     return this.state.champions.map(function(champ, idx){
+      var date = new Date(champ.lastPlayTime).toString().slice(4,15);
+
       return (
         <li key={idx}>
-          <img src={CHAMPION_SQUARES[CHAMPIONS[champ.championId]]} />
+          <div className="champImgContainer">
+            <img className="topChampionsImage" src={CHAMPION_SQUARES[CHAMPIONS[champ.championId]]} />
+          </div>
+          <div className="champInfoContainer">
+            <div className="champLevel">Lvl: {champ.championLevel}</div>
+            <div className="champPoints">Pts: {champ.championPoints}</div>
+            <div className="champDate">{date}</div>
+          </div>
         </li>
       )
     });
@@ -47,6 +58,7 @@ var TopChampionsIndex = React.createClass({
   render: function(){
     return (
       <div className="topChampionsIndex">
+        <div className="topChampHeader">Top Champions</div>
         <ul>
           { this.champions() }
         </ul>
