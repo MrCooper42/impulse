@@ -55,8 +55,8 @@ var CurrentGameButton = React.createClass({
 
   render: function() {
     return (
-      <div className="currentGameButton" onClick={this.showModal}>
-        <img className="icon" src={this.getImageUrl()} />
+      <div className="" onClick={this.showModal}>
+        <img className="currentGameButton" src={this.getImageUrl()} />
         <Modal className="modalWindow" ref="modal">
           <CurrentGameInfo modalCallback={this.hideModal}/>
         </Modal>

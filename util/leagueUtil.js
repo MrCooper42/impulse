@@ -76,9 +76,28 @@ var LeagueUtil = {
       method: "GET",
       success: function(gameData) {
         LeagueActions.receiveCurrentGameData(gameData);
+
+        var team = gameData.participants.map(function(summoner) {
+          return summoner.summonerId
+        });
+
+        LeagueUtil.fetchTeamData(team);
       },
       error: function(a, b, c) {
         LeagueActions.noCurrentGameAvailable();
+      }
+    });
+  },
+
+  fetchTeamData: function(summonerIds) {
+    $.ajax({
+      url: "https://na.api.pvp.net/api/lol/na/v1.4/summoner/" + summonerIds.join(",") + "?api_key=" + key.league,
+      method: "GET",
+      success: function(summonersInfo) {
+        LeagueActions.receiveTeamData(summonersInfo);
+      },
+      error: function() {
+        console.log("Teammates not found");
       }
     });
   },

@@ -61,6 +61,13 @@ var LeagueActions = {
       actionType: "CURRENT_GAME",
       game: {gameId : 0}
     });
+  },
+
+  receiveTeamData: function(teamData) {
+    Dispatcher.dispatch({
+      actionType: "TEAM_DATA",
+      teamData: teamData
+    });
   }
 
 };

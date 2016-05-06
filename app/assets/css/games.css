@@ -105,7 +105,7 @@
   padding-left: 5px;
   padding-right: 5px;
   padding-bottom:5px;
-  padding-top:5px;  
+  padding-top:5px;
 }
 
 #CSOptions{
@@ -198,7 +198,7 @@
 
 .onToggleCSAvg{
   border-bottom: solid #20232A 3px;
-  color: #A01D26; 
+  color: #A01D26;
 }
 
 .onToggleDmgTotal{
@@ -208,7 +208,7 @@
 
 .onToggleDmgAvg{
   border-bottom: solid #20232A 3px;
-  color: #A01D26; 
+  color: #A01D26;
 }
 
 .toggleKDAoptions {
@@ -352,13 +352,21 @@
   flex-direction: column;
 }
 
-.currentGameHeader {
-
-}
 
 .currentGameInfo {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.currentGameButton {
+  transition: .8s;
+  width: 24px;
+}
+
+.currentGameButton:hover {
+  cursor: pointer;
+  width: 28px;
+  transition: .8s;
 }
