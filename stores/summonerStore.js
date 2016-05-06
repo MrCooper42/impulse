@@ -22,10 +22,6 @@ SummonerStore.rank = function() {
 
 SummonerStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
-    case 'RECEIVE_SUMMONER':
-      resetSummoner(payload.summoner);
-      SummonerStore.__emitChange();
-      break;
     case 'SET_SUMMONER':
       setSummoner(payload.summoner);
       SummonerStore.__emitChange();
@@ -58,11 +54,6 @@ var setRank = function(data) {
 var resetRank = function() {
   _rank = "UNRANKED";
   localStorage["summonerRank"] = _rank;
-};
-
-var resetSummoner = function(summoner) {
-  _summoner = summoner[Object.keys(summoner)[0]];
-  localStorage["summoner"] = JSON.stringify(_summoner);
 };
 
 var setSummoner = function(summoner) {

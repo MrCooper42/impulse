@@ -9,12 +9,7 @@ var LeagueUtil = {
       url: "https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/" + summonerName + "?api_key=" + key.league,
       method: "GET",
       success: function(summoner) {
-        that.fetchGameStats(summoner[Object.keys(summoner)[0]].id);
-        that.fetchSummonerStats(summoner[Object.keys(summoner)[0]].id);
-        that.fetchRankedInfo(summoner[Object.keys(summoner)[0]].id);
-        that.fetchTopChampions(summoner[Object.keys(summoner)[0]].id);
-        that.fetchCurrentGameInfo(summoner[Object.keys(summoner)[0]].id);
-        LeagueActions.receiveSummoner(summoner);
+        LeagueUtil.setSummoner(summoner[Object.keys(summoner)[0]]);
       },
       error: function(error) {
         window.alert("Summoner not found");
@@ -28,7 +23,6 @@ var LeagueUtil = {
     this.fetchSummonerStats(summoner.id);
     this.fetchCurrentGameInfo(summoner.id);
     this.fetchTopChampions(summoner.id);
-    this.fetchCurrentGameInfo(summoner.id);
   },
 
   fetchSummonerStats: function(summonerId) {
