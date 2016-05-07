@@ -372,7 +372,6 @@
   position: fixed;
   transition: 1s;
   width: 24px;
-  z-index: 1050;
   top: 20px;
   right: 300px;
 }
@@ -385,4 +384,9 @@
 
 .currentGameImg {
   width: 96px;
+}
+
+.currentGameWrapper {
+  display: flex;
+  justify-content: space-around;
 }

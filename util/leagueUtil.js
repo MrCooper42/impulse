@@ -4,12 +4,25 @@ var LeagueActions = require('../actions/leagueActions');
 var LeagueUtil = {
 
   fetchSummonerInfo: function(summonerName){
-    var that = this;
     $.ajax({
       url: "https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/" + summonerName + "?api_key=" + key.league,
       method: "GET",
       success: function(summoner) {
         LeagueUtil.setSummoner(summoner[Object.keys(summoner)[0]]);
+      },
+      error: function(error) {
+        window.alert("Summoner not found");
+      }
+    });
+  },
+
+  fetchSummonerInfo2: function(summonerId, callback){
+    $.ajax({
+      url: "https://na.api.pvp.net/api/lol/na/v1.4/summoner/" + summonerId + "?api_key=" + key.league,
+      method: "GET",
+      success: function(summoner) {
+        LeagueUtil.setSummoner(summoner[Object.keys(summoner)[0]]);
+        callback();
       },
       error: function(error) {
         window.alert("Summoner not found");

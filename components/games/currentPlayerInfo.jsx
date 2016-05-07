@@ -1,5 +1,8 @@
 var React = require('react');
 
+// FLUX
+var LeagueUtil = require('../../util/leagueUtil');
+
 // OBJECTS
 var CHAMPION_SQUARES = require('../../app/assets/images/squares');
 var CHAMPIONS = require('../../app/assets/objects/championsMap');
@@ -8,8 +11,8 @@ var SUMMONER_SPELLS = require('../../app/assets/images/summonerSpells');
 var CurrentPlayerInfo = React.createClass({
 
   searchSummoner: function() {
-    LeagueUtil.setSummoner(this.props.summoner.summonerId);
-    location.reload();
+    LeagueUtil.fetchSummonerInfo2(this.props.summoner.summonerId, this.props.modalCallback);
+    // this.props.modalCallback();
   },
 
   render: function() {

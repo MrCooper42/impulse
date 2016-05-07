@@ -39,10 +39,11 @@ var CurrentGameInfo = React.createClass({
   },
 
   getParticipants: function(teamId) {
+    var callback = this.props.modalCallback;
     return this.state.game.participants.map(function(summoner) {
       if (summoner.teamId === teamId) {
         return (
-          < CurrentPlayerInfo key={summoner.summonerId} summoner={summoner} />
+          < CurrentPlayerInfo key={summoner.summonerId} summoner={summoner} modalCallback={callback}/>
         );
       }
     });
@@ -53,8 +54,11 @@ var CurrentGameInfo = React.createClass({
     return (
       <div className="currentGameInfo">
         <h3 className="currentGameHeader">{this.state.game.gameMode} {this.state.game.gameType}</h3>
-        <span>{this.getParticipants(100)}</span>
-        <span>{this.getParticipants(200)}</span>
+        <div className="currentGameWrapper">
+          <div>{this.getParticipants(100)}</div>
+          <div><h1>VS.</h1></div>
+          <div>{this.getParticipants(200)}</div>
+        </div>
       </div>
     );
   }
