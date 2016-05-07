@@ -72,12 +72,12 @@ var LeagueUtil = {
       success: function(gameData) {
         LeagueActions.receiveCurrentGameData(gameData);
       },
-      error: function(a, b, c) {
+      error: function(error) {
         LeagueActions.noCurrentGameAvailable();
       }
     });
   },
-  
+
   fetchTopChampions: function(summonerId){
     $.ajax({
       url: "https://na.api.pvp.net/championmastery/location/NA1/player/" + summonerId + "/topchampions?api_key=" + key.league,
