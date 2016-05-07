@@ -28,6 +28,7 @@
   top: 300px;
   left: 20px;
   padding: 10px 30px;
+  transition: 0.5s;
 }
 
 .progression {
@@ -316,6 +317,7 @@
   background-color: black;
   width: 220px;
   left: 10px;
+  transition: 0.5s;
 }
 
 .itemsList {
