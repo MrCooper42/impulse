@@ -39,6 +39,8 @@ var SearchSummoner = React.createClass({
     e.preventDefault();
     if (this.state.inputText === "") {
       localStorage.removeItem('summoner');
+      localStorage.removeItem('summaryStats');
+      localStorage.removeItem('summonerRank');
       location.reload();
     } else {
       LeagueUtil.fetchSummonerInfo(this.state.inputText);

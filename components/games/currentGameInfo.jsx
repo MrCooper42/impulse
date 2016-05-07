@@ -4,6 +4,9 @@ var React = require('react');
 var GameStore = require('../../stores/gameStore');
 var SummonerStore = require('../../stores/summonerStore');
 
+// COMPONENTS
+var CurrentPlayerInfo = require('./currentPlayerInfo');
+
 // OBJECTS
 var CHAMPION_SQUARES = require('../../app/assets/images/squares');
 var CHAMPIONS = require('../../app/assets/objects/championsMap');
@@ -36,17 +39,11 @@ var CurrentGameInfo = React.createClass({
   },
 
   getParticipants: function() {
+    debugger;
     return this.state.game.participants.map(function(summoner) {
       return (
-        <div key={summoner.summonerId} className={summoner.teamId === 100 ? "redTeam" : "blueTeam"}>
-          <h2>{summoner.summonerName}</h2>
-          <div><img src={CHAMPION_SQUARES[CHAMPIONS[summoner.championId]]}/></div>
-          <div className="currentGameSpells">
-            <img className="icon" src={SUMMONER_SPELLS[summoner.spell1Id].url}/>
-            <img className="icon" src={SUMMONER_SPELLS[summoner.spell2Id].url}/>
-          </div>
-        </div>
-      )
+        < CurrentPlayerInfo summoner={summoner} />
+      );
     });
   },
 

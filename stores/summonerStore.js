@@ -6,7 +6,6 @@ var SummonerStore = new Store(Dispatcher);
 var _summoner = {id: 0};
 var _summaryStats = {};
 var _rank = "";
-var _teammates = [];
 
 SummonerStore.summoner = function() {
   return _summoner;
@@ -19,6 +18,7 @@ SummonerStore.stats = function() {
 SummonerStore.rank = function() {
   return _rank;
 };
+
 
 SummonerStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
@@ -36,10 +36,6 @@ SummonerStore.__onDispatch = function(payload) {
       break;
     case 'NO_RANK':
       resetRank();
-      SummonerStore.__emitChange();
-      break;
-    case 'TEAM_DATA':
-      setTeam(payload.teamData);
       SummonerStore.__emitChange();
       break;
   };
@@ -66,10 +62,6 @@ var resetStats = function(summaryStats) {
   localStorage["summaryStats"] = JSON.stringify(summaryStats);
 };
 
-var setTeam = function(team) {
-  _teammates = team;
-  localStorage["teammates"] = JSON.stringify(team);
-};
 
 var checkStorage = function() {
   if (localStorage['summoner']) {
@@ -80,9 +72,6 @@ var checkStorage = function() {
   }
   if (localStorage['summonerRank']) {
     _rank = localStorage['summonerRank'];
-  }
-  if (localStorage['teammates']) {
-    _teammates = localStorage['teammates'];
   }
 };
 
