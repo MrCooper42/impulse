@@ -56,7 +56,7 @@ var CurrentGameInfo = React.createClass({
         <h3 className="currentGameHeader">{this.state.game.gameMode} {this.state.game.gameType}</h3>
         <div className="currentGameWrapper">
           <div>{this.getParticipants(100)}</div>
-          <div><h1>VS.</h1></div>
+          <div><h1>VS</h1></div>
           <div>{this.getParticipants(200)}</div>
         </div>
       </div>

@@ -43,6 +43,8 @@
   border-radius: 5px;
   padding-right:20px;
   padding-bottom: 5px;
+  box-shadow: 2px 2px 1px black;
+
 }
 
 .progression svg{
@@ -175,7 +177,7 @@
 
 .onToggleDeath {
   border-bottom: solid #EAA732 3px;
-  color: #20232A;
+  color: #A01D26;
 }
 
 .onToggleAssist {
@@ -199,13 +201,8 @@
 }
 
 .onToggleCSAvg{
-<<<<<<< HEAD
   border-bottom: solid #20232A 3px;
-  color: #A01D26;
-=======
-  border-bottom: solid #EAA732 3px;
   color: #EAA732;
->>>>>>> b96fd0ae5268b636bc94b39f38ede5c8f0ca86f1
 }
 
 .onToggleDmgTotal{
@@ -215,7 +212,7 @@
 
 .onToggleDmgAvg{
   border-bottom: solid #20232A 3px;
-  color: #A01D26;
+  color: #EAA732;
 }
 
 .toggleKDAoptions {
@@ -245,7 +242,7 @@
   cursor: pointer;
   text-align: center;
   margin-bottom: 5px;
-  color: #20232A;
+  color: black;
   padding-bottom: 5px;
 }
 
@@ -279,7 +276,7 @@
 }
 
 .recentGame .avatar{
-  background-color: white;
+  background-color: black;
   margin-left: 40px;
 }
 
@@ -340,19 +337,35 @@
 }
 
 .blueTeam {
-  background-color: #0000BB;
+  background-color: #257985;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  width: 100%;
+  justify-content: flex-end;
+  margin-right: 15px;
+  border-bottom: solid 3px black;
+  transition: 0.5s;
+}
+
+.blueTeam:hover{
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.5s;
 }
 
 .redTeam {
-  background-color: #BD3737;
+  background-color: #FF4447;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
+  justify-content: flex-end;
+  margin-left: 15px;
+  border-bottom: solid 3px black;
+  transition: 0.5s;
+}
+
+.redTeam:hover{
+  cursor: pointer;
+  opacity: 0.6;  
+  transition: 0.5s;
 }
 
 .currentGameSpells {
@@ -383,10 +396,10 @@
 }
 
 .currentGameImg {
-  width: 96px;
+  width: 80px;
 }
 
 .currentGameWrapper {
   display: flex;
-  justify-content: space-around;
+  align-items:center;
 }
