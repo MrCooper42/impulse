@@ -27,6 +27,28 @@ Download Available on the [Chrome Web Store](https://google.com/)
 * LoL-inspired Quote
 * Live Weather & Location 
 
+## Challenges
+1. Efficiently Using API Calls
+  * AD:
+  * MS:
+
+2. Live Game Information
+```javascript
+
+
+```
+3. Progression Chart
+```javascript
+
+
+```
+
+4. Recent Game Build/Stats 
+```javascript
+
+
+```
+
 
 ## Team
 * [Arjun Dutta](https://github.com/adutta91)
