@@ -83,6 +83,12 @@ Check out our [walkthrough](https://www.youtube.com/watch?v=MQveiATYtnA&feature=
 Whenever a summoner was searched, the application makes a request to the API for the relevant information. It was designed to limit API calls to only when a new summoner is searched. Otherwise, API calls would have to be made everytime a widget was opened. By front loading all the API calls, we limit the call rate and allow settings management without excess API calls.
 
 
+##TODOS
+[ ] Drag & Drop Widgets
+[ ] Look up more detailed previous game stats
+[ ] Statistics in comparison to teammates  
+[ ] Add more quotes/background images
+
 ## Team
 * [Arjun Dutta](https://github.com/adutta91)
 * [Matthew Shen](https://github.com/mattyshen)
