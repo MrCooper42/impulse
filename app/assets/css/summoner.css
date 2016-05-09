@@ -10,7 +10,6 @@
   transition: 1s;
   padding:5px;
   font-size:20px;
-
 }
 
 .summaryButtonOn {
@@ -87,13 +86,13 @@
 
 .summonerRank {
   position: fixed;
-  right: 160px;
+  right: 190px;
 }
 
 .division {
   position: fixed;
   top: 30px;
-  right: 140px;
+  right: 160px;
   font-size: 40px;
   color: white;
   text-shadow: 3px 3px black;
@@ -134,12 +133,12 @@
 }
 
 .champDate{
- 
+
 }
 
 .champPoints{
   padding-top: 10px;
-  padding-bottom: 10px; 
+  padding-bottom: 10px;
 }
 
 .topChampionsImage {
