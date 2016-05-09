@@ -9,7 +9,7 @@ var Modal = require('boron/OutlineModal');
 var CurrentGameInfo = require('./currentGameInfo');
 
 var modalStyle = {
-  width: '590px',
+  width: '660px',
   height: '500px',
 };
 
@@ -18,6 +18,7 @@ var backdropStyle = {
 
 var contentStyle = {
   height: '100%',
+  width: '660px',
   color: 'white',
   backgroundColor : '#2F3131'
 };
@@ -71,10 +72,10 @@ var CurrentGameButton = React.createClass({
     return (
       <div className="" onClick={this.showModal}>
         <img className="currentGameButton" src={this.getImageUrl()} />
-        <Modal className="modalWindow" 
+        <Modal className="modalWindow"
          contentStyle={contentStyle}
          modalStyle={modalStyle}
-         backdropStyle={backdropStyle} 
+         backdropStyle={backdropStyle}
          ref="modal">
           <CurrentGameInfo modalCallback={this.hideModal}/>
         </Modal>

@@ -355,6 +355,7 @@
   align-items: center;
   justify-content: flex-end;
   margin-right: 15px;
+  width: 280px;
   border-bottom: solid 3px black;
   transition: 0.5s;
 }
@@ -369,15 +370,16 @@
   background-color: #FF4447;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   margin-left: 15px;
+  width: 280px;
   border-bottom: solid 3px black;
   transition: 0.5s;
 }
 
 .redTeam:hover{
   cursor: pointer;
-  opacity: 0.6;  
+  opacity: 0.6;
   transition: 0.5s;
 }
 
