@@ -42,11 +42,15 @@ var resetGames = function(games) {
 
 var resetCurrentGame = function(game) {
   _currentGame = game;
+  localStorage['currentGame'] = JSON.stringify(game);
 };
 
 var checkStorage = function() {
   if (localStorage['leagueGames']) {
     _games = JSON.parse(localStorage['leagueGames']);
+  }
+  if (localStorage['currentGame']) {
+    _currentGame = JSON.parse(localStorage['currentGame']);
   }
 };
 

@@ -11,8 +11,7 @@ var SUMMONER_SPELLS = require('../../app/assets/images/summonerSpells');
 var CurrentPlayerInfo = React.createClass({
 
   searchSummoner: function() {
-    LeagueUtil.fetchSummonerInfo2(this.props.summoner.summonerId, this.props.modalCallback);
-    // this.props.modalCallback();
+    LeagueUtil.fetchSummonerInfoWithCallback(this.props.summoner.summonerId, this.props.modalCallback);
   },
 
   render: function() {

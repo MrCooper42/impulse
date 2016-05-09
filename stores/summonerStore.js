@@ -1,9 +1,11 @@
 var Store = require('flux/utils').Store;
 var Dispatcher = require('../dispatcher/dispatcher');
 
+var LeagueUtil = require('../util/leagueUtil');
+
 var SummonerStore = new Store(Dispatcher);
 
-var _summoner = {id: 0};
+var _summoner = {id : 0};
 var _summaryStats = {};
 var _rank = "";
 
@@ -72,6 +74,15 @@ var checkStorage = function() {
   }
   if (localStorage['summonerRank']) {
     _rank = localStorage['summonerRank'];
+  }
+  if (!localStorage['summoner']) {
+    LeagueUtil.setSummoner({
+       "id": 60131288,
+       "name": "DoctorZeus",
+       "profileIconId": 785,
+       "revisionDate": 1462663095000,
+       "summonerLevel": 30
+     });
   }
 };
 

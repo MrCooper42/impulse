@@ -103,7 +103,7 @@ module.exports = {
 
   "Kennen": "http://res.cloudinary.com/dzyfczxnr/image/upload/v1460752790/champSquares/KennenSquare.png",
 
-  "Kha'Zix": "http://res.cloudinary.com/dzyfczxnr/image/upload/v1460752790/champSquares/KhaZixSquare.png",
+  "Khazix": "http://res.cloudinary.com/dzyfczxnr/image/upload/v1460752790/champSquares/KhaZixSquare.png",
 
   "Kindred": "http://res.cloudinary.com/dzyfczxnr/image/upload/v1460752790/champSquares/KindredSquare.png",
 

@@ -1,10 +1,10 @@
 module.exports = {
   "Search": true,
-  "SummonerSummary": false,
-  "RecentGame": false,
-  "Progression": false,
-  "CurrentGame": false,
-  "TopChampions": false,
+  "SummonerSummary": true,
+  "RecentGame": true,
+  "Progression": true,
+  "CurrentGame": true,
+  "TopChampions": true,
   "Clock": true,
   "Quote": true,
   "Weather": true

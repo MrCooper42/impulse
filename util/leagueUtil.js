@@ -16,7 +16,7 @@ var LeagueUtil = {
     });
   },
 
-  fetchSummonerInfo2: function(summonerId, callback){
+  fetchSummonerInfoWithCallback: function(summonerId, callback){
     $.ajax({
       url: "https://na.api.pvp.net/api/lol/na/v1.4/summoner/" + summonerId + "?api_key=" + key.league,
       method: "GET",

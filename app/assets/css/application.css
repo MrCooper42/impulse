@@ -23,3 +23,8 @@ ul {
 h2 {
  margin: 5px;
 }
+
+h4 {
+  margin: 10px auto;
+  text-align: center;
+}
