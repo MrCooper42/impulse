@@ -1,6 +1,8 @@
 # Impulse
 impulse is a new-tab chrome extension that allows League of Legend (LoL) users to quickly search (via LoL username) and look up various statistics on opponent and allies alike. impulse is built with Google Chrome Extensions, React.js, Flux, Javascript, and D3.js. 
 
+[**Video Walkthrough**](https://google.com/)
+
 ![alt text][logo]
 
 [logo]: http://res.cloudinary.com/dzyfczxnr/image/upload/v1462828236/Impulse/Screen_Shot_2016-05-09_at_2.04.01_PM.png "Default Impulse"
