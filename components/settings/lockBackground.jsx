@@ -23,15 +23,13 @@ var LockBackground = React.createClass({
     this.setState({ locked: !this.state.locked });
   },
 
-  buttonValue: function() {
-    return this.state.locked ? "locked" : "unlocked"
+  imgUrl: function() {
+    return this.state.locked ? "http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,w_32/v1462819758/Impulse/lock.png" : "http://res.cloudinary.com/dzyfczxnr/image/upload/c_scale,w_32/v1462819757/Impulse/unlock.png"
   },
 
   render: function() {
     return (
-      <div className="lockBackground" onClick={this.toggleLock}>
-        {this.buttonValue()}
-      </div>
+      <img className="lockBackground" src={this.imgUrl()} onClick={this.toggleLock}/>
     );
   }
 });
