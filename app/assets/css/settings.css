@@ -7,11 +7,13 @@
   border-radius: 3px;
   transition: 1s;
   color: white;
+  border: 1px solid rgba(0, 0, 0, 0)
 }
 
 .hideAllButton:hover {
   cursor: pointer;
   background-color: #2F3131;
+  border: 1px solid white;
   transition: 1s;
 }
 
@@ -38,11 +40,13 @@
   border-radius: 3px;
   transition: 1s;
   color: white;
+  border: 1px solid rgba(0, 0, 0, 0)
 }
 
 .refreshBackground:hover {
   background-color: #2F3131;
   cursor: pointer;
+  border: 1px solid white;
   transition: 1s;
 }
 
