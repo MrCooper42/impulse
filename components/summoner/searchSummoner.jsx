@@ -20,7 +20,6 @@ var SearchSummoner = React.createClass({
         summoner: summoner,
         inputText: summoner.name
       });
-      // LeagueUtil.setSummoner(summoner);
     }
   },
 
