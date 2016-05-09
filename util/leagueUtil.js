@@ -3,18 +3,6 @@ var LeagueActions = require('../actions/leagueActions');
 
 var LeagueUtil = {
 
-  fetchSummonerInfo: function(summonerName){
-    $.ajax({
-      url: "https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/" + summonerName + "?api_key=" + key.league,
-      method: "GET",
-      success: function(summoner) {
-        LeagueUtil.setSummoner(summoner[Object.keys(summoner)[0]]);
-      },
-      error: function(error) {
-        window.alert("Summoner not found");
-      }
-    });
-  },
 
   fetchSummonerInfoWithCallback: function(summonerId, callback){
     $.ajax({
@@ -23,6 +11,19 @@ var LeagueUtil = {
       success: function(summoner) {
         LeagueUtil.setSummoner(summoner[Object.keys(summoner)[0]]);
         callback();
+      },
+      error: function(error) {
+        window.alert("Summoner not found");
+      }
+    });
+  },
+  
+  fetchSummonerInfo: function(summonerName){
+    $.ajax({
+      url: "https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/" + summonerName + "?api_key=" + key.league,
+      method: "GET",
+      success: function(summoner) {
+        LeagueUtil.setSummoner(summoner[Object.keys(summoner)[0]]);
       },
       error: function(error) {
         window.alert("Summoner not found");

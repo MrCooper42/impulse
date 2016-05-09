@@ -28,44 +28,52 @@ Download Available on the [Chrome Web Store](https://google.com/)
 * Live Weather & Location 
 
 ## Challenges
-1. Efficiently Using API Calls
-  * AD:
-  * MS:
+* Efficiently Using API Calls
+  * Limited API calls to only when absolutely necessary
+  * Utilized browsers local storage to cache data from api calls
+  * Organized flux architecture to control flow of data
 
-2. Live Game Information
+API CALLS
 ```javascript
-
-
-```
-3. Progression Chart
-```javascript
-
-getAllData: function(){
-  if (this.state.allGames.length > 0) {
-    var killDates = [];
-    var allGames = this.state.allGames;
-    var result = [];
-
-    allGames.forEach(function(game, idx){
-      killDates.push({x: 10-idx, y: (game.stats.championsKilled ? game.stats.championsKilled : 0)})
+  fetchSummonerInfo: function(summonerName){
+    $.ajax({
+      url: "https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/" + summonerName + "?api_key=" + key.league,
+      method: "GET",
+      success: function(summoner) {
+        LeagueUtil.setSummoner(summoner[Object.keys(summoner)[0]]);
+      },
+      error: function(error) {
+        window.alert("Summoner not found");
+      }
     });
+  },
 
-    if(this.state.KDA){
-        if (this.state.KDAdisplay[0]){
-          result.push(killDates);
-        }
+  setSummoner: function(summoner) {
+    LeagueActions.setSummoner(summoner);
+    this.fetchGameStats(summoner.id);
+    this.fetchSummonerStats(summoner.id);
+    this.fetchTopChampions(summoner.id);
+    this.fetchRankedInfo(summoner.id);
+    this.fetchCurrentGameInfo(summoner.id);
+  },
+```
+
+SUMMONER SEARCHED (SUBMIT)
+```javascript 
+  _onSubmit: function(e){
+    e.preventDefault();
+    if (this.state.inputText === "") {
+      localStorage.removeItem('summoner');
+      localStorage.removeItem('summaryStats');
+      localStorage.removeItem('summonerRank');
+      location.reload();
+    } else {
+      LeagueUtil.fetchSummonerInfo(this.state.inputText);
     }
-    return result.length === 0 ? [[{x: 0, y:0}]] : result
-  }
-}
-
+  },
 ```
 
-4. Recent Game Build/Stats 
-```javascript
-
-
-```
+Whenever a summoner was searched, the application makes a request to the API for the relevant information. It was designed to limit API calls to only when a new summoner is searched. Otherwise, API calls would have to be made everytime a widget was opened. By front loading all the API calls, we limit the call rate and allow settings management without excess API calls.
 
 
 ## Team
