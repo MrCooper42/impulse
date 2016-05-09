@@ -16,7 +16,7 @@
 }
 
 .recentGameInfo {
-  background-color: black;
+  background-color: #2F3131;
   color: white;
   display: flex;
   flex-direction: column;
@@ -29,6 +29,11 @@
   left: 20px;
   padding: 10px 30px;
   transition: 0.5s;
+  box-shadow: 2px 2px 1px black;
+}
+
+.recentGameInfo h2{
+  color: #EAA732;
 }
 
 .progression {
@@ -273,6 +278,7 @@
   left:95px;
   padding-bottom: 5px;
   z-index:1;
+  border-radius: 5px;
 }
 
 .recentGame .avatar{
@@ -311,10 +317,17 @@
   position: absolute;
   top: 40px;
   color: white;
-  background-color: black;
+  background-color: #2F3131;
   width: 220px;
   left: 10px;
   transition: 0.5s;
+  border-radius: 5px;
+  box-shadow: 2px 2px 1px black;
+
+}
+
+.compareStats h4{
+  color: #EAA732;
 }
 
 .itemsList {
@@ -374,6 +387,11 @@
   flex-direction: column;
 }
 
+.currentGameHeader {
+  color: #EAA732;
+  font-size: 20px;
+}
+
 .currentGameInfo {
   display: flex;
   align-items: center;
@@ -402,4 +420,8 @@
 .currentGameWrapper {
   display: flex;
   align-items:center;
+}
+
+.currentGameWrapper h1{
+  color: #EAA732;
 }

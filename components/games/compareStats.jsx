@@ -93,7 +93,7 @@ var CompareStats = React.createClass({
       // <li>Dmg/min: {displayStats.totalDamageDealtToChampions} {this.dmgCompare(averages)} ({averages.damageAvg})</li>
       return (
         <div>
-          <h4>Stats compared to averages</h4>
+          <h4>STATS  vs.  AVG</h4>
           <ul>
             <li>Kills: {displayStats.championsKilled} {this.killCompare(averages)}</li>
             <li>Deaths: {displayStats.numDeaths} {this.deathCompare(averages)}</li>
