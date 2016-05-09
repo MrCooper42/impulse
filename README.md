@@ -84,10 +84,10 @@ Whenever a summoner was searched, the application makes a request to the API for
 
 
 ##TODOS
-[ ] Drag & Drop Widgets
-[ ] Look up more detailed previous game stats
-[ ] Statistics in comparison to teammates  
-[ ] Add more quotes/background images
+- [ ] MercuryDrag & Drop Widgets
+- [ ] Look up more detailed previous game stats
+- [ ] Statistics in comparison to teammates  
+- [ ] Add more quotes/background images
 
 ## Team
 * [Arjun Dutta](https://github.com/adutta91)
