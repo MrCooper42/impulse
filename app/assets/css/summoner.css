@@ -52,8 +52,9 @@
   color:white;
   background-color: #2F3131;
   right:25px;
-  border-radius: 0 0 5px 5px;
-  box-shadow: 2px 2px 1px black;
+  border-radius: 5px;
+  box-shadow: 3px 3px 2px black;
+  border: 1px solid white;
   z-index:1;
 }
 
@@ -100,12 +101,13 @@
 
 .topChampionsIndex {
   position: fixed;
-  right: 85px;
-  bottom: 48px;
+  right: 175px;
+  bottom: 80px;
   background-color: #2F3131;
   padding-bottom: 5px;
   border-radius: 5px;
-  box-shadow: 2px 2px 1px black;
+  box-shadow: 3px 3px 2px black;
+  border: 1px solid white;
 }
 
 .topChampHeader {

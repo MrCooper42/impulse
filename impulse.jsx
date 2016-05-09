@@ -85,24 +85,17 @@ var App = React.createClass({
     }
   },
 
-  getBackgroundButtons: function() {
-    var buttons = (
-      <LockBackground />
-    );
+  getRefreshBackground: function() {
     if (localStorage['bgLocked'] !== 'true') {
-      buttons = (
-        <div>
-          <LockBackground />
-          <RefreshBackground />
-        </div>
+      return (
+        <RefreshBackground />
+      );
+    } else {
+      return (
+        <div/>
       );
     };
 
-    if (localStorage['hideAll'] !== "true"){
-      return buttons;
-    } else{
-      return <div/>
-    }
   },
 
   settingBtnHidden: function(){
@@ -110,7 +103,6 @@ var App = React.createClass({
       return <div/>
     } else {
       return <SettingsButton />
-
     }
   },
 
@@ -126,14 +118,13 @@ var App = React.createClass({
         backgroundSize: 'cover'
     }
 
-
-
     return (
       <div className="bg" style={divStyle}>
         {this.getDisplay()}
+        <LockBackground />
         <HideAllButton />
+        {this.getRefreshBackground()}
         {this.settingBtnHidden()}
-        {this.getBackgroundButtons()}
       </div>
     )
   }
