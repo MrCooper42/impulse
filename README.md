@@ -40,6 +40,24 @@ Download Available on the [Chrome Web Store](https://google.com/)
 3. Progression Chart
 ```javascript
 
+getAllData: function(){
+  if (this.state.allGames.length > 0) {
+    var killDates = [];
+    var allGames = this.state.allGames;
+    var result = [];
+
+    allGames.forEach(function(game, idx){
+      killDates.push({x: 10-idx, y: (game.stats.championsKilled ? game.stats.championsKilled : 0)})
+    });
+
+    if(this.state.KDA){
+        if (this.state.KDAdisplay[0]){
+          result.push(killDates);
+        }
+    }
+    return result.length === 0 ? [[{x: 0, y:0}]] : result
+  }
+}
 
 ```
 
