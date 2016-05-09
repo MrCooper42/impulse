@@ -8,7 +8,7 @@ impulse is a new-tab chrome extension that allows League of Legend (LoL) users t
 [logo]: http://res.cloudinary.com/dzyfczxnr/image/upload/v1462828236/Impulse/Screen_Shot_2016-05-09_at_2.04.01_PM.png "Default Impulse"
 
 ## Installation
-Download Available on the [Chrome Web Store](https://google.com/)
+Download Available on the [Chrome Web Store](https://chrome.google.com/webstore/detail/impulse/aigkahjbocbglmnnhaghdednifgbofdm)
 
 ## Widgets/Features
 Check out our [walkthrough](https://www.youtube.com/watch?v=MQveiATYtnA&feature=youtu.be) which demonstrates the following features:
