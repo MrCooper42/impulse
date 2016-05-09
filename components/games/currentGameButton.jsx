@@ -8,6 +8,21 @@ var SummonerStore = require('../../stores/summonerStore');
 var Modal = require('boron/OutlineModal');
 var CurrentGameInfo = require('./currentGameInfo');
 
+var modalStyle = {
+  width: '590px',
+  height: '500px'
+};
+
+var backdropStyle = {
+};
+
+var contentStyle = {
+    height: '100%',
+    color: 'white',
+    backgroundColor : 'black'
+
+};
+
 var CurrentGameButton = React.createClass({
 
   getInitialState: function() {
@@ -57,7 +72,11 @@ var CurrentGameButton = React.createClass({
     return (
       <div className="" onClick={this.showModal}>
         <img className="currentGameButton" src={this.getImageUrl()} />
-        <Modal className="modalWindow" ref="modal">
+        <Modal className="modalWindow" 
+         contentStyle={contentStyle}
+         modalStyle={modalStyle}
+         backdropStyle={backdropStyle} 
+         ref="modal">
           <CurrentGameInfo modalCallback={this.hideModal}/>
         </Modal>
       </div>
