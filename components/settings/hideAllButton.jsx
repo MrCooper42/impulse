@@ -17,7 +17,7 @@ var HideAllButton = React.createClass({
   render: function() {
     return (
       <div className="hideAllButton" onClick={this.toggleHide}>
-        Hide All
+        Hide
       </div>
     )
   }

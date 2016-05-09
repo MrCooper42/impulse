@@ -11,6 +11,7 @@ var CurrentPlayerInfo = require('./currentPlayerInfo');
 var CHAMPION_SQUARES = require('../../app/assets/images/squares');
 var CHAMPIONS = require('../../app/assets/objects/championsMap');
 var SUMMONER_SPELLS = require('../../app/assets/images/summonerSpells');
+var GAME_MODES = require('../../app/assets/objects/gameModes');
 
 var CurrentGameInfo = React.createClass({
 
@@ -53,7 +54,7 @@ var CurrentGameInfo = React.createClass({
   render: function() {
     return (
       <div className="currentGameInfo">
-        <h3 className="currentGameHeader">{this.state.game.gameMode} {this.state.game.gameType}</h3>
+        <h3 className="currentGameHeader">  {GAME_MODES[this.state.game.gameMode]} {GAME_MODES[this.state.game.gameType]}</h3>
         <div className="currentGameWrapper">
           <div>{this.getParticipants(100)}</div>
           <div><h1>VS</h1></div>

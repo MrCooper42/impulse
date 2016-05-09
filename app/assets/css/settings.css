@@ -5,32 +5,29 @@
   left: 20px;
   padding: 5px;
   border-radius: 3px;
-  background-color: #F1E8D5;
+  background-color: black;
   transition: 1s;
+  color: white;
 }
 
 .hideAllButton:hover {
   cursor: pointer;
-  color: white;
-  background-color: black;
+  background-color: #2F3131;
   transition: 1s;
 }
 
 .lockBackground {
   position: fixed;
-  bottom: 20px;
+  bottom: 15px;
   right: 20px;
   padding: 5px;
   text-align: center;
   border-radius: 3px;
-  background-color: #F1E8D5;
   transition: 1s;
 }
 
 .lockBackground:hover {
   cursor: pointer;
-  color: white;
-  background-color: black;
   transition: 1s;
 }
 
@@ -40,14 +37,14 @@
   right: 20px;
   padding: 5px;
   border-radius: 3px;
-  background-color: #F1E8D5;
   transition: 1s;
+  background-color: black;
+  color: white;
 }
 
 .refreshBackground:hover {
+  background-color: #2F3131;
   cursor: pointer;
-  color: white;
-  background-color: black;
   transition: 1s;
 }
 
@@ -55,23 +52,23 @@
   position: fixed;
   left: 20px;
   bottom: 20px;
+  width: 25px;
   padding: 5px;
   border-radius: 3px;
-  background-color: #F1E8D5;
   transition: 1s;
 }
 
 .settingsIcon:hover {
   cursor: pointer;
   color: white;
-  background-color: black;
+  background-color: #2F3131;
   transition: 1s;
 }
 
 .settingsMenu {
   position: fixed;
   left: 10px;
-  bottom:40px;
+  bottom:60px;
   color:white;
   background-color: black;
   z-index: 100;

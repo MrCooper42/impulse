@@ -51,9 +51,7 @@ var SettingsButton = React.createClass({
     return (
       <div>
         {this.display()}
-        <div className="settingsIcon" onClick={this.showModal} >
-          Settings
-        </div>
+        <img src="http://res.cloudinary.com/dzyfczxnr/image/upload/v1462821152/Impulse/settings.png" className="settingsIcon" onClick={this.showModal} />
         <Modal className="modalWindow"
                ref="modal"
                contentStyle={contentStyle}
