@@ -11,6 +11,9 @@ var CurrentGameInfo = require('./currentGameInfo');
 var modalStyle = {
   width: '660px',
   height: '500px',
+  border: 'solid 3px white',
+  paddingBottom: '10px',
+  borderRadius: '5px'
 };
 
 var backdropStyle = {
@@ -20,7 +23,9 @@ var contentStyle = {
   height: '100%',
   width: '660px',
   color: 'white',
-  backgroundColor : '#2F3131'
+  backgroundColor : '#2F3131',
+  paddingBottom: '10px',
+  borderRadius: '5px'
 };
 
 var CurrentGameButton = React.createClass({
