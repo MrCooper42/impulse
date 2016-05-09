@@ -9,6 +9,7 @@ impulse is a new-tab chrome extension that allows League of Legend (LoL) users t
 Download Available on the [Chrome Web Store](https://google.com/)
 
 ## Widgets/Features
+Check out our [walkthrough](https://google.com/) which demonstrates the following features:
 * Summoner Search
 * Summoner Summary (Season Stats)
 * Recent Game Build/Stats
