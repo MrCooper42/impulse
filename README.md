@@ -84,7 +84,7 @@ Whenever a summoner was searched, the application makes a request to the API for
 
 
 ##TODOS
-- [ ] MercuryDrag & Drop Widgets
+- [ ] Drag & Drop Widgets
 - [ ] Look up more detailed previous game stats
 - [ ] Statistics in comparison to teammates  
 - [ ] Add more quotes/background images
