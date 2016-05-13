@@ -5,8 +5,23 @@ var LeagueUtil = require('../../util/leagueUtil');
 
 var REC = require("react-easy-chart");
 var LineChart = REC.LineChart;
-var ProgressionToolTip = require('./progressionToolTip');
 
+// COMPONENTS
+var ProgressionToolTip = require('./progressionToolTip');
+var PastGame = require('./pastGame');
+
+// MODAL
+var Modal = require('boron/OutlineModal');
+
+// MODAL STYLE
+var modalStyle = {
+};
+
+var backdropStyle = {
+};
+
+var contentStyle = {
+};
 
 var Progression = React.createClass({
   getInitialState: function(){
@@ -34,7 +49,9 @@ var Progression = React.createClass({
       top: "",
       left: "",
       x:0,
-      y:0
+      y:0,
+
+      selectedGame: 0
     };
   },
 
@@ -60,6 +77,14 @@ var Progression = React.createClass({
       otherGames: GameStore.allGames().slice(1),
       allGames: GameStore.allGames()
     })
+  },
+
+  showModal: function(){
+    this.refs.modal.show();
+  },
+
+  hideModal: function(){
+    this.refs.modal.hide();
   },
 
   getAllData: function(){
@@ -105,7 +130,7 @@ var Progression = React.createClass({
 
       allGames.forEach(function(game, idx){
         CSDates.push({x:10-idx, y: (game.stats.minionsKilled ? game.stats.minionsKilled : 0)})
-      }); 
+      });
 
       allGames.forEach(function(game, idx){
         CSAvg.push({x:10-idx, y: (game.stats.minionsKilled/game.stats.timePlayed ? parseInt((game.stats.minionsKilled/(game.stats.timePlayed/60)).toFixed(2)): 0)})
@@ -130,16 +155,16 @@ var Progression = React.createClass({
       if(this.state.Gold){
         if(this.state.GoldDisplay[0]){
           result.push(goldDates);
-        } 
+        }
 
         if(this.state.GoldDisplay[1]){
           result.push(goldAvg);
         }
-      } 
+      }
       else if(this.state.CS){
         if(this.state.CSDisplay[0]){
           result.push(CSDates);
-        } 
+        }
 
         if(this.state.CSDisplay[1]){
           result.push(CSAvg);
@@ -148,7 +173,7 @@ var Progression = React.createClass({
       else if(this.state.Dmg){
         if(this.state.DmgDisplay[0]){
           result.push(DmgDates);
-        } 
+        }
 
         if(this.state.DmgDisplay[1]){
           result.push(DmgAvg);
@@ -308,7 +333,7 @@ var Progression = React.createClass({
 
   getLabels: function(){
     states = [this.state.KDA, this.state.Gold, this.state.CS, this.state.Dmg, this.state.Time];
-    
+
     if(states[0] && states[1] === false && states[2] === false && states[3] === false && states[4] === false){
       return {x: 'Game (most recent)', y: 'Stats'};
     } else if(states[1] && states[0] === false && states[2] === false && states[3] === false && states[4] === false){
@@ -350,6 +375,11 @@ var Progression = React.createClass({
     this.setState({showToolTip: false});
   },
 
+  clickHandler: function(d, e) {
+    this.setState({ selectedGame : d.x - 1})
+    this.showModal()
+  },
+
   getToolTipValue: function(){
     if(this.state.Gold){
       if(this.state.GoldDisplay[0])
@@ -368,7 +398,7 @@ var Progression = React.createClass({
           return this.state.y + "K Damage"
         else{
           return this.state.y + " Damage/minute"
-        }      
+        }
     } else if(this.state.Time){
         return this.state.y + " minutes played"
     } else{
@@ -379,7 +409,7 @@ var Progression = React.createClass({
 
   render: function(){
 
-    
+
     if(this.state.KDAoptions){
       KDAoptions = "showKDAoptions";
     } else {
@@ -422,37 +452,37 @@ var Progression = React.createClass({
       onToggleAssist = ""
     }
 
-    if (this.state.GoldDisplay[0]){ 
+    if (this.state.GoldDisplay[0]){
       onToggleGoldTotal = "onToggleGoldTotal"
     } else {
       onToggleGoldTotal = ""
     }
 
-    if (this.state.GoldDisplay[1]){ 
+    if (this.state.GoldDisplay[1]){
       onToggleGoldAvg = "onToggleGoldAvg"
     } else {
       onToggleGoldAvg = ""
     }
 
-    if (this.state.CSDisplay[0]){ 
+    if (this.state.CSDisplay[0]){
       onToggleCSTotal = "onToggleCSTotal"
     } else {
       onToggleCSTotal = ""
     }
 
-    if (this.state.CSDisplay[1]){ 
+    if (this.state.CSDisplay[1]){
       onToggleCSAvg = "onToggleCSAvg"
     } else {
       onToggleCSAvg = ""
     }
 
-    if (this.state.DmgDisplay[0]){ 
+    if (this.state.DmgDisplay[0]){
       onToggleDmgTotal = "onToggleDmgTotal"
     } else {
       onToggleDmgTotal = ""
     }
 
-    if (this.state.DmgDisplay[1]){ 
+    if (this.state.DmgDisplay[1]){
       onToggleDmgAvg = "onToggleDmgAvg"
     } else {
       onToggleDmgAvg = ""
@@ -488,15 +518,19 @@ var Progression = React.createClass({
       toggleTime = ""
     }
 
-
-
     return (
       <div className="progression">
 
-
+        <Modal className="modalWindow"
+               ref="modal"
+               contentStyle={contentStyle}
+               modalStyle={modalStyle}
+               backdropStyle={backdropStyle} >
+          <PastGame gameIdx={this.state.selectedGame} modalCallback={this.hideModal}/>
+        </Modal>
 
         <div>
-          <LineChart 
+          <LineChart
             axes
             axisLabels={this.getLabels()}
             dataPoints
@@ -509,33 +543,34 @@ var Progression = React.createClass({
             mouseOverHandler={this.mouseOverHandler}
             mouseOutHandler={this.mouseOutHandler}
             mouseMoveHandler={this.mouseMoveHandler}
+            clickHandler={this.clickHandler}
             lineColors={this.getLineColors()}
             width={500}
             height={200}
             data={this.getAllData()}/>
 
-          {this.state.showToolTip ? 
+          {this.state.showToolTip ?
             <ProgressionToolTip top={this.state.top} left={this.state.left} value={this.getToolTipValue()} /> : <div/>
           }
         </div>
 
-        <div id="KDAoptions" className={KDAoptions}>    
+        <div id="KDAoptions" className={KDAoptions}>
           <span className={onToggleKill} onClick={this.showK}>Kill</span>
           <span className={onToggleDeath} onClick={this.showD}>Death</span>
           <span className={onToggleAssist} onClick={this.showA}>Assist</span>
         </div>
 
-        <div id="goldOptions" className={goldOptions}>    
+        <div id="goldOptions" className={goldOptions}>
           <span className={onToggleGoldTotal} onClick={this.showTotalGold}>Total</span>
           <span className={onToggleGoldAvg} onClick={this.showAvgGold}>Per Minute</span>
         </div>
 
-        <div id="CSOptions" className={CSOptions}>    
+        <div id="CSOptions" className={CSOptions}>
           <span className={onToggleCSTotal} onClick={this.showTotalCS}>Total</span>
           <span className={onToggleCSAvg} onClick={this.showAvgCS}>Per Minute</span>
         </div>
 
-        <div id="DmgOptions" className={DmgOptions}>    
+        <div id="DmgOptions" className={DmgOptions}>
           <span className={onToggleDmgTotal} onClick={this.showTotalDmg}>Total</span>
           <span className={onToggleDmgAvg} onClick={this.showAvgDmg}>Per Minute</span>
         </div>
