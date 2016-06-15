@@ -4,6 +4,7 @@ var SettingsUtil = require('../../util/settingsUtil');
 
 var WIDGETS = require('../../app/assets/objects/widgetList');
 var DEFAULTS = require('../../app/assets/objects/defaultSettings');
+var SETTINGS = require('../../app/assets/objects/settingsDisplay');
 
 var Settings = React.createClass({
 
@@ -39,11 +40,11 @@ var Settings = React.createClass({
   displaySettings: function() {
     that = this
     return Object.keys(this.state.settings).map(function(widget, idx) {
-      var toggled = that.state.settings[widget] ? "settingsButtonOn" : "settingsButtonOff"
+      var toggled = that.state.settings[widget] ? "settingsButtonOn" : "settingsButtonOff";
       return (
         <li key={idx}>
           <div>
-            <span>{widget}</span>
+            <span>{SETTINGS[widget]}</span>
             <button onClick={that.changeSettings} id={widget} className={toggled} value="toggle"/>
           </div>
         </li>
