@@ -23,10 +23,9 @@ var PastGame = React.createClass({
   },
 
   render: function() {
-    debugger;
     return (
       <div>
-        HALLO
+        [Recent game info]
       </div>
     );
   }
