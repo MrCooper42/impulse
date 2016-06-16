@@ -39,6 +39,7 @@ var Settings = React.createClass({
 
   displaySettings: function() {
     var currentSettings = this.state.settings
+    var that = this;
     return Object.keys(this.state.settings).map(function(widget, idx) {
       var toggled = currentSettings[widget] ? "settingsButtonOn" : "settingsButtonOff";
       return (
