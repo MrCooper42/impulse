@@ -40,7 +40,7 @@ var Settings = React.createClass({
   displaySettings: function() {
     var that = this;
     return Object.keys(this.state.settings).map(function(widget, idx) {
-      var toggled = this.state.settings[widget] ? "settingsButtonOn" : "settingsButtonOff";
+      var toggled = that.state.settings[widget] ? "settingsButtonOn" : "settingsButtonOff";
       return (
         <li key={idx}>
           <div>
