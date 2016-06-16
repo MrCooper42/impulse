@@ -70,5 +70,4 @@ var SearchSummoner = React.createClass({
 });
 
 
-
 module.exports = SearchSummoner;

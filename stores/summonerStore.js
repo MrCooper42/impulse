@@ -4,6 +4,7 @@ var Dispatcher = require('../dispatcher/dispatcher');
 var LeagueUtil = require('../util/leagueUtil');
 
 var SummonerStore = new Store(Dispatcher);
+var DEFAULT_SUMMONER = require('../app/assets/objects/defaultSummoner');
 
 var _summoner = {id : 0};
 var _summaryStats = {};
@@ -64,7 +65,6 @@ var resetStats = function(summaryStats) {
   localStorage["summaryStats"] = JSON.stringify(summaryStats);
 };
 
-
 var checkStorage = function() {
   if (localStorage['summoner']) {
     _summoner = JSON.parse(localStorage['summoner']);
@@ -76,13 +76,7 @@ var checkStorage = function() {
     _rank = localStorage['summonerRank'];
   }
   if (!localStorage['summoner']) {
-    LeagueUtil.setSummoner({
-       "id": 60131288,
-       "name": "DoctorZeus",
-       "profileIconId": 785,
-       "revisionDate": 1462663095000,
-       "summonerLevel": 30
-     });
+    LeagueUtil.setSummoner(DEFAULT_SUMMONER);
   }
 };
 
