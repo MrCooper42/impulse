@@ -4,7 +4,7 @@ var ReactDOM = require('react-dom');
 var LeagueStore = require('./stores/summonerStore');
 
 // FLUX
-var leagueUtil = require('./util/leagueUtil')
+var leagueUtil = require('./util/leagueUtil') 
 var SettingsUtil = require('./util/settingsUtil')
 
 // STORES
